@@ -36,9 +36,10 @@ main
 .block-center
   text-align: center
 
-.block-wide
-  width: $width-content
-  margin-left: -($width-content - $width-text) / 2
+@media(min-width: #{$width-content})
+  .block-wide
+    width: $width-content
+    margin-left: -($width-content - $width-text) / 2
 
 
 // ----------------------------------------------------------------------------
@@ -494,7 +495,7 @@ code
 
 @media(max-width: #{$width-text})
   html
-    font-size: 9px
+    font-size: 8px
 
   main,
   .single,
