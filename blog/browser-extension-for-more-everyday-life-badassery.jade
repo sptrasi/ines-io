@@ -1,0 +1,209 @@
+include ../_includes/_mixins
+
+p When my friend Jowa asked me to help her build the new website for her project #[a(href="http://www.scheiderevoltee.com" target="_blank") Scheidé Revoltée], I knew this would be right up my alley. Their mission: celebrating equality, fighting outdated gender stereotypes and making a difference by empowering girls all over the world to be badass in their everyday life, one step at a time. Or in their words:
+
++quote("Scheidé Révoltée", "http://www.scheiderevoltee.com") We are a bunch of people who believe that gender equality is important to make the world an overall better place - for women, men, and everybody else. From a perspective of young, white women, we want to help create equality by empowering girls to overcome the expectations and standarts society sets upon them - and encourage boys to join the spirit.
+
+p And yes, #[em Scheide] is German for vagina.
+
+p The website itself was going to be very simple and minimalistic, but I knew it needed little extra, an interactive feature to promote the message in a fun way by injecting small doses of badassery into everyday life. So #[a(href="https://chrome.google.com/webstore/detail/scheidify/noehlhgcfmnllodacehfablpkegjdkho" target="_blank") Scheidify] was born.
+
+h2 What's Scheidify?
+
+p The internet can be frustrating and full of bullshit. Scheidify is a little #[a(href="https://chrome.google.com/webstore/detail/scheidify/noehlhgcfmnllodacehfablpkegjdkho" target="_blank") browser extension] for Chrome that can help make the internet a better place. It adds a little button to your toolbar that lets you "scheidify" any website instantly by replacing images with empowering and fun graphics and gifs celebrating badassery and vaginas.
+
++image("scheidify_screenshot.jpg")
+
+h2 How does it work?
+
+p Writing an extension for Chrome is surprisingly easy – and you can do it, too! In this blog post, I'll explain how Scheidify was built and how you can make your own badass browser extension. All you need is a text editor and a very basic understanding of JavaScript. Scheidify is written almost entirely in JavaScript and pretty much consists of only three files (and a bunch of images of course).
+
+h3 The manifest file
+
+p The #[a(href="https://developer.chrome.com/extensions/manifest" target="_blank") manifest file] contains all important settings and information for the extension, from name, description and developer infos to the included scripts, permissions and browser actions. The #[code manifest.json] for Scheidify looks like this:
+
++code("javascript").
+  {
+    "manifest_version": 2,
+    "name": "Scheidify",
+    "description": "For more everyday life badassery in your browser.",
+    "version": "1.0",
+    "author": "Scheidé Revoltée",
+    "homepage_url" : "http://www.scheiderevoltee.de",
+
+    "permissions": [
+      "activeTab"
+    ],
+
+    "content_scripts": [
+      {
+        "js": ["scheidify.js"],
+        "exclude_matches": ["*://*.facebook.com/*", "*://*.twitter.com/*"],
+        "all_frames": true
+      }
+    ],
+
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+
+    "browser_action": {
+      "default_title": "Scheidify!",
+      "default_icon": { 
+        "19": "scheidify_19.png",
+        "38": "scheidify_38.png"
+      }
+    },
+
+    "icons": { 
+      "16": "scheidify_16.png",
+      "48": "scheidify_48.png",
+      "128": "scheidify_128.png"
+    }
+  }
+
+p The extension is allowed to access the currently active tab (#[code activeTab]) when it's activated and includes two scripts: the content script #[code scheidify.js], which is active on all pages except Facebook and Twitter (where it'd break anyways) and the background script #[code background.js] that handles the browser actions (like the toolbar button).
+
+p The icons in #[code browser_action] are used for the toolbar, the other icons are used in the settings and overview pages.
+
+h3 The content script
+
+p This is the main script where all the action happens. It finds all images on the site and then goes through them one by one and replaces the image source with a link to a much cooler image. These images could certainly be shipped with the browser extension itself, but since we want #[em loads] of them, I uploaded them to #[a(href="https://www.imgur.com" target="_blank") Imgur]. Imgur also comes with a very straightforward API which we can later use to automatically grab all images from an album. This way, the images can easily be edited and updated and our script always has the latest list of image links.
+
+p But for now, here's a simplified version of #[code scheidify.js] to illustrate the basic principle:
+
++code("javascript").
+  function Scheidify() {
+    var scheiden = [
+      'http://i.imgur.com/YwUaiDl.gif',
+      'http://i.imgur.com/CUgsQrr.gif',
+      'http://i.imgur.com/L8T19bM.gif',
+      'http://i.imgur.com/gvPEcfB.gif'
+    ];
+
+    var images = document.getElementsByTagName('img');
+
+    for(var i = 0; i &lt; images.length; i++) {
+      images[i].src = scheiden[Math.floor(Math.random() * scheiden.length)];
+      images[i].setAttribute('style', 'height: auto; max-width: 100%');
+    }
+  }
+
+p The function starts with an array of image links that we'll be using to replace the site's images with. It then grabs all #[code img] tags, i.e. all images. (I've never had so much fun naming variables by the way. Wait for the final code – it includes my favourite line of code I've ever written: #[code scheiden.push(scheide)]).
+
+p All we need to do now is iterate over the existing images on the site and set the old image source to one of our new image sources. To select a random image from the list, #[code Math.floor(Math.random() * scheiden.length)] generates a random number between #[code 0] and the length of the array containing the image links.
+
+p Setting the image height to #[code auto] and the maximum image width to #[code 100%] makes sure that the image is always displayed proportionally and doesn't fuck up a website's layout if our new image is wider than the container it's in.
+
+h3 The background script
+
+p The #[code background.js] takes care of the toolbar button. Whenever a user clicks on the button, we want to run the #[code Scheidify()] function on the page and add a little badge to the toolbar button to show that Scheidify is running. If the user clicks the button again, the page should go back to normal.
+
++code("javascript").
+  var scheidifyEnabled = false;
+
+  chrome.browserAction.onClicked.addListener(function(tab) {
+    if(!scheidifyEnabled) {
+      chrome.tabs.executeScript({ code: 'Scheidify();' });
+      chrome.browserAction.setBadgeText({ text: 'on', tabId: tab.id });
+      chrome.browserAction.setBadgeBackgroundColor({ color: '#000', tabId: tab.id });
+    }
+
+    else {
+      chrome.browserAction.setBadgeText({ text: '', tabId: tab.id });
+      chrome.tabs.executeScript({ code: 'window.location.reload();' });
+    }
+
+    scheidifyEnabled = !scheidifyEnabled;
+  });
+
+p This bit of code uses the #[a(href="https://developer.chrome.com/extensions/api_index" target="_blank") Chrome API] and its browser actions – which means we can make use of all the in-built browser stuff. The variable #[code scheidifyEnabled] stores the current state, i.e. whether the site is currently "scheidified" or not.
+
+p The #[code onClicked] browser action lets us watch clicks on the toolbar button. Whenever a user clicks, we check if Scheidify is enabled or not. If it's not enabled yet, we run the #[code Scheidify()] function in the current tab and add a little badge with the word "on" and a black background to the icon.
+
+p Otherwise, if Scheidify is already enabled, we remove the badge and reload the current window to restore the site's original state. Finally, we set #[code scheidifyEnabled] to the opposite of itself. If it was enabled before, it's now disabled and if it was disabled before, it's now enabled. Pretty simple, right?
+
+h3 Testing the extension
+
+p Chrome comes with a handy developer mode that lets you run and test extensions. You can activate it at the top of the extensions settings and then simply install the extension by clicking "Load unpacked extension" and selecting the folder on your harddrive:
+
++image("scheidify_chrome.jpg", false, true)
+
+p It also lets you reload your extension whenever you make changes so you don't have to reinstall it every time.
+
+h3 Imgur API integration
+
+p Since we wanted to use a huge pool of images that could be updated without having to change the code and thus making the users update their browser extension contstantly, I set up an album on #[a(href="https://www.imgur.com" target="_blank") Imgur]. To use their API, you first have to #[a(href="https://api.imgur.com/oauth2/addclient" target="_blank") register] your app. The site looks something like this:
+
++image("scheidify_imgur.jpg", false, true)
+
+p Select "Anonymous usage without user authorization" and put whatever you want in the "Authorization callback URL" field. In this case, it's not relevant since we only want to request a bunch of images and not interact with the site at all apart from that. After the registration, Imgur assigns you a Client ID.
+
+p To get all images in an album, we need to make an HTTP request to the Imgur API. The mechanics of that might seem confusing if you haven't done it before, but don't worry, here's how it works: Using #[code XMLHttpRequest()], we make a #[code GET] request to the API (which includes the ID of the album we want to get the images from). Basically, we're asking it for stuff. In the header of our request, we submit our Client ID – this authorizes us and our app. The server then processes our request and hopefully returns the data we asked for. Then we can use that data and work with it.
+
++code("javascript").
+  function Scheidify() {
+    
+    // your client ID here
+    var clientId = 'XXXXXXXXXXXXXXX';
+    
+    // your album ID here
+    var albumId = 'XXXXX';
+
+    // the Imgur API to request the album images from
+    var api = 'https://api.imgur.com/3/album/' + albumId + '/images';
+
+    var xhr = new XMLHttpRequest();
+    xhr.open( 'GET', api, true);
+    xhr.setRequestHeader('Authorization', 'Client-ID ' + clientId);
+    xhr.onload = function(e) {
+      if(xhr.readyState === 4) {
+        if(xhr.status === 200) {
+
+          var result = JSON.parse(xhr.responseText);
+          var scheiden = [];
+
+          for(var i = 0; i &lt; result.data.length; i++) {
+            var scheide = result.data[i].link;
+            scheiden.push(scheide);
+          }
+
+          // the rest of the code
+        }
+
+        else {
+          console.error(xhr.statusText);
+        }
+      }
+    }
+    xhr.send(null);
+  }
+
+p If the request is finished and the response is ready (#[code readyState === 4]) #[em and] it was successful and "OK" (#[code status === 200]), we can parse the result and end up with an object that contains what we got back from the server. It looks something like this – only with a lot #[a(href="https://api.imgur.com/models/image" target="_blank") more] parameters and info per image:
+
++code("javascript").
+  data : [
+    {
+      id: "cn2tjaN",
+      link: "https://i.imgur.com/cn2tjaN.gif",
+    },
+      {
+      id: "eKzQFpI"
+      link: "https://i.imgur.com/eKzQFpI.gif"
+    }
+  ]
+
+p Now we can iterate over this data object, take every single link and add it to our empty array: #[code scheiden.push(scheide)] (there it is, my favourite line). Then we can go on and replace the images just like we did in the simplified version above.
+
+h3 The extension
+
+p To see the final Scheidify code complete with Imgur integration and the "Scheidified by Scheidé Revoltée" badge, check out the source on #[a(href="https://github.com/" + profiles.github + "/scheidify" target="_blank") GitHub]. To see it in action you can install it straight from the Chrome Web Store here:
+
+p: +button(href="https://chrome.google.com/webstore/detail/scheidify/noehlhgcfmnllodacehfablpkegjdkho") Get Scheidify
+
+h2 What else?
+
+p Scheidify is extremely simple and doesn't work #[em everywhere]. It only replaces actual images (and not background images), doesn't keep track of images that are loaded dynamically later on and fails if sites blocked external image sources for security reasons.
+
+p But just like #[a(href="http://www.scheiderevoltee.com" target="_blank") Scheidé Revoltée] it's fun, DIY and on a mission to show how easy it is to add a little bit of badassery to your everyday life. And now go and buy a #[a(href="http://www.scheiderevoltee.com/#shop" target="_blank") t-shirt] and smash the patriarchy.

@@ -1,0 +1,55 @@
+// ----------------------------------------------------------------------------
+//  Mixins
+// ----------------------------------------------------------------------------
+
+@mixin icon($icon-name, $icon-position: before)
+  &:#{$icon-position}
+    color: currentColor
+    content: map-get($icons, $icon-name)
+    display: inline-block
+    font-family: $font-icons
+
+@mixin size($width, $height: $width)
+  height: $height
+  width: $width
+
+@mixin position($position, $pos-y, $pos-x, $pos-y-value, $pos-x-value)
+  position: $position
+  #{$pos-y}: $pos-y-value
+  #{$pos-x}: $pos-x-value
+
+@mixin triangle($triangle-direction: right, $triangle-size: $size-triangle, $triangle-color: $color-white)
+  $triangle-align: calc(50% - #{$triangle-size})
+
+  &:before
+    content: ''
+    width: 0
+    height: 0
+    border-color: transparent
+    border-style: solid
+    border-width: $triangle-size
+    position: absolute
+
+    @if $triangle-direction == right
+      border-left-color: $triangle-color
+      border-right-width: 0
+      top: $triangle-align
+      left: 0
+
+    @else if $triangle-direction == left
+      border-right-color: $triangle-color
+      border-left-width: 0
+      top: $triangle-align
+      right: 0
+
+    @else if $triangle-direction == top
+      border-bottom-color: $triangle-color
+      border-top-width: 0
+      left: $triangle-align
+      bottom: 0
+
+    @else if $triangle-direction == bottom
+      border-top-color: $triangle-color
+      border-bottom-width: 0
+      left: $triangle-align
+      top: 0

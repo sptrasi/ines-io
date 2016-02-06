@@ -1,0 +1,18 @@
+include _mixins
+
+- var post_max = posts || 0 
+- var post_counter = 1
+- var post_style_counter = 1
+
+//- ----------------------------------------------------------------------------
+//-  Display latest posts
+//- ----------------------------------------------------------------------------
+
+section.teasers
+  each post, slug in public.blog._data
+    if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
+      +teaser(post, slug, post_style_counter)
+
+      - if(post_style_counter === 6) post_style_counter = 1
+      - else post_style_counter++
+      - post_counter++

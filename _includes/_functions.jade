@@ -1,0 +1,58 @@
+//- ----------------------------------------------------------------------------
+//-  Global template functions
+//- ----------------------------------------------------------------------------
+
+//- Get relative path to root from current page
+
+- function getRoot() {
+-   var path = '';
+-   for (var i = 1; i < current.path.length; i++) {
+-     path += '../';
+-   }
+-   return path;
+- }
+
+//- Get current url
+- function getCurrentUrl() {
+-   return url + '/' + current.path.join('/');
+- }
+
+//- Get meta title
+- function getMetaTitle(social) {
+-   var pagetitle = '';
+-   if(headline) {
+-     if(subheadline) pagetitle =  headline + ' — ' + subheadline;
+-     else pagetitle = headline;
+-     if(!social) pagetitle +=  ' | ' + title;
+-   }
+-   else pagetitle = title;
+- return pagetitle;
+- }
+
+//- Get meta image
+- function getMetaImage() {
+-   var blog = '/blog/img/'
+-   if(image && image.file) return (image.social) ? blog + image.social : blog + image.file;
+-   else return '/assets/img/default.png'
+- }
+
+//- Convert date to human readable and timestamp format
+
+- function convertDate(input) {
+-   var dates = [];
+-   var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+-   var date = new Date(input);
+-   dates.full = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+-   dates.timestamp = JSON.parse(JSON.stringify(date));
+-   return dates;
+- }
+
+//- Convert date to RSS pubDate
+- function convertPubDate(date) {
+-   var date = new Date(date);
+-   var pieces     = date.toString().split(' ');
+-   var offsetTime = pieces[5].match(/[-+]\d{4}/);
+-   var offset     = (offsetTime) ? offsetTime : pieces[5];
+-   var parts      = [ pieces[0] + ',', pieces[2], pieces[1], pieces[3], pieces[4], offset ];
+-   return parts.join(' ');
+- }

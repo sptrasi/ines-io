@@ -1,0 +1,80 @@
+include _includes/_mixins
+
+- var root = getRoot()
+- var meta_title_page = getMetaTitle()
+- var meta_title_social = getMetaTitle(true)
+- var meta_image = url + getMetaImage()
+
+//- ----------------------------------------------------------------------------
+//-  Global layout
+//- ----------------------------------------------------------------------------
+
+doctype html
+html(lang="en")
+  head
+    title!=meta_title_page
+
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon" href=root + "assets/img/favicon.ico")
+    link(rel="alternate" type="application/rss+xml" title="RSS" href=root + "feed")
+    link(rel="stylesheet" href=root + "assets/css/style.css?v" + version)
+
+    meta(property="og:type" content="website")
+    meta(property="og:site_name" content=site)
+    meta(property="og:url" content=getCurrentUrl())
+    meta(property="og:title" content=meta_title_social)
+    meta(property="og:description" content=description)
+    meta(property="og:image" content=meta_image)
+
+    meta(name="twitter:card" content="summary")
+    meta(name="twitter:site" content="@" + profiles.twitter)
+    meta(name="twitter:title" content=meta_title_social)
+    meta(name="twitter:description" content=description)
+    meta(name="twitter:image" content=meta_image)
+
+    if color
+      style .color, .color:before, .color:after { color: #{color}; border-color: #{color} }
+
+  body
+
+    header
+      nav.nav#nav
+        button.nav-icon#nav-icon: span
+
+        ul.nav-list
+          each slug, item in navigation
+            li.nav-list-item: a(href=(root + slug) || "/")=item
+
+
+    main(class=(current.path[0] == 'index') ? 'home' : '')
+      if current.path[0] == 'index'
+        !=yield
+
+      else if current.path[0] == 'blog'
+        !=partial("_includes/_post")
+
+      else
+        !=partial("_includes/_page")
+
+
+    footer &copy; 2015-#{new Date().getFullYear()} #{site}
+      each slug, item in footer_links
+        |  | #[a(href=root + slug)=item]
+
+
+    script(src=root + "assets/js/main.js?v" + version)
+
+    if highlight_code
+      script(src=root + "assets/js/prism.js")
+
+    if codepen_embed
+      script(src="https://assets.codepen.io/assets/embed/ei.js")
+
+    if environment == 'production'
+      script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', #{google_analytics}, 'auto'); ga('send', 'pageview');

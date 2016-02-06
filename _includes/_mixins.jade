@@ -1,0 +1,87 @@
+include _functions
+
+//- ----------------------------------------------------------------------------
+//-  Global template mixins
+//- ----------------------------------------------------------------------------
+
+//- Post teaser
+
+mixin teaser(post, slug, counter)
+  - if(counter) counter = 'teaser--style-' + counter
+
+  article.teaser(class=counter)
+    a.teaser-text(href=getRoot() + 'blog/' + slug)
+      h2=post.headline
+      h3.label=post.subheadline
+
+    a.teaser-image(href=getRoot() + 'blog/' + slug style='background-image: url(' + getRoot() + 'blog/img/' + post.image.file + ')')
+
+
+//- Inline Image
+
+mixin image(filename, caption, small)
+  - if(!small) var classname = 'block-wide'
+
+  figure.image(class=classname)&attributes(attributes)
+    img(src=(absolute || '') + 'img/' + filename)
+
+    if caption
+      figcaption.caption!=caption
+
+
+//- Date
+
+mixin date(input)
+  - var dates = convertDate(input)
+
+    time.date(datetime=dates.timestamp)&attributes(attributes)=dates.full
+
+
+//- Blockquote
+
+mixin quote(source, link)
+  blockquote&attributes(attributes): p
+    block
+
+    if source
+      cite
+
+        if link
+          a(href=link target='_blank')=source
+
+        else
+          != source
+
+
+//- Codepen Embed
+
+mixin codepen(slug, height)
+  .embed&attributes(attributes)
+    .codepen(data-height=height data-theme-id='17499' data-slug-hash=slug data-default-tab='result' data-user=profiles.codepen) 
+      a(href='https://codepen.io/' + profiles.codepen + '/' + slug + '/' target='_blank') View on CodePen
+
+
+//- Video Embeds
+
+mixin youtube(id, ratio)
+  - if(!ratio) ratio = '16x9'
+
+  .video(class='video--' + ratio)&attributes(attributes)
+    iframe(src='https://www.youtube.com/embed/' + id frameborder="0" allowfullscreen)
+
+
+//- Code Block
+
+mixin code(language)
+  - if(!language) language = 'markup'
+
+  pre.block-code(class='language-' + language)&attributes(attributes)
+    code
+      block
+
+
+//- Button
+
+mixin button
+  a.button.color&attributes(attributes)
+    block

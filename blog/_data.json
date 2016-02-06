@@ -1,0 +1,312 @@
+{
+  "redesign-open-source": {
+    "headline": "Redesigning and Open Source",
+    "subheadline": "Behind the scenes",
+    "description": "I always enjoy redesigning my site. It's the ideal place to try out new things, and I just love the rush of excitement and motivation that comes with it. This time, I didn't only go for a new look, I also gave the templates and build system a modern makeover and published it all under an open source license.",
+    "date": "2016-02-06",
+    "image": {
+      "file": "ines-io_new.jpg"
+    },
+    "color": "#5641c0",
+    "highlight_code": true
+  },
+
+  "switching-to-desktop-apps": {
+    "headline": "I switched from web apps to desktop apps and it's amazing",
+    "subheadline": "Leaving Evernote and reclaiming the browser",
+    "description": "If you are, like me, very sensitive to small inconveniences and frustrations, good programs that do their job efficiently and look so nice that even seeing the little dock icon makes you happy, can have a huge impact on your life. Here are the four apps that helped me free my browser of the unnecessary webapp clutter and made life and work a little more fun.",
+    "date": "2016-02-03",
+    "image": {
+      "file": "desktopapps.jpg"
+    },
+    "color": "#e4bad0"
+  },
+
+  "browser-extension-for-more-everyday-life-badassery": {
+    "headline": "The browser extension for more everyday life badassery",
+    "subheadline": "Scheidify for Scheidé Revoltée",
+    "description": "When my friend Jowa asked me to help her build the new website for her project Scheidé Revoltée, I knew this would be right up my alley. Their mission: celebrating equality, fighting outdated gender stereotypes and making a difference by empowering girls all over the world to be badass in their everyday life, one step at a time.",
+    "date": "2015-12-17",
+    "image": {
+      "file": "scheidify.jpg",
+      "social": "scheidify_screenshot.jpg",
+      "credit_url": "http://flirtmoji.co",
+      "credit_text": "Katy McCarthy, Flirtmoji"
+    },
+    "color": "#ff0b5c",
+    "medium": "https://medium.com/@inesmontani/the-browser-extension-for-more-everyday-life-badassery-c0ef6d9d6209",
+    "highlight_code": true
+  },
+
+  "the-ultimate-guide-static-websites-jekyll": {
+    "headline": "The ultimate guide to static websites with Jekyll",
+    "subheadline": "Going static for beginners – with free template!",
+    "description": "A few months ago I said goodbye to WordPress and switched my site over to Anchor CMS. It was a very refreshing experience but after reading about yet another round of security warnings and realising that I was writing all my blog posts in a text editor anyways, I knew it was time for a change. I set up Jekyll, converted my theme and went 100% static.",
+    "date": "2015-11-28",
+    "image": {
+      "file": "jekyll.jpg",
+      "credit_url": "http://www.pixeden.com/psd-web-elements/flat-psd-browsers-set",
+      "credit_text": "Pixeden / Jekyll"
+    },
+    "color": "#CD1E23",
+    "medium": "https://medium.com/@inesmontani/the-ultimate-guide-to-static-websites-with-jekyll-8ec2b72febf1",
+    "highlight_code": true
+  },
+
+  "i-fell-for-self-help-so-you-dont-have-to" : {
+    "headline": "I fell for self-help so you don't have to",
+    "subheadline": "Why this glittery bullshit needs to stop",
+    "description": "I hate to admit it, but during my late teenage years and the beginning of my adult life, I massively fell for self-help blogs.] I was unhappy, didn't particularly like myself and had no idea where I would end up one day so I started spending hours on the internet looking for answers. (Yeah, this probably sounds familiar.)",
+    "date": "2015-10-14",
+    "description": "",
+    "image": {
+      "file": "gemstones.jpg",
+      "credit_url": "http://thepatternlibrary.com",
+      "credit_text": "The Pattern Library"
+    },
+    "color": "#f88c29",
+    "medium": "https://medium.com/@inesmontani/i-fell-for-self-help-so-you-don-t-have-to-203655dcaf55"
+  },
+
+  "i-ditched-spotify-for-apple-music": {
+    "headline": "I ditched Spotify for Apple Music",
+    "subheadline": "It’s not perfect, but I owe it to my teenage self",
+    "description": "As a teenager, I always knew about the latest up and coming indie bands, way before they ever toured Europe or released their first album. I collected early bootlegs and demos that were shared and traded on Livejournal communities and together with everything else I was into, I accumulated an impressive digital music collection over the years.",
+    "date": "2015-10-12",
+    "image": {
+      "file": "spotify_apple.jpg"
+    },
+    "color": "#f25671",
+    "medium": "https://medium.com/@inesmontani/i-ditched-spotify-for-apple-music-336dfa3dfb14"
+  },
+
+  "5-things-i-learned-from-working-in-print": {
+    "headline": "5 things I learned from working in print",
+    "subheadline": "Online marketing, advertising and productivity",
+    "description": "For four years, I worked for a popular print magazine, developing marketing strategies, selling advertising space and coordinating partnerships. Being a monthly publication, we often jokingly compared it to giving birth once a month: at first you get all excited, then it becomes super hard and you want to die and then all of a sudden it's over, you're happy and hold the result in your hands and already forgot about all of the pain.",
+    "date": "2015-09-29",
+    "image": {
+      "file": "workinginprint.jpg",
+      "credit_text": "Graphberry",
+      "credit_url": "http://www.graphberry.com/item/designer-flat-workspace-elements"
+    },
+    "color": "#F35869"
+  },
+
+  "developing-displacy": {
+    "headline": "Dependency parse tree visualization with CSS",
+    "subheadline": "Developing displaCy",
+    "description": "My latest project started out as web development job but quickly turned into something much bigger: displaCy, a visualiser for dependency parse trees (grammatical structure) using the spaCy API.",
+    "date": "2015-08-20",
+    "image": {
+      "file": "displacy.jpg"
+    },
+    "color": "#6d75ff",
+    "highlight_code": true,
+    "codepen_embed": true
+  },
+
+  "farin-urlaub-interview": {
+    "headline": "A doctor at the races",
+    "subheadline": "An interview with Farin Urlaub",
+    "description": "Earlier this summer, I interviewed Farin Urlaub (funnily enough, one of my early teenage idols), for Exberliner. If you're not German, you might know him as the singer/guitarist of punk rock giants Die Ärzte. But he’s also a successful solo artist and has been a consistent personality in German music since the 1980s. At 51, he’s looking back on a three-decade-long career.",
+    "date": "2015-08-17",
+    "image": {
+      "file": "farinurlaub.jpg",
+      "credit_text": "Olaf Heine"
+    },
+    "color": "#3C576F",
+    "readmore": "http://www.exberliner.com/culture/music--nightlife/farin-urlaub-interview/",
+    "meta": "Published in Exberliner, issue #140, July/August 2015"
+  },
+
+  "deichkind-interview": {
+    "headline": "Children of the dams",
+    "subheadline": "An interview with Deichkind",
+    "description": "Chart-topping tech-rap monoliths Deichkind have a string of hits amassed over a nearly 20-year career and regularly pack stadiums. But while every German under 50 knows who they are, they’re hardly recognised outside of the German-speaking world – even among expats here in Berlin.",
+    "date": "2015-04-21",
+    "image": {
+      "file": "deichkind.jpg",
+      "credit_text": "Jonas Lindström"
+    },
+    "color": "#D07592",
+    "readmore": "http://www.exberliner.com/culture/music--nightlife/deichkind-english-interview/",
+    "meta": "Published in Exberliner, issue #112, January 2013"
+  },
+
+  "new-york-travel-guide": {
+    "headline": "New York City Travel Guide",
+    "subheadline": "Meine Alltagstips & Erfahrungen aus 6 Wochen New York",
+    "description": "New York, die Liste der romantischen Stereotypen und Erwartungen ist endlos. Nach knapp eineinhalb Monaten und einem mehr oder weniger normalen Alltag in New York bin ich zurück in Berlin und habe ein paar meiner Erfahrungen zusammengefasst.",
+    "date": "2015-03-25",
+    "language": "de",
+    "image": {
+      "file": "newyork.jpg"
+    },
+    "color": "#548c8c"
+  },
+
+  "new-york-travel-blog": {
+    "headline": "New York City Travel Blog",
+    "subheadline": "Read my diary",
+    "description": "In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York.",
+    "date": "2015-03-16",
+    "image": {
+      "file": "newyorktravelblog.jpg"
+    },
+    "color": "#ef2340"
+  },
+
+  "die-zukunft-ist-da": {
+    "headline": "Die Zukunft ist da",
+    "subheadline": "Über Arbeit, Neustart und den Sinn des Ganzen",
+    "description": "In den letzten Monaten habe ich einen entscheidenden Schritt gemacht und einen Neustart gewagt. Ich habe meinen Job an den Nagel gehängt, eine Reise nach New York gebucht und einen Entschluss gefasst: Ich will unabhängiger sein.",
+    "date": "2015-02-07",
+    "language": "de",
+    "image": {
+      "file": "hands.jpg",
+      "credit_text": "Death to the Stock Photo"
+    },
+    "color": "#898e98"
+  },
+
+  "hipster-shop-concept-generator": {
+    "headline": "The Hipster Business Shop Concept Generator",
+    "subheadline": "For Berlin and the rest of the world",
+    "description": "Berlin is full of concept stores selling the weirdest combinations of random products and trying their best to be as quaint as possible. There are so many, I don't even remember which one it was that inspired me to make this little generator.",
+    "date": "2014-12-23",
+    "image": {
+      "file": "shopconcept.jpg"
+    },
+    "color": "#895441"
+  },
+
+  "who-the-fk-is-helene-fischer": {
+    "headline": "Who the f**k is Helene Fischer?",
+    "subheadline": "Curiosities of German music explained by a German",
+    "description": "For Exberliner I tried to explain the weirdness, embarrassments and curiosities of German music. Especially one phenomenon: Helene Fischer.",
+    "date": "2014-11-20",
+    "image": {
+      "file": "helenefischer.jpg",
+      "credit_text": "Abhijay Achatz",
+      "credit_url": "https://flic.kr/p/dEgPYq"
+    },
+    "color": "#c6d601",
+    "readmore": "http://www.exberliner.com/culture/music--nightlife/who-the-fuck-is-helene-fischer/",
+    "meta": "Published in Exberliner, issue #131, October 2014"
+  },
+
+  "gay-men-reading-german-cosmopolitan": {
+    "headline": "Gay Men Reading German Cosmopolitan",
+    "subheadline": "Die Absurditäten von deutschen Frauenmagazinen",
+    "description": "Eines Abends, nach ein paar Gläsern Gasovka Apfelsaft in Walters Küche, fiel uns eine alte Ausgabe der Cosmopolitan in die Hände. Ich hatte mich vorher noch nie intensiver mit Frauenmagazinen beschäftigt, nicht einmal im Wartezimmer beim Arzt. Er noch weniger. Er fing an, vorzulesen und ich filmte mit. Bei jedem neuen Absatz und jedem neuen Tipp rollten sich meine Fußnägel ein kleines Stück weiter hoch.",
+    "date": "2014-09-04",
+    "language": "de",
+    "image": {
+      "file": "gaymenreading.jpg",
+      "credit_text": "Natalia Peris / Flickr"
+    },
+    "color": "#f4617a",
+    "readmore": "http://gaymenreading.tumblr.com"
+  },
+
+  "ich-bin-dagegen-aber": {
+    "headline": "Ich bin dagegen, aber...",
+    "subheadline": "Generation Y und das tägliche Unbehagen",
+    "description": "Ich habe Stunden damit verbracht, mit meinem Mitbewohner in der Küche zu sitzen, Kette zu rauchen und über einen Dritten Weltkrieg oder einen Komplettzusammenbruch der Wirtschaft zu philosophieren. Wie würde das aussehen? Würden wir überleben? Da oben im vierten Stock mitten in Neukölln mit einem leeren Kühlschrank und wenig Möbeln, aber dafür MacBooks und Spiegelreflex?",
+    "date": "2014-07-15",
+    "language": "de",
+    "image": {
+      "file": "confetti.jpg",
+      "credit_text": "Daltonkat2 / Flickr"
+    },
+    "color": "#ac99b0"
+  },
+
+  "schlandmania": {
+    "headline": "Schlandmania",
+    "subheadline": "Warum sich hier dringend etwas ändern muss",
+    "description": "Seit 2006 ist es gang und gäbe, wieder Flagge zu zeigen. Sie wehen an Autos und Häusern, zieren die Gesichter der Fanmeilen-Besucher und Prominenten (wenn auch nicht immer gekonnt) und bestimmen wochenlang das Stadtbild jeder Klein und Großstadt.",
+    "date": "2014-07-09",
+    "language": "de",
+    "image": {
+      "file": "schlandmania.jpg"
+    },
+    "color": "#44819b"
+  },
+
+  "the-early-years": {
+    "subheadline": "The early years",
+    "headline": "Best of analog 2008-2012",
+    "description": "A collection of disposable camera memories between 2008 and 2012, between Cologne and Berlin, with visits several other places. I took a lot photos during that particular eventful, messy and not always easy time of my life. I had the time of my life, but I'm not sure I'd want to go back.",
+    "date": "2014-06-10",
+    "image": {
+      "file": "the-early-years/analog13.jpg"
+    },
+    "color": "#8fc1c9"
+  },
+
+  "christiane-f-interview": {
+    "headline": "Christiane's second life",
+    "subheadline": "An interview with Christiane F. (Wir Kinder vom Bahnhof Zoo)",
+    "description": "My parents had one true passion: reading. I remember being a child, scouring through their hughe bookshelves and secretly taking books back to my room. One of them was Wir Kinder vom Bahnhof Zoo, the story of Christiane F., who became addicted to heroin as a teenager.",
+    "date": "2014-01-22",
+    "image": {
+      "file": "christianef.jpg",
+      "credits_text": "Levante Verlag"
+    },
+    "color": "#5b8819",
+    "readmore": "http://www.exberliner.com/features/people/christianes-second-life/",
+    "meta": "Published in Exberliner, issue #123, January 2014"
+  },
+
+  "tocotronic-interview": {
+    "headline": "\"German is a relatively inconvenient language\"",
+    "subheadline": "An interview with Tocotronic",
+    "description": "For the January issue of Exberliner I met Dirk von Lowtzow and Jan Müller of Tocotronic for an interview in the Whiskey Room of Michelberger Hotel. They told me why the Hamburg School is only a made-up journalist myth and what makes it so hard to write lyrics in German.",
+    "date": "2013-01-22",
+    "image": {
+      "file": "tocotronic.jpg",
+      "credits_text": "Michael Petersohn"
+    },
+    "color": "#b5393a",
+    "readmore": "http://www.exberliner.com/culture/music--nightlife/tocotronic-interview/",
+    "meta": "Published in Exberliner, issue #112, January 2013"
+  },
+
+  "adam-ficek-interview": {
+    "headline": "From Babyshambles to Roses Kings Castles",
+    "subheadline": "An interview with Adam Ficek",
+    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day. More than six years later, I discovered the texts in an old database backup, translated them to English and started publishing them, mostly for nostalgic reasons.",
+    "date": "2009-06-06",
+    "image": {
+      "file": "adamficek.jpg"
+    },
+    "color": "#6a6a65",
+    "meta": "Originally published in German in 2009"
+  },
+
+  "holy-fuck-interview": {
+    "headline": "\"We're not a shabby hippie punk band!\"",
+    "subheadline": "An interview with Holy Fuck",
+    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day. More than six years later, I discovered the texts in an old database backup, translated them to English and started publishing them, mostly for nostalgic reasons.",
+    "date": "2009-04-27",
+    "image": {
+      "file": "holyfuck.jpg"
+    },
+    "color": "#de7814",
+    "meta": "Originally published in German in 2009"
+  },
+
+  "the-indelicates-interview": {
+    "headline": "\"Being sixteen was the worst thing in the world\"",
+    "subheadline": "An interview with The Indelicates",
+    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day. More than six years later, I discovered the texts in an old database backup, translated them to English and started publishing them, mostly for nostalgic reasons.",
+    "date": "2007-10-10",
+    "image": {
+      "file": "theindelicates.jpg"
+    },
+    "color": "#757f97",
+    "meta": "Originally published in German in 2007"
+  }
+}

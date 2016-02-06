@@ -1,0 +1,17 @@
+{
+  "about": {
+    "headline": "About"
+  },
+
+  "impressum": {
+    "headline": "Impressum & Datenschutz"
+  },
+
+  "404": {
+    "headline": "404 Error"
+  },
+
+  "feed": {
+    "layout": false
+  }
+}
