@@ -1,6 +1,6 @@
-# ines.io
-
 ![New layout](http://ines.io/blog/img/ines-io_new.jpg)
+
+# Info
 
 The site is built with [Harp](http://harpjs.com), using [Jade](http://jade-lang.com/) for templating and [Sass](http://sass-lang.com/) / [Autoprefixer](https://github.com/postcss/autoprefixer) for CSS pre-processing.
 
