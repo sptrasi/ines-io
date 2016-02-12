@@ -1,4 +1,17 @@
 {
+  "how-i-got-a-slitten": {
+    "headline": "How I got a slitten (Yes, they're real!)",
+    "subheadline": "Kittens with sloth faces",
+    "description": "",
+    "date": "2016-02-12",
+    "image": {
+      "file": "slitten.jpg",
+      "credit_text": "Johanna Warda",
+      "credit_url": "http://jowajohv.tumblr.com"
+    },
+    "color": "#159ddb"
+  },
+
   "redesign-open-source": {
     "headline": "Redesigning and Open Source",
     "subheadline": "Behind the scenes",
