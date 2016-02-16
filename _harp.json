@@ -1,9 +1,9 @@
 {
   "globals": {
-    "version": "2.0",
+    "version": "2.1",
     "title": "ines.io",
     "site": "ines.io",
-    "url": "http://ines.io",
+    "url": "https://ines.io",
     "description": "Hello, I'm Ines. I'm a freelance web developer, marketing consultant and digital strategist based in Berlin.",
     "google_analytics": "'UA-65631754-1'",
 
