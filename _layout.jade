@@ -58,7 +58,7 @@ html(lang="en")
         !=partial("_includes/_page")
 
 
-    footer &copy; 2015-#{new Date().getFullYear()} #{site}
+    footer.caption &copy; 2015-#{new Date().getFullYear()} #{site}
       each slug, item in footer_links
         |  | #[a(href=root + slug)=item]
 
