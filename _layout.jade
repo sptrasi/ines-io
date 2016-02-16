@@ -63,13 +63,13 @@ html(lang="en")
         |  | #[a(href=root + slug)=item]
 
 
-    script(src=root + "assets/js/main.js?v" + version)
+    script(src=root + "assets/js/main.js?v" + version async)
 
     if highlight_code
       script(src=root + "assets/js/prism.js")
 
     if codepen_embed
-      script(src="https://assets.codepen.io/assets/embed/ei.js")
+      script(src="https://assets.codepen.io/assets/embed/ei.js" async)
 
     if environment == 'production'
       script.
