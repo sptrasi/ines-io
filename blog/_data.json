@@ -1,4 +1,15 @@
 {
+  "guide-everyday-life-minimalism": {
+    "headline": "A guide to everyday life minimalism",
+    "subheadline": "Removing friction and embracing your inner sloth",
+    "description": "Minimalism is incredibly trendy right now and has been for a while. Its aesthetic interpretations flood Tumblr and Instagram and it's almost painful to look at. Like, yeah, I get it, I should only own all-white designer pieces and do as little as possible to not amass clutter in any way. But of course, real life is quite different.",
+    "date": "2016-02-16",
+    "image": {
+      "file": "minimalism.jpg"
+    },
+    "color": "#444444"
+  },
+
   "how-i-got-a-slitten": {
     "headline": "How I got a slitten (Yes, they're real!)",
     "subheadline": "Kittens with sloth faces",
