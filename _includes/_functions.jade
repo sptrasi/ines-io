@@ -9,7 +9,7 @@
 -   for (var i = 1; i < current.path.length; i++) {
 -     path += '../';
 -   }
--   return path;
+-   return (current.source == '404') ? url + '/' : path;
 - }
 
 //- Get current url
