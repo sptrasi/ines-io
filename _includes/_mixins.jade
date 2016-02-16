@@ -22,7 +22,7 @@ mixin teaser(post, slug, counter)
 mixin image(filename, caption, small)
   - if(!small) var classname = 'block-wide'
 
-  figure.image(class=classname)&attributes(attributes)
+  figure.block-center.image(class=classname)&attributes(attributes)
     img(src=(absolute || '') + 'img/' + filename)
 
     if caption
