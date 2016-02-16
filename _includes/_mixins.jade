@@ -40,18 +40,18 @@ mixin date(input)
 //- Blockquote
 
 mixin quote(source, link)
-  blockquote&attributes(attributes): p
-    block
+  blockquote&attributes(attributes)
+    p
+      block
 
     if source
-      cite
+      footer.meta
 
         if link
           a(href=link target='_blank')=source
 
         else
-          != source
-
+          !=source
 
 //- Codepen Embed
 
