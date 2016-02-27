@@ -5,42 +5,46 @@ include _mixins
 //- ----------------------------------------------------------------------------
 
 article.single
-  if image
-    header.single-header
-      .single-hero(style="background-image: url(img/" + image.file + ")")
-
-        if image.credit_text
-          .single-hero-credit
-          
-            if image.credit_url
-              a.credit(href=image.credit_url target="_blank")=image.credit_text
-
-            else
-              span.credit=image.credit_text
-
-  .single-headlines.color
-    h2.label=subheadline
-    h1=headline
-
-    .single-social.color
-      !=partial("_share-icons", { posturl: getCurrentUrl() })
-
-  .single-content
+  if artdirected
     !=yield
 
-    if date || meta
-      p.meta
+  else
+    if image
+      header.single-header
+        .single-hero(style="background-image: url(img/" + image.file + ")")
 
-        if date
-          +date(date)
+          if image.credit_text
+            .single-hero-credit
+            
+              if image.credit_url
+                a.credit(href=image.credit_url target="_blank")=image.credit_text
 
-        !=meta
+              else
+                span.credit=image.credit_text
 
-    .block-center.color
-      if readmore
-        a.button.color(href=readmore) Read more
+    .single-headlines.color
+      h2.label=subheadline
+      h1=headline
 
-      else
+      .single-social.color
         !=partial("_share-icons", { posturl: getCurrentUrl() })
+
+    .single-content
+      !=yield
+
+      if date || meta
+        p.meta
+
+          if date
+            +date(date)
+
+          !=meta
+
+      .block-center.color
+        if readmore
+          a.button.color(href=readmore) Read more
+
+        else
+          !=partial("_share-icons", { posturl: getCurrentUrl() })
 
 !=partial("_latest-posts", { posts: 6 })
