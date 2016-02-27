@@ -20,6 +20,9 @@ html(lang="en")
     link(rel="alternate" type="application/rss+xml" title="RSS" href=root + "feed")
     link(rel="stylesheet" href=root + "assets/css/style.css?v" + version)
 
+    if stylesheet
+      link(rel="stylesheet" href=root + stylesheet)
+
     meta(property="og:type" content="website")
     meta(property="og:site_name" content=site)
     meta(property="og:url" content=getCurrentUrl())
