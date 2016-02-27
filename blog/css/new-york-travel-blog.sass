@@ -1,0 +1,57 @@
+@import ../../assets/css/mixins
+
+$color-light: #fff
+$color-dark: #111
+
+.single-content
+  margin: 0 0 100px 0
+  width: 100%
+
+.blog-header
+  background: $color-dark url('../img/newyorktravelblog.jpg') top left no-repeat
+  background-size: cover
+  color: $color-light
+  margin-bottom: 3em
+  min-height: 150vh
+  position: relative
+  width: 100vw
+
+  .content
+    @include position(absolute, top, right, 1em, 1em)
+    width: 40%
+    line-height: 1.35
+    padding: 1.5em
+    font-weight: bold
+    background: $color-light
+    color: $color-dark
+    mix-blend-mode: screen
+
+  a
+    border-bottom: 3px solid
+
+.blog-post
+  padding: 100px 20%
+
+  p,
+  .image
+    margin-bottom: 3em
+
+  h2
+    font-size: 3em !important
+
+  img
+    display: block
+
+  .meta:before 
+    content: ''
+    display: block
+    width: 150px
+    border-top: 10px solid
+    margin-bottom: 3em
+
+  &:nth-child(even)
+    background: $color-dark
+    color: $color-light
+    
+    h2, h3, a:hover
+      color: #fff !important
