@@ -2,7 +2,7 @@
   "guide-everyday-life-minimalism": {
     "headline": "A guide to everyday life minimalism",
     "subheadline": "Removing friction and embracing your inner sloth",
-    "description": "Minimalism is incredibly trendy right now and has been for a while. Its aesthetic interpretations flood Tumblr and Instagram and it's almost painful to look at. Like, yeah, I get it, I should only own all-white designer pieces and do as little as possible to not amass clutter in any way. But of course, real life is quite different.",
+    "description": "Minimalism is incredibly trendy right now and has been for a while. Its aesthetic interpretations flood Tumblr and Instagram and it's almost painful to look at.",
     "date": "2016-02-16",
     "image": {
       "file": "minimalism.jpg"
@@ -14,7 +14,7 @@
   "how-i-got-a-slitten": {
     "headline": "How I got a slitten (Yes, they're real!)",
     "subheadline": "Kittens with sloth faces",
-    "description": "If you know me, you know how much I love sloths. So when I first came across Slittens, cute little kittens with sloth faces, I naturally fell in love. Some might say I even developed an unhealthy obsession, but that's a different story.",
+    "description": "If you know me, you know how much I love sloths. So when I first came across Slittens, cute little kittens with sloth faces, I naturally fell in love.",
     "date": "2016-02-12",
     "image": {
       "file": "slitten.jpg",
@@ -27,7 +27,7 @@
   "redesign-open-source": {
     "headline": "Redesigning and Open Source",
     "subheadline": "Behind the scenes",
-    "description": "I always enjoy redesigning my site. It's the ideal place to try out new things, and I just love the rush of excitement and motivation that comes with it. This time, I didn't only go for a new look, I also gave the templates and build system a modern makeover and published it all under an open source license.",
+    "description": "I always enjoy redesigning my site. It's the ideal place to try out new things, and I just love the rush of excitement and motivation that comes with it.",
     "date": "2016-02-06",
     "image": {
       "file": "ines-io_new.jpg"
@@ -39,7 +39,7 @@
   "switching-to-desktop-apps": {
     "headline": "I switched from web apps to desktop apps and it's amazing",
     "subheadline": "Leaving Evernote and reclaiming the browser",
-    "description": "If you are, like me, very sensitive to small inconveniences and frustrations, good programs that do their job efficiently and look so nice that even seeing the little dock icon makes you happy, can have a huge impact on your life. Here are the four apps that helped me free my browser of the unnecessary webapp clutter and made life and work a little more fun.",
+    "description": "If you are, like me, very sensitive to small inconveniences and frustrations, good programs that do their job efficiently and look so nice that even seeing the little dock icon makes you happy, can have a huge impact on your life.",
     "date": "2016-02-03",
     "image": {
       "file": "desktopapps.jpg"
@@ -66,7 +66,7 @@
   "the-ultimate-guide-static-websites-jekyll": {
     "headline": "The ultimate guide to static websites with Jekyll",
     "subheadline": "Going static for beginners – with free template!",
-    "description": "A few months ago I said goodbye to WordPress and switched my site over to Anchor CMS. It was a very refreshing experience but after reading about yet another round of security warnings and realising that I was writing all my blog posts in a text editor anyways, I knew it was time for a change. I set up Jekyll, converted my theme and went 100% static.",
+    "description": "Most personal blogs don't actually need a heavyweight content management system like WordPress. It's funny to call WordPress a \"heavyweight CMS\" when it used to be the only decent CMS that wasn't a bulky monster.",
     "date": "2015-11-28",
     "image": {
       "file": "jekyll.jpg",
@@ -81,9 +81,8 @@
   "i-fell-for-self-help-so-you-dont-have-to" : {
     "headline": "I fell for self-help so you don't have to",
     "subheadline": "Why this glittery bullshit needs to stop",
-    "description": "I hate to admit it, but during my late teenage years and the beginning of my adult life, I massively fell for self-help blogs.] I was unhappy, didn't particularly like myself and had no idea where I would end up one day so I started spending hours on the internet looking for answers. (Yeah, this probably sounds familiar.)",
+    "description": "I hate to admit it, but during my late teenage years and the beginning of my adult life, I massively fell for self-help blogs.",
     "date": "2015-10-14",
-    "description": "",
     "image": {
       "file": "gemstones.jpg",
       "credit_url": "http://thepatternlibrary.com",
@@ -96,7 +95,7 @@
   "i-ditched-spotify-for-apple-music": {
     "headline": "I ditched Spotify for Apple Music",
     "subheadline": "It’s not perfect, but I owe it to my teenage self",
-    "description": "As a teenager, I always knew about the latest up and coming indie bands, way before they ever toured Europe or released their first album. I collected early bootlegs and demos that were shared and traded on Livejournal communities and together with everything else I was into, I accumulated an impressive digital music collection over the years.",
+    "description": "It's hard to say what it was that bothered me so much about Spotify. The interface, the design, the often poor performance, the app, the social aspect?",
     "date": "2015-10-12",
     "image": {
       "file": "spotify_apple.jpg"
@@ -108,7 +107,7 @@
   "5-things-i-learned-from-working-in-print": {
     "headline": "5 things I learned from working in print",
     "subheadline": "Online marketing, advertising and productivity",
-    "description": "For four years, I worked for a popular print magazine, developing marketing strategies, selling advertising space and coordinating partnerships. Being a monthly publication, we often jokingly compared it to giving birth once a month: at first you get all excited, then it becomes super hard and you want to die and then all of a sudden it's over, you're happy and hold the result in your hands and already forgot about all of the pain.",
+    "description": "For four years, I worked for a popular print magazine, developing marketing strategies, selling advertising space and coordinating partnerships.",
     "date": "2015-09-29",
     "image": {
       "file": "workinginprint.jpg",
@@ -134,7 +133,7 @@
   "farin-urlaub-interview": {
     "headline": "A doctor at the races",
     "subheadline": "An interview with Farin Urlaub",
-    "description": "Earlier this summer, I interviewed Farin Urlaub (funnily enough, one of my early teenage idols), for Exberliner. If you're not German, you might know him as the singer/guitarist of punk rock giants Die Ärzte. But he’s also a successful solo artist and has been a consistent personality in German music since the 1980s. At 51, he’s looking back on a three-decade-long career.",
+    "description": "Earlier this summer, I interviewed Farin Urlaub (funnily enough, one of my early teenage idols), for Exberliner.",
     "date": "2015-08-17",
     "image": {
       "file": "farinurlaub.jpg",
@@ -148,7 +147,7 @@
   "deichkind-interview": {
     "headline": "Children of the dams",
     "subheadline": "An interview with Deichkind",
-    "description": "Chart-topping tech-rap monoliths Deichkind have a string of hits amassed over a nearly 20-year career and regularly pack stadiums. But while every German under 50 knows who they are, they’re hardly recognised outside of the German-speaking world – even among expats here in Berlin.",
+    "description": "Earlier this year, Walter and I met Deichkind for Exberliner and we talked about career ambitions, getting older, the digital generation and German music fans.",
     "date": "2015-04-21",
     "image": {
       "file": "deichkind.jpg",
@@ -179,13 +178,15 @@
     "image": {
       "file": "newyorktravelblog.jpg"
     },
-    "color": "#ef2340"
+    "color": "#ef2340",
+    "artdirected": true,
+    "stylesheet": "blog/css/new-york-travel-blog.css"
   },
 
   "die-zukunft-ist-da": {
     "headline": "Die Zukunft ist da",
     "subheadline": "Über Arbeit, Neustart und den Sinn des Ganzen",
-    "description": "In den letzten Monaten habe ich einen entscheidenden Schritt gemacht und einen Neustart gewagt. Ich habe meinen Job an den Nagel gehängt, eine Reise nach New York gebucht und einen Entschluss gefasst: Ich will unabhängiger sein.",
+    "description": "In den letzten Monaten habe ich einen entscheidenden Schritt gemacht und einen Neustart gewagt.",
     "date": "2015-02-07",
     "language": "de",
     "image": {
@@ -198,7 +199,7 @@
   "hipster-shop-concept-generator": {
     "headline": "The Hipster Business Shop Concept Generator",
     "subheadline": "For Berlin and the rest of the world",
-    "description": "Berlin is full of concept stores selling the weirdest combinations of random products and trying their best to be as quaint as possible. There are so many, I don't even remember which one it was that inspired me to make this little generator.",
+    "description": "Berlin is full of concept stores selling the weirdest combinations of random products and trying their best to be as quaint as possible.",
     "date": "2014-12-23",
     "image": {
       "file": "shopconcept.jpg"
@@ -224,7 +225,7 @@
   "gay-men-reading-german-cosmopolitan": {
     "headline": "Gay Men Reading German Cosmopolitan",
     "subheadline": "Die Absurditäten von deutschen Frauenmagazinen",
-    "description": "Eines Abends, nach ein paar Gläsern Gasovka Apfelsaft in Walters Küche, fiel uns eine alte Ausgabe der Cosmopolitan in die Hände. Ich hatte mich vorher noch nie intensiver mit Frauenmagazinen beschäftigt, nicht einmal im Wartezimmer beim Arzt. Er noch weniger. Er fing an, vorzulesen und ich filmte mit. Bei jedem neuen Absatz und jedem neuen Tipp rollten sich meine Fußnägel ein kleines Stück weiter hoch.",
+    "description": "Ein kleines Spaßprojekt über die Absurditäten deutscher Frauenmagazine – gelesen von schwulen Männern.",
     "date": "2014-09-04",
     "language": "de",
     "image": {
@@ -238,7 +239,7 @@
   "ich-bin-dagegen-aber": {
     "headline": "Ich bin dagegen, aber...",
     "subheadline": "Generation Y und das tägliche Unbehagen",
-    "description": "Ich habe Stunden damit verbracht, mit meinem Mitbewohner in der Küche zu sitzen, Kette zu rauchen und über einen Dritten Weltkrieg oder einen Komplettzusammenbruch der Wirtschaft zu philosophieren. Wie würde das aussehen? Würden wir überleben? Da oben im vierten Stock mitten in Neukölln mit einem leeren Kühlschrank und wenig Möbeln, aber dafür MacBooks und Spiegelreflex?",
+    "description": "\"Was immer bleibt, ist dieses Gefühl: Scheiße, du müsstest doch eigentlich was machen!\" schreibt Tino Hanekamp.",
     "date": "2014-07-15",
     "language": "de",
     "image": {
@@ -263,7 +264,7 @@
   "the-early-years": {
     "subheadline": "The early years",
     "headline": "Best of analog 2008-2012",
-    "description": "A collection of disposable camera memories between 2008 and 2012, between Cologne and Berlin, with visits several other places. I took a lot photos during that particular eventful, messy and not always easy time of my life. I had the time of my life, but I'm not sure I'd want to go back.",
+    "description": "A collection of disposable camera memories between 2008 and 2012, between Cologne and Berlin, with visits several other places.",
     "date": "2014-06-10",
     "image": {
       "file": "the-early-years/analog13.jpg"
@@ -274,7 +275,7 @@
   "christiane-f-interview": {
     "headline": "Christiane's second life",
     "subheadline": "An interview with Christiane F. (Wir Kinder vom Bahnhof Zoo)",
-    "description": "My parents had one true passion: reading. I remember being a child, scouring through their hughe bookshelves and secretly taking books back to my room. One of them was Wir Kinder vom Bahnhof Zoo, the story of Christiane F., who became addicted to heroin as a teenager.",
+    "description": "For Exberliner, Christiane Felscherinow answered Walter's and my questions.",
     "date": "2014-01-22",
     "image": {
       "file": "christianef.jpg",
@@ -288,7 +289,7 @@
   "tocotronic-interview": {
     "headline": "\"German is a relatively inconvenient language\"",
     "subheadline": "An interview with Tocotronic",
-    "description": "For the January issue of Exberliner I met Dirk von Lowtzow and Jan Müller of Tocotronic for an interview in the Whiskey Room of Michelberger Hotel. They told me why the Hamburg School is only a made-up journalist myth and what makes it so hard to write lyrics in German.",
+    "description": "For the January issue of Exberliner I met Dirk von Lowtzow and Jan Müller of Tocotronic for an interview in the Whiskey Room of Michelberger Hotel.",
     "date": "2013-01-22",
     "image": {
       "file": "tocotronic.jpg",
@@ -302,7 +303,7 @@
   "adam-ficek-interview": {
     "headline": "From Babyshambles to Roses Kings Castles",
     "subheadline": "An interview with Adam Ficek",
-    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day. More than six years later, I discovered the texts in an old database backup, translated them to English and started publishing them, mostly for nostalgic reasons.",
+    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
     "date": "2009-06-06",
     "image": {
       "file": "adamficek.jpg"
@@ -314,7 +315,7 @@
   "holy-fuck-interview": {
     "headline": "\"We're not a shabby hippie punk band!\"",
     "subheadline": "An interview with Holy Fuck",
-    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day. More than six years later, I discovered the texts in an old database backup, translated them to English and started publishing them, mostly for nostalgic reasons.",
+    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
     "date": "2009-04-27",
     "image": {
       "file": "holyfuck.jpg"
@@ -326,7 +327,7 @@
   "the-indelicates-interview": {
     "headline": "\"Being sixteen was the worst thing in the world\"",
     "subheadline": "An interview with The Indelicates",
-    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day. More than six years later, I discovered the texts in an old database backup, translated them to English and started publishing them, mostly for nostalgic reasons.",
+    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
     "date": "2007-10-10",
     "image": {
       "file": "theindelicates.jpg"
