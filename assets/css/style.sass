@@ -88,6 +88,9 @@ main
   flex: 0 0 50%
   position: relative
 
+  .teaser:hover &
+    box-shadow: inset 15px 15px 0 $color-white, inset -15px -15px 0 $color-white
+
 @media(min-width: #{$width-content})
   .teaser
     flex: 0 0 (100% / 1.5)
