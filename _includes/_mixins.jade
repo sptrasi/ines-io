@@ -4,19 +4,6 @@ include _functions
 //-  Global template mixins
 //- ----------------------------------------------------------------------------
 
-//- Post teaser
-
-mixin teaser(post, slug, counter)
-  - if(counter) counter = 'teaser--style-' + counter
-
-  article.teaser(class=counter)
-    a.teaser-text(href=getRoot() + 'blog/' + slug)
-      h2=post.headline
-      h3.label=post.subheadline
-
-    a.teaser-image(href=getRoot() + 'blog/' + slug style='background-image: url(' + getRoot() + 'blog/img/' + post.image.file + ')')
-
-
 //- Inline Image
 
 mixin image(filename, caption, small)

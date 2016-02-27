@@ -11,7 +11,17 @@ include _mixins
 section.teasers
   each post, slug in public.blog._data
     if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
-      +teaser(post, slug, post_style_counter)
+      
+      article.teaser(class="teaser--style-" + post_style_counter)
+        a.teaser-text(href=getRoot() + 'blog/' + slug)
+
+          h5.meta=post.subheadline
+          h2=post.headline
+
+          if post.description
+            p.caption=post.description.substring(0, excerpt_length) + ' ...'
+
+        a.teaser-image(href=getRoot() + 'blog/' + slug style='background-image: url(' + getRoot() + 'blog/img/' + post.image.file + ')')
 
       - if(post_style_counter === 6) post_style_counter = 1
       - else post_style_counter++
