@@ -1,0 +1,72 @@
+@import ../../assets/css/mixins
+
+$width: 1000px
+$font-primary: 'Proxima Nova', Tahoma, Geneva, sans-serif
+$color-highlight: #55c4cf
+$color-lowlight: #f9a98e
+$color-text: #444
+
+%rule
+  border-bottom: 6px double
+  content: ''
+  display: block
+  margin: 100px auto 50px auto
+  width: 150px
+
+.blog-header
+  padding: 50px 50px 100px
+  width: 100vw
+  background: #111
+
+  .credit
+    @include position(absolute, top, right, 1rem, 1rem)
+    font: normal normal 1rem $font-primary
+    color: #fff
+
+  h1
+    background: url('../img/australia-travel-blog-logo.jpg') top left no-repeat
+    height: 420px
+    margin: 0 auto
+    width: 710px
+
+    span
+      display: none
+
+.single-content
+  width: $width
+  padding-bottom: 50px
+
+.blog-post
+  padding-bottom: 50px
+
+  &:after
+    @extend %rule
+
+  h2
+    font: bold 4.2rem $font-primary
+    margin-bottom: 0.5em
+    text-transform: uppercase
+    padding-top: 2em
+
+  .meta
+    margin-bottom: 50px
+
+  h2, .meta
+    text-align: center
+
+  p
+    columns: ($width / 3) 2
+    column-gap: 3em
+    font-size: 1.5rem
+    line-height: 1.65
+    color: $color-text
+    text-align: justify
+
+  .highlight
+    font-weight: bold
+    letter-spacing: 2px
+    text-transform: uppercase
+    padding-right: 5px
+
+  .image
+    margin-bottom: 1em

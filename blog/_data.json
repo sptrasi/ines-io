@@ -1,4 +1,20 @@
 {
+   "australia-travel-blog": {
+    "published": true,
+    "headline": "Australia Travel Blog",
+    "subheadline": "Read my diary",
+    "description": "I'm currently spending a month exploring Australia, mainly Sydney, Melbourne and the countryside. This is my travel diary.",
+    "date": "2016-03-16",
+    "image": {
+      "file": "australia-travel-blog.jpg",
+      "credit_text": "Freepik",
+      "crecit_url": "http://www.freepik.com/free-photos-vectors/travel"
+    },
+    "color": "#55c4cf",
+    "artdirected": true,
+    "stylesheet": "blog/css/australia-travel-blog.css"
+  },
+
   "guide-everyday-life-minimalism": {
     "headline": "A guide to everyday life minimalism",
     "subheadline": "Removing friction and embracing your inner sloth",

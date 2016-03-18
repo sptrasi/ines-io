@@ -1,0 +1,37 @@
+include ../_includes/_mixins
+
+//- ----------------------------------------------------------------------------
+//-  Blog Post Mixin
+//- ----------------------------------------------------------------------------
+
+mixin post(headline, date)
+  .blog-post(id=date)
+    h2
+      a(href="#" + date)=headline
+    .meta=convertDate(date).full
+    
+    block
+
+
+//- ----------------------------------------------------------------------------
+//-  Template
+//- ----------------------------------------------------------------------------
+
+header.blog-header
+  h1 
+    span Australia Travel Blog
+    a.credit.caption(href="http://www.freepik.com/free-photos-vectors/travel" target="_blank") Vector Graphic: Freepik
+
+.single-content
+
+  +post("Rutherglen & jetlag", "2016-03-18")
+    p We left our hotel at around 6:30 in the morning to head back to Sydney airport and catch a domestic flight to Albury. I was pretty tired, which made the whole experience slightly bizarre: a tiny plane with only about 25 people on it and only one flight attendant dressed in a retro uniform who took her job very seriously. An hour later, we arrived in Albury and drove out to Rutherglen, a small rural town between Sydney and Melbourne. "Victoria's Tidiest Town 1996" reads the sign that greets you upon driving into the city and it kinda leaves open more questions than it answers. (Who decides this? What are the criteria? For some reason, I can't stop thinking about #[a(href="http://www.imdb.com/title/tt0425112/" target="_blank") #[em Hot Fuzz]].) Despite being such a small coutryside town, Rutherglen has excellent food offerings, including a gourmet restaurant (where I tried champagne baked oysters and my first wallaby) and an Australian pie shop (where I tried both kangaroo and emu). I spent most of my afternoon sleeping off the jetlag in a cosy bed in a nicely air-conditioned room. Being 10 hours ahead of Berlin is pretty great since I can stay up late and answer emails at night when everyone else just got up and started working. At night we went for a little walk around the fields. The stars were out and it was the clearest I'd ever seen them, up into all the tiny little details. It feels ridiculous saying that, but I've lived in cities all my life so things like seeing more than five stars at a time feel weirdly novel to me. I've always preferred impressive concrete buildings and illuminated skylines over hiking through nature and stargazing. Being in the countryside makes me realise how much of a city person I really am. But I'm also finally at a point in my life where seeing the sun and a blue sky doesn't make me go into cynical rants about how much I hate various aspects of the human existence.
+
+    +image("australia-travel-blog/rutherglen.jpg", "The view from my bed", true)
+
+
+  +post("Hello Sydney!", "2016-03-17")
+    p It's funny to think that it's been almost exactly a year since I got back from #[a(href=url + "/blog/new-york-travel-blog" target="_blank") New York]. So many things have changed. I'm less worried about the future and for the first time in years, I feel like I can go away and explore new places and be able to #[em actually] enjoy it. So a year later, I'm on an Etihad Airways plane that's taking me from Abu Dhabi to Sydney, Australia. I've been incredibly scared of the 24-hour trip — my motion sickness is quite unpredictable and the idea of being in one place for such a long time, pretty much cut off from the outside world (and most likey without internet) makes me feel slightly uncomfortable. But when I found myself on this massive two-story plane, equipped with a modern entertainment system and a free seat right next to me, I knew that it would be alright. I honestly have no idea how I passed the twelve hours. We arrived in Sydney around 7pm, got through security and customs in no time and took a cab to a nearby pub that rented out cheap rooms upstairs. Even though we had to catch another regional flight early in the morning, we decided to head to the city center and had seafood at Chinatown restaurant that's known to be a go-to place for local chefs after work, since it's open till 4am in the morning. I'm really looking forward to this trip and I'm glad everything just worked out perfectly so far. We'll be spending the first week in Rutherglen where M.'s family lives, then head down to Melbourne and finally back to Sydney on April 1. I'm slightly worried about the heat (especially considering the recent heat wave), but I've come up with a few good coping strategies. Wish me luck!
+
+  .block-center.color
+    !=partial("../_includes/_share-icons", { posturl: getCurrentUrl() })
