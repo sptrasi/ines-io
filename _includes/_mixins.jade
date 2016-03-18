@@ -51,10 +51,8 @@ mixin codepen(slug, height)
 //- Video Embeds
 
 mixin youtube(id, ratio)
-  - if(!ratio) ratio = '16x9'
-
-  .video(class='video--' + ratio)&attributes(attributes)
-    iframe(src='https://www.youtube.com/embed/' + id frameborder="0" allowfullscreen)
+  .video(class='video--' + (ratio || '16x9'))&attributes(attributes)
+    iframe(src='https://www.youtube.com/embed/' + id frameborder='0' allowfullscreen)
 
 
 //- Code Block
