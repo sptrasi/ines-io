@@ -1,12 +1,11 @@
 {
    "australia-travel-blog": {
-    "published": true,
     "headline": "Australia Travel Blog",
     "subheadline": "Read my diary",
     "description": "I'm currently spending a month exploring Australia, mainly Sydney, Melbourne and the countryside. This is my travel diary.",
     "date": "2016-03-16",
     "image": {
-      "file": "australia-travel-blog.jpg",
+      "file": "australia-travel-blog/beach.jpg",
       "credit_text": "Freepik",
       "crecit_url": "http://www.freepik.com/free-photos-vectors/travel"
     },
