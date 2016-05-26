@@ -1,0 +1,103 @@
+include ../_includes/_mixins
+
+p The redesign of my website finally gave me an opportunity to experiment with SVG filters and color manipulation. The duotone look, which was made sort of trendy again earlier this year by Spotify's new brand identity, is based around manipulating the image's color range by modifying the individual color channels.
+
+//-+image("duotone_spotify.jpg")
+
+p In this blog post I'm going to explain the idea behind the duotone effect, how to achieve it using SVGs and the much talked about #[code feColorMatrix], and how to do and automate the matrix calculation. I'll also show how I've implemented an easy color matrix generator in my blog CMS.
+
+h2 A little bit of color theory
+
+p If you've ever played around with the color channels in Photoshop or a similar editor, you've probably realised that it's not actually #[em that] easy to produce nice-looking results. My first experiments were all pretty frustrating because I was mostly just moving sliders around without understanding the actual logic behind it.
+
+p You're probably familiar with RGB model, in which red, green and blue are added in different proportions to produce more colors.
+
++image("duotone_rgb.jpg")
+
+p The darkest color, black, represents the absence of R, G and B  (#[code rgba(0, 0, 0)]) and the lightest color, white, the combination of all of them (#[code rgba(255, 255, 255)]). All other colors are created by mixing different proportions of red, green and blue. For grayscale images, the R, G, and B values are always equal – take #[code rgba(85, 85, 85)] for example, which maps to a #[code #555] gray.
+
+p The duotone effect we're trying to achieve is basically like grayscale or "black and white": a light and a dark color with all other shades made up of the difference between them. This means that we need to modify the constant that would be black and manipulate all other shades to be on the spectrum between the two new colors &mdash; relative to the color spectrum of the original image. This is where a bit of maths and a color matrix comes in.
+
+h2 Introducing feColorMatrix
+
+p #[code feColorMatrix] is an SVG filter that lets you change colors by manipulating the individual RGBA (red, green, blue, alpha) channels. The color manipulations are specified in a matrix with five columns (the input RGBA values and a constant) and four rows (representing each output R, G, B, and A value). By adding up each row, it calculates a new RGBA output value.
+
++code.
+    &lt;filter id="filter"&gt;
+        &lt;feColorMatrix
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 1 0"/&gt;
+    &lt;/filter&gt;
+
+p To see how this works and looks in detail, I highly recommend Una Kravets' #[a(href="http://alistapart.com/article/finessing-fecolormatrix" target="_blank") article] over at A List Apart. For a more in-depth look at the maths behind the matrix calculations, check out  #[a(href="https://css-tricks.com/color-filters-can-turn-your-gray-skies-blue/" target="_blank") this article] on CSS-Tricks by Amelia Bellamy-Royds (who also happened to leave #[a(href="http://stackoverflow.com/a/21979654" target="_blank") this very helpful comment] on StackOverflow, which is basically the tl;dr version). It also explains the duotone matrix I'm talking about in this post.
+
+h2 Calculating the matrix
+
+p Since the R, G, and B values are always going to be equal, we only need to use one of the columns, plus the last column for the constant. All you need to do is set the R value to the difference between the R value of the lighter and darker color and the constant to the R value of the darker color. Then repeat the process for the G and B values row by row.
+
+p Here's what the matrix calculation would look like for the colors #[code rgb(A, B, C)] and #[code rgb(D, E, F)]. The color matrix uses a range between 0 and 1 so we need to divide the values by 256.
+
++code("javascript").
+    (A / 256 - D / 256) 0 0 0 (D / 256)
+    (B / 256 - E / 256) 0 0 0 (E / 256)
+    (C / 256 - F / 256) 0 0 0 (F / 256)
+             0          0 0 1    0
+
+h2 Let's automate it
+
+p For my blog, I wanted an automated solution that creates a new color matrix for each thumbnail image based on two input colors. This way, I can easily set and change those two colors in the meta data of each blog post &mdash; much better than doing it manually and much more readable than a cryptic-looking string of numbers between #[code -1] and #[code 1].
+
+p While browsing Codepen for inspiration, I came across #[a(href="http://codepen.io/jmperez/pen/LGqaxQ" target="_blank") this pen] by José Manuel Pérez. It uses a simple JavaScript function to calculate a matrix based on two input RGB values. You can play around with it by editing the pen and calling the JavaScript function with different color combinations.
+
++codepen("LGqaxQ", 550)
+
+p It also brought #[code color-interpolation-filters: sRGB] to my attention, which can be set as an attribute of the filter or via CSS. If you've been wondering why you couldn't find a good configuration for an optimal contrast between the two colors – this might do the trick!
+
+p While this simple DOM manipulation works great for a demo, it's obviously not the best idea to compute and re-render a matrix on the client for a bunch of images. Ideally, this should be taken care of when building the static files and thus part of the blog CMS.
+
+h2 Jade to the rescue
+
+p #[a(href="http://jade-lang.com/" target="_blank") Jade] is a clean templating language that compiles to HTML and supports reusable flexible content elements (mixins) and, if needed, JavaScript expressions. This is pretty cool because whenever I want to do something that's too complex to do with inline template logic, I can simply write a JS function.
+
+p I'm using #[a(href="http://harpjs.com/" target="_blank") Harp] as my static site generator of choice since it lets me write my templates in Jade and also comes with handy out-of-the-box pre-processing. For this demo, I've simply added the post meta data to the top. If you use Harp, you would store this in the #[code _data.json] of your blog directory, which becomes available in your layout as #[code public.blog._data].
+
++code("json").
+    {
+        "post-one" : {
+            "image": "one.jpg",
+            "colors": [ [255, 192, 79], [246, 22, 157] ]
+        },
+
+        "post-two": {
+            "image": "two.jpg",
+            "colors": [ [122, 255, 98], [107, 17, 202] ]
+        },
+
+        "post-three": {
+            "image": "three.jpg",
+            "colors": [ [122, 255, 98], [107, 17, 202] ]
+    }
+
+p Now you can loop through the posts and render the images. To calculate the matrix, it calls #[code getColorMatrix()] with the two colors defined in the meta. Here's a demo of the whole thing rendered in Jade:
+
++codepen("55dd76d7443640b9361af4eb712edc63")
+
+h2 Different implementations and improvements
+
+p The solution outlined above should be very easy to adapt for any other Node.js-powered blogging software. But the calculation itself is so basic, it should be fairly easy to implement for other systems as well. Here are some ideas:
+
++list
+    +item Create a #[a(href="https://jekyllrb.com/docs/plugins/#tags" target="_blank") tag template] for Jekyll in Ruby that performs the calculations and returns the matrix values or the entire filter markup using something like #[code {% color_matrix (122,255,98) (107,17,202) %}]
+    +item Add hex to RGB #[a(href="http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb" target="_blank") conversion] so you can specify two hex values and even their shortened versions
+
+
+h2 Links and Resources
+
++list
+    +item #[a(href="http://alistapart.com/article/finessing-fecolormatrix" target="_blank") Finessing feColorMatrix] by Una Kravets (A List Apart)
+    +item #[a(href="https://css-tricks.com/color-filters-can-turn-your-gray-skies-blue/" target="_blank") Color Filters Can Turn Your Gray Skies Blue] by Amelia Bellamy-Royds (CSS-Tricks)
+    +item #[a(href="https://codepen.io/mullany/pen/qJCDk" target="_blank") feColorMatrix Generator] by Michael Mullany (Codepen)
+    +item #[a(href="https://designshack.net/articles/graphics/duotone-color-tips-examples-for-this-vibrant-trend/" target="_blank") Duotone Color: Tips & Examples for This Vibrant Trend] by Carrie Cousins (Design Shack)

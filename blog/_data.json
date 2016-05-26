@@ -1,353 +1,359 @@
 {
-   "australia-travel-blog": {
-    "headline": "Australia Travel Blog",
-    "subheadline": "Read my diary",
-    "description": "I'm currently spending a month exploring Australia, mainly Sydney, Melbourne and the countryside. This is my travel diary.",
-    "date": "2016-03-16",
-    "image": {
-      "file": "australia-travel-blog/beach.jpg",
-      "credit_text": "Freepik",
-      "crecit_url": "http://www.freepik.com/free-photos-vectors/travel"
+    "the-ultimate-guide-static-websites-harp-jade": {
+        "headline": "The Ultimate Guide to Static Websites with Harp & Jade",
+        "description": "",
+        "date": "2015-05-26",
+        "category": "code",
+        "image": {
+            "file": "harp-jade.jpg",
+            "credit_text": "Skye Selbiger (adapted)",
+            "credit_url": "http://www.skyeselbiger.com"
+        },
+        "colors": [[245, 101, 101], [30, 57, 126]],
+        "highlight_code": true,
+        "codepen_embed": true
     },
-    "color": "#55c4cf",
-    "artdirected": true,
-    "stylesheet": "blog/css/australia-travel-blog.css"
-  },
 
-  "guide-everyday-life-minimalism": {
-    "headline": "A guide to everyday life minimalism",
-    "subheadline": "Removing friction and embracing your inner sloth",
-    "description": "Minimalism is incredibly trendy right now and has been for a while. Its aesthetic interpretations flood Tumblr and Instagram and it's almost painful to look at.",
-    "date": "2016-02-16",
-    "image": {
-      "file": "minimalism.jpg"
+    "dynamic-duotone-svg-jade": {
+        "headline": "Dynamic duotone SVG images with feColorMatrix and Jade",
+        "description": "In this blog post I'm going to explain the idea behind the duotone effect, how to achieve it using SVGs and the much talked about feColorMatrix, and how to do and automate the matrix calculation. I'll also show how I've implemented an easy color matrix generator in my blog CMS.",
+        "date": "2016-05-26",
+        "category": "code",
+        "image": {
+            "file": "duotone.jpg"
+        },
+        "colors": [[122, 255, 98], [107, 17, 202]],
+        "highlight_code": true,
+        "codepen_embed": true
     },
-    "color": "#444444",
-    "medium": "https://medium.com/@inesmontani/a-guide-to-everyday-life-minimalism-2340f44c7080"
-  },
 
-  "how-i-got-a-slitten": {
-    "headline": "How I got a slitten (Yes, they're real!)",
-    "subheadline": "Kittens with sloth faces",
-    "description": "If you know me, you know how much I love sloths. So when I first came across Slittens, cute little kittens with sloth faces, I naturally fell in love.",
-    "date": "2016-02-12",
-    "image": {
-      "file": "slitten.jpg",
-      "credit_text": "Johanna Warda",
-      "credit_url": "http://jowajohv.tumblr.com"
+    "modular-markup": {
+        "headline": "Rebuilding a Website with Modular Markup Components",
+        "description": "In a small team, everyone should be able to contribute content to the website without having to worry about design or write complex HTML.",
+        "date": "2016-04-01",
+        "category": "code",
+        "image": {
+            "file": "modular-markup.jpg"
+        },
+        "colors": [[0, 228, 255], [46, 20, 55]],
+        "readmore": "https://spacy.io/blog/modular-markup"
     },
-    "color": "#159ddb"
-  },
 
-  "redesign-open-source": {
-    "headline": "Redesigning and Open Source",
-    "subheadline": "Behind the scenes",
-    "description": "I always enjoy redesigning my site. It's the ideal place to try out new things, and I just love the rush of excitement and motivation that comes with it.",
-    "date": "2016-02-06",
-    "image": {
-      "file": "ines-io_new.jpg"
+    "australia-travel-blog": {
+        "headline": "Australia Travel Blog",
+        "description": "My travel diary from a month of exploring Australia, mainly Sydney, Melbourne and the countryside.",
+        "date": "2016-03-16",
+        "category": "travel",
+        "image": {
+            "file": "australia-travel-blog/beach.jpg"
+        },
+        "colors": [[255, 192, 79], [246, 22, 157]]
     },
-    "color": "#5641c0",
-    "highlight_code": true
-  },
 
-  "switching-to-desktop-apps": {
-    "headline": "I switched from web apps to desktop apps and it's amazing",
-    "subheadline": "Leaving Evernote and reclaiming the browser",
-    "description": "If you are, like me, very sensitive to small inconveniences and frustrations, good programs that do their job efficiently and look so nice that even seeing the little dock icon makes you happy, can have a huge impact on your life.",
-    "date": "2016-02-03",
-    "image": {
-      "file": "desktopapps.jpg"
+    "guide-everyday-life-minimalism": {
+        "headline": "A guide to everyday life minimalism",
+        "description": "Minimalism is incredibly trendy right now and has been for a while. Its aesthetic interpretations flood Tumblr and Instagram and it's almost painful to look at.",
+        "category": "life",
+        "date": "2016-02-16",
+        "image": {
+            "file": "minimalism.jpg"
+        },
+        "colors": [[0, 255, 104], [0, 106, 195]],
+        "medium": "https://medium.com/@inesmontani/a-guide-to-everyday-life-minimalism-2340f44c7080"
     },
-    "color": "#e4bad0"
-  },
 
-  "browser-extension-for-more-everyday-life-badassery": {
-    "headline": "The browser extension for more everyday life badassery",
-    "subheadline": "Scheidify for Scheidé Revoltée",
-    "description": "When my friend Jowa asked me to help her build the new website for her project Scheidé Revoltée, I knew this would be right up my alley. Their mission: celebrating equality, fighting outdated gender stereotypes and making a difference by empowering girls all over the world to be badass in their everyday life, one step at a time.",
-    "date": "2015-12-17",
-    "image": {
-      "file": "scheidify.jpg",
-      "social": "scheidify_screenshot.jpg",
-      "credit_url": "http://flirtmoji.co",
-      "credit_text": "Katy McCarthy, Flirtmoji"
+    "switching-to-desktop-apps": {
+        "headline": "I switched from web apps to desktop apps and it's amazing",
+        "description": "If you are, like me, very sensitive to small inconveniences and frustrations, good programs that do their job efficiently and look so nice that even seeing the little dock icon makes you happy, can have a huge impact on your life.",
+        "date": "2016-02-03",
+        "category": "tech",
+        "image": {
+            "file": "desktop.jpg"
+        },
+        "colors": [[2, 204, 131], [4, 56, 104]]
     },
-    "color": "#ff0b5c",
-    "medium": "https://medium.com/@inesmontani/the-browser-extension-for-more-everyday-life-badassery-c0ef6d9d6209",
-    "highlight_code": true
-  },
 
-  "the-ultimate-guide-static-websites-jekyll": {
-    "headline": "The ultimate guide to static websites with Jekyll",
-    "subheadline": "Going static for beginners – with free template!",
-    "description": "Most personal blogs don't actually need a heavyweight content management system like WordPress. It's funny to call WordPress a \"heavyweight CMS\" when it used to be the only decent CMS that wasn't a bulky monster.",
-    "date": "2015-11-28",
-    "image": {
-      "file": "jekyll.jpg",
-      "credit_url": "http://www.pixeden.com/psd-web-elements/flat-psd-browsers-set",
-      "credit_text": "Pixeden / Jekyll"
+    "browser-extension-for-more-everyday-life-badassery": {
+        "headline": "The browser extension for more everyday life badassery",
+        "description": "When my friend Jowa asked me to help her build the new website for her project Scheidé Revoltée, I knew this would be right up my alley. Their mission: celebrating equality, fighting outdated gender stereotypes and making a difference by empowering girls all over the world to be badass in their everyday life, one step at a time.",
+        "date": "2015-12-17",
+        "category": "code",
+        "image": {
+            "file": "scheidify.jpg",
+            "social": "scheidify_screenshot.jpg",
+            "credit_url": "http://flirtmoji.co",
+            "credit_text": "Katy McCarthy, Flirtmoji"
+        },
+        "colors": [[252,53,76], [10,191,188]],
+        "medium": "https://medium.com/@inesmontani/the-browser-extension-for-more-everyday-life-badassery-c0ef6d9d6209",
+        "highlight_code": true
     },
-    "color": "#CD1E23",
-    "medium": "https://medium.com/@inesmontani/the-ultimate-guide-to-static-websites-with-jekyll-8ec2b72febf1",
-    "highlight_code": true
-  },
 
-  "i-fell-for-self-help-so-you-dont-have-to" : {
-    "headline": "I fell for self-help so you don't have to",
-    "subheadline": "Why this glittery bullshit needs to stop",
-    "description": "I hate to admit it, but during my late teenage years and the beginning of my adult life, I massively fell for self-help blogs.",
-    "date": "2015-10-14",
-    "image": {
-      "file": "gemstones.jpg",
-      "credit_url": "http://thepatternlibrary.com",
-      "credit_text": "The Pattern Library"
+    "the-ultimate-guide-static-websites-jekyll": {
+        "headline": "The Ultimate Guide to Static Websites with Jekyll",
+        "description": "Most personal blogs don't actually need a heavyweight content management system like WordPress. It's funny to call WordPress a \"heavyweight CMS\" when it used to be the only decent CMS that wasn't a bulky monster.",
+        "date": "2015-11-28",
+        "category": "code",
+        "image": {
+            "file": "jekyll.jpg",
+            "credit_url": "http://www.sketchappsources.com/free-source/917-jekyll-logo-sketch-freebie-resource.html",
+            "credit_text": "Julio Estrada"
+        },
+        "colors": [[164, 222, 210], [46, 20, 55]],
+        "medium": "https://medium.com/@inesmontani/the-ultimate-guide-to-static-websites-with-jekyll-8ec2b72febf1",
+        "highlight_code": true
     },
-    "color": "#f88c29",
-    "medium": "https://medium.com/@inesmontani/i-fell-for-self-help-so-you-don-t-have-to-203655dcaf55"
-  },
 
-  "i-ditched-spotify-for-apple-music": {
-    "headline": "I ditched Spotify for Apple Music",
-    "subheadline": "It’s not perfect, but I owe it to my teenage self",
-    "description": "It's hard to say what it was that bothered me so much about Spotify. The interface, the design, the often poor performance, the app, the social aspect?",
-    "date": "2015-10-12",
-    "image": {
-      "file": "spotify_apple.jpg"
+    "i-fell-for-self-help-so-you-dont-have-to" : {
+        "headline": "I fell for self-help so you don't have to",
+        "description": "I hate to admit it, but during my late teenage years and the beginning of my adult life, I massively fell for self-help blogs.",
+        "date": "2015-10-14",
+        "category": "opinion",
+        "image": {
+            "file": "gemstones.jpg",
+            "credit_url": "http://thepatternlibrary.com",
+            "credit_text": "The Pattern Library"
+        },
+        "colors": [[122, 255, 98], [107, 17, 202]],
+        "medium": "https://medium.com/@inesmontani/i-fell-for-self-help-so-you-don-t-have-to-203655dcaf55"
     },
-    "color": "#f25671",
-    "medium": "https://medium.com/@inesmontani/i-ditched-spotify-for-apple-music-336dfa3dfb14"
-  },
 
-  "5-things-i-learned-from-working-in-print": {
-    "headline": "5 things I learned from working in print",
-    "subheadline": "Online marketing, advertising and productivity",
-    "description": "For four years, I worked for a popular print magazine, developing marketing strategies, selling advertising space and coordinating partnerships.",
-    "date": "2015-09-29",
-    "image": {
-      "file": "workinginprint.jpg",
-      "credit_text": "Graphberry",
-      "credit_url": "http://www.graphberry.com/item/designer-flat-workspace-elements"
+    "5-things-i-learned-from-working-in-print": {
+        "headline": "5 things I learned from working in print",
+        "description": "For four years, I worked for a popular print magazine, developing marketing strategies, selling advertising space and coordinating partnerships.",
+        "date": "2015-09-29",
+        "category": "opinion",
+        "image": {
+            "file": "print.jpg",
+            "credit_text": "Amador Loureiro",
+            "credit_url": "https://unsplash.com/photos/BVyNlchWqzs"
+        },
+        "colors": [[0, 255, 195], [82, 0, 163]]
     },
-    "color": "#F35869"
-  },
 
-  "developing-displacy": {
-    "headline": "Dependency parse tree visualization with CSS",
-    "subheadline": "Developing displaCy",
-    "description": "My latest project started out as web development job but quickly turned into something much bigger: displaCy, a visualiser for dependency parse trees (grammatical structure) using the spaCy API.",
-    "date": "2015-08-20",
-    "image": {
-      "file": "displacy.jpg"
+    "developing-displacy": {
+        "headline": "displaCy: Dependency parse tree visualization with CSS",
+        "description": "My latest project started out as web development job but quickly turned into something much bigger: displaCy, a visualiser for dependency parse trees (grammatical structure) using the spaCy API.",
+        "date": "2015-08-20",
+        "category": "code",
+        "image": {
+            "file": "displacy.jpg"
+        },
+        "colors": [[164, 222, 210], [46, 20, 55]],
+        "highlight_code": true,
+        "codepen_embed": true
     },
-    "color": "#6d75ff",
-    "highlight_code": true,
-    "codepen_embed": true
-  },
 
-  "farin-urlaub-interview": {
-    "headline": "A doctor at the races",
-    "subheadline": "An interview with Farin Urlaub",
-    "description": "Earlier this summer, I interviewed Farin Urlaub (funnily enough, one of my early teenage idols), for Exberliner.",
-    "date": "2015-08-17",
-    "image": {
-      "file": "farinurlaub.jpg",
-      "credit_text": "Olaf Heine"
+    "farin-urlaub-interview": {
+        "headline": "Farin Urlaub Interview",
+        "description": "Earlier this summer, I interviewed Farin Urlaub (funnily enough, one of my early teenage idols), for Exberliner.",
+        "date": "2015-08-17",
+        "category": "pop",
+        "image": {
+            "file": "farinurlaub.jpg",
+            "credit_text": "Olaf Heine"
+        },
+        "colors": [[0, 255, 104], [0, 106, 195]],
+        "wide": true,
+        "readmore": "http://www.exberliner.com/culture/music--nightlife/farin-urlaub-interview/",
+        "meta": "Published in Exberliner, issue #140, July/August 2015"
     },
-    "color": "#3C576F",
-    "readmore": "http://www.exberliner.com/culture/music--nightlife/farin-urlaub-interview/",
-    "meta": "Published in Exberliner, issue #140, July/August 2015"
-  },
 
-  "deichkind-interview": {
-    "headline": "Children of the dams",
-    "subheadline": "An interview with Deichkind",
-    "description": "Earlier this year, Walter and I met Deichkind for Exberliner and we talked about career ambitions, getting older, the digital generation and German music fans.",
-    "date": "2015-04-21",
-    "image": {
-      "file": "deichkind.jpg",
-      "credit_text": "Jonas Lindström"
+    "deichkind-interview": {
+        "headline": "Deichkind Interview",
+        "description": "Earlier this year, Walter and I met Deichkind for Exberliner and we talked about career ambitions, getting older, the digital generation and German music fans.",
+        "date": "2015-04-21",
+        "category": "pop",
+        "image": {
+            "file": "deichkind.jpg",
+            "credit_text": "Jonas Lindström"
+        },
+        "colors": [[240, 14, 46], [25, 37, 80]],
+        "wide": true,
+        "readmore": "http://www.exberliner.com/culture/music--nightlife/deichkind-english-interview/",
+        "meta": "Published in Exberliner, issue #112, January 2013"
     },
-    "color": "#D07592",
-    "readmore": "http://www.exberliner.com/culture/music--nightlife/deichkind-english-interview/",
-    "meta": "Published in Exberliner, issue #112, January 2013"
-  },
 
-  "new-york-travel-guide": {
-    "headline": "New York City Travel Guide",
-    "subheadline": "Meine Alltagstips & Erfahrungen aus 6 Wochen New York",
-    "description": "New York, die Liste der romantischen Stereotypen und Erwartungen ist endlos. Nach knapp eineinhalb Monaten und einem mehr oder weniger normalen Alltag in New York bin ich zurück in Berlin und habe ein paar meiner Erfahrungen zusammengefasst.",
-    "date": "2015-03-25",
-    "language": "de",
-    "image": {
-      "file": "newyork.jpg"
+    "new-york-travel-guide": {
+        "headline": "New York City Travel Guide",
+        "description": "New York, die Liste der romantischen Stereotypen und Erwartungen ist endlos. Nach knapp eineinhalb Monaten und einem mehr oder weniger normalen Alltag in New York bin ich zurück in Berlin und habe ein paar meiner Erfahrungen zusammengefasst.",
+        "date": "2015-03-25",
+        "category": "travel",
+        "language": "de",
+        "image": {
+            "file": "newyork.jpg"
+        },
+        "colors": [[115, 217, 112], [36, 32, 106]]
     },
-    "color": "#548c8c"
-  },
 
-  "new-york-travel-blog": {
-    "headline": "New York City Travel Blog",
-    "subheadline": "Read my diary",
-    "description": "In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York.",
-    "date": "2015-03-16",
-    "image": {
-      "file": "newyorktravelblog.jpg"
+    "new-york-travel-blog": {
+        "headline": "New York City Travel Blog",
+        "description": "In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York.",
+        "date": "2015-03-16",
+        "category": "travel",
+        "image": {
+            "file": "newyorktravelblog.jpg"
+        },
+        "colors": [[245, 246, 0], [107, 17, 202]]
     },
-    "color": "#ef2340",
-    "artdirected": true,
-    "stylesheet": "blog/css/new-york-travel-blog.css"
-  },
 
-  "die-zukunft-ist-da": {
-    "headline": "Die Zukunft ist da",
-    "subheadline": "Über Arbeit, Neustart und den Sinn des Ganzen",
-    "description": "In den letzten Monaten habe ich einen entscheidenden Schritt gemacht und einen Neustart gewagt.",
-    "date": "2015-02-07",
-    "language": "de",
-    "image": {
-      "file": "hands.jpg",
-      "credit_text": "Death to the Stock Photo"
+    "die-zukunft-ist-da": {
+        "headline": "Die Zukunft ist da: Über die Arbeit und den Neustart",
+        "description": "In den letzten Monaten habe ich einen entscheidenden Schritt gemacht und einen Neustart gewagt.",
+        "date": "2015-02-07",
+        "category": "opinion",
+        "language": "de",
+        "image": {
+            "file": "hands.jpg",
+            "credit_text": "Death to the Stock Photo"
+        },
+        "colors": [[2, 204, 131], [4, 56, 104]]
     },
-    "color": "#898e98"
-  },
 
-  "hipster-shop-concept-generator": {
-    "headline": "The Hipster Business Shop Concept Generator",
-    "subheadline": "For Berlin and the rest of the world",
-    "description": "Berlin is full of concept stores selling the weirdest combinations of random products and trying their best to be as quaint as possible.",
-    "date": "2014-12-23",
-    "image": {
-      "file": "shopconcept.jpg"
+    "hipster-shop-concept-generator": {
+        "headline": "The Hipster Business Shop Concept Generator",
+        "description": "Berlin is full of concept stores selling the weirdest combinations of random products and trying their best to be as quaint as possible.",
+        "date": "2014-12-23",
+        "category": "fun",
+        "image": {
+            "file": "shopconcept.jpg"
+        },
+        "colors": [[245, 101, 101], [30, 57, 126]]
     },
-    "color": "#895441"
-  },
 
-  "who-the-fk-is-helene-fischer": {
-    "headline": "Who the f**k is Helene Fischer?",
-    "subheadline": "Curiosities of German music explained by a German",
-    "description": "For Exberliner I tried to explain the weirdness, embarrassments and curiosities of German music. Especially one phenomenon: Helene Fischer.",
-    "date": "2014-11-20",
-    "image": {
-      "file": "helenefischer.jpg",
-      "credit_text": "Abhijay Achatz",
-      "credit_url": "https://flic.kr/p/dEgPYq"
+    "who-the-fk-is-helene-fischer": {
+        "headline": "Who the f**k is Helene Fischer?",
+        "description": "For Exberliner I tried to explain the weirdness, embarrassments and curiosities of German music. Especially one phenomenon: Helene Fischer.",
+        "date": "2014-11-20",
+        "category": "pop",
+        "wide": true,
+        "image": {
+            "file": "helenefischer.jpg",
+            "credit_text": "Abhijay Achatz",
+            "credit_url": "https://flic.kr/p/dEgPYq"
+        },
+        "colors": [[10,191,188], [252,53,76]],
+        "readmore": "http://www.exberliner.com/culture/music--nightlife/who-the-fuck-is-helene-fischer/",
+        "meta": "Published in Exberliner, issue #131, October 2014"
     },
-    "color": "#c6d601",
-    "readmore": "http://www.exberliner.com/culture/music--nightlife/who-the-fuck-is-helene-fischer/",
-    "meta": "Published in Exberliner, issue #131, October 2014"
-  },
 
-  "gay-men-reading-german-cosmopolitan": {
-    "headline": "Gay Men Reading German Cosmopolitan",
-    "subheadline": "Die Absurditäten von deutschen Frauenmagazinen",
-    "description": "Ein kleines Spaßprojekt über die Absurditäten deutscher Frauenmagazine – gelesen von schwulen Männern.",
-    "date": "2014-09-04",
-    "language": "de",
-    "image": {
-      "file": "gaymenreading.jpg",
-      "credit_text": "Natalia Peris / Flickr"
+    "gay-men-reading-german-cosmopolitan": {
+        "headline": "Gay Men Reading German Cosmopolitan",
+        "description": "Ein kleines Spaßprojekt über die Absurditäten deutscher Frauenmagazine – gelesen von schwulen Männern.",
+        "date": "2014-09-04",
+        "category": "fun",
+        "language": "de",
+        "image": {
+            "file": "gaymenreading.jpg",
+            "credit_text": "Natalia Peris / Flickr"
+        },
+        "colors":  [[255, 192, 79], [246, 22, 157]],
+        "readmore": "http://gaymenreading.tumblr.com"
     },
-    "color": "#f4617a",
-    "readmore": "http://gaymenreading.tumblr.com"
-  },
 
-  "ich-bin-dagegen-aber": {
-    "headline": "Ich bin dagegen, aber...",
-    "subheadline": "Generation Y und das tägliche Unbehagen",
-    "description": "\"Was immer bleibt, ist dieses Gefühl: Scheiße, du müsstest doch eigentlich was machen!\" schreibt Tino Hanekamp.",
-    "date": "2014-07-15",
-    "language": "de",
-    "image": {
-      "file": "confetti.jpg",
-      "credit_text": "Daltonkat2 / Flickr"
+    "ich-bin-dagegen-aber": {
+        "headline": "Generation Y und das tägliche Unbehagen: Ich bin dagegen, aber...",
+        "description": "\"Was immer bleibt, ist dieses Gefühl: Scheiße, du müsstest doch eigentlich was machen!\" schreibt Tino Hanekamp.",
+        "date": "2014-07-15",
+        "category": "opinion",
+        "language": "de",
+        "image": {
+            "file": "confetti.jpg",
+            "credit_text": "Daltonkat2 / Flickr"
+        },
+        "colors": [[0, 255, 195], [82, 0, 163]]
     },
-    "color": "#ac99b0"
-  },
 
-  "schlandmania": {
-    "headline": "Schlandmania",
-    "subheadline": "Warum sich hier dringend etwas ändern muss",
-    "description": "Seit 2006 ist es gang und gäbe, wieder Flagge zu zeigen. Sie wehen an Autos und Häusern, zieren die Gesichter der Fanmeilen-Besucher und Prominenten (wenn auch nicht immer gekonnt) und bestimmen wochenlang das Stadtbild jeder Klein und Großstadt.",
-    "date": "2014-07-09",
-    "language": "de",
-    "image": {
-      "file": "schlandmania.jpg"
+    "schlandmania": {
+        "headline": "Schlandmania",
+        "description": "Seit 2006 ist es gang und gäbe, wieder Flagge zu zeigen. Sie wehen an Autos und Häusern, zieren die Gesichter der Fanmeilen-Besucher und Prominenten (wenn auch nicht immer gekonnt) und bestimmen wochenlang das Stadtbild jeder Klein und Großstadt.",
+        "date": "2014-07-09",
+        "category": "opinion",
+        "language": "de",
+        "image": {
+            "file": "schlandmania.jpg"
+        },
+        "colors": [[255, 168, 0], [195, 0, 87]]
     },
-    "color": "#44819b"
-  },
 
-  "the-early-years": {
-    "subheadline": "The early years",
-    "headline": "Best of analog 2008-2012",
-    "description": "A collection of disposable camera memories between 2008 and 2012, between Cologne and Berlin, with visits several other places.",
-    "date": "2014-06-10",
-    "image": {
-      "file": "the-early-years/analog13.jpg"
+    "the-early-years": {
+        "headline": "Best of analog 2008-2012",
+        "description": "A collection of disposable camera memories between 2008 and 2012, between Cologne and Berlin, with visits several other places.",
+        "date": "2014-06-10",
+        "category": "personal",
+        "image": {
+            "file": "the-early-years/analog13.jpg",
+            "display": false
+        },
+        "colors": [[245, 246, 0], [107, 17, 202]]
     },
-    "color": "#8fc1c9"
-  },
 
-  "christiane-f-interview": {
-    "headline": "Christiane's second life",
-    "subheadline": "An interview with Christiane F. (Wir Kinder vom Bahnhof Zoo)",
-    "description": "For Exberliner, Christiane Felscherinow answered Walter's and my questions.",
-    "date": "2014-01-22",
-    "image": {
-      "file": "christianef.jpg",
-      "credits_text": "Levante Verlag"
+    "christiane-f-interview": {
+        "headline": "Christiane F. Interview",
+        "description": "For Exberliner, Christiane Felscherinow answered Walter's and my questions.",
+        "date": "2014-01-22",
+        "category": "pop",
+        "image": {
+            "file": "christianef.jpg",
+            "credit_text": "Levante Verlag"
+        },
+        "wide": true,
+        "colors": [[240, 14, 46], [25, 37, 80]],
+        "readmore": "http://www.exberliner.com/features/people/christianes-second-life/",
+        "meta": "Published in Exberliner, issue #123, January 2014"
     },
-    "color": "#5b8819",
-    "readmore": "http://www.exberliner.com/features/people/christianes-second-life/",
-    "meta": "Published in Exberliner, issue #123, January 2014"
-  },
 
-  "tocotronic-interview": {
-    "headline": "\"German is a relatively inconvenient language\"",
-    "subheadline": "An interview with Tocotronic",
-    "description": "For the January issue of Exberliner I met Dirk von Lowtzow and Jan Müller of Tocotronic for an interview in the Whiskey Room of Michelberger Hotel.",
-    "date": "2013-01-22",
-    "image": {
-      "file": "tocotronic.jpg",
-      "credits_text": "Michael Petersohn"
+    "tocotronic-interview": {
+        "headline": "Tocotronic Interview",
+        "description": "For the January issue of Exberliner I met Dirk von Lowtzow and Jan Müller of Tocotronic for an interview in the Whiskey Room of Michelberger Hotel.",
+        "date": "2013-01-22",
+        "category": "pop",
+        "wide": true,
+        "image": {
+            "file": "tocotronic.jpg",
+            "credit_text": "Michael Petersohn"
+        },
+        "colors": [[189, 0, 250], [34, 34, 34]],
+        "readmore": "http://www.exberliner.com/culture/music--nightlife/tocotronic-interview/",
+        "meta": "Published in Exberliner, issue #112, January 2013"
     },
-    "color": "#b5393a",
-    "readmore": "http://www.exberliner.com/culture/music--nightlife/tocotronic-interview/",
-    "meta": "Published in Exberliner, issue #112, January 2013"
-  },
 
-  "adam-ficek-interview": {
-    "headline": "From Babyshambles to Roses Kings Castles",
-    "subheadline": "An interview with Adam Ficek",
-    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
-    "date": "2009-06-06",
-    "image": {
-      "file": "adamficek.jpg"
+    "adam-ficek-interview": {
+        "headline": "Adam Ficek (Babyshambles) Interview",
+        "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
+        "date": "2009-06-06",
+        "category": "pop",
+        "image": {
+            "file": "adamficek.jpg"
+        },
+        "colors": [[0, 255, 104], [0, 106, 195]],
+        "meta": "Originally published in German in 2009"
     },
-    "color": "#6a6a65",
-    "meta": "Originally published in German in 2009"
-  },
 
-  "holy-fuck-interview": {
-    "headline": "\"We're not a shabby hippie punk band!\"",
-    "subheadline": "An interview with Holy Fuck",
-    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
-    "date": "2009-04-27",
-    "image": {
-      "file": "holyfuck.jpg"
+    "holy-fuck-interview": {
+        "headline": "Holy Fuck Interview",
+        "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
+        "date": "2009-04-27",
+        "category": "pop",
+        "image": {
+            "file": "holyfuck.jpg",
+            "credit_text": "Jen Robinson",
+            "credit_url": "https://flic.kr/p/7MEDjK"
+        },
+        "colors": [[164, 222, 210], [46, 20, 55]],
+        "meta": "Originally published in German in 2009"
     },
-    "color": "#de7814",
-    "meta": "Originally published in German in 2009"
-  },
 
-  "the-indelicates-interview": {
-    "headline": "\"Being sixteen was the worst thing in the world\"",
-    "subheadline": "An interview with The Indelicates",
-    "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
-    "date": "2007-10-10",
-    "image": {
-      "file": "theindelicates.jpg"
-    },
-    "color": "#757f97",
-    "meta": "Originally published in German in 2007"
-  }
+    "the-indelicates-interview": {
+        "headline": "The Indelicates Interview",
+        "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
+        "date": "2007-10-10",
+        "category": "pop",
+        "wide": true,
+        "image": {
+            "file": "theindelicates.jpg"
+        },
+        "colors": [[255, 192, 79], [246, 22, 157]],
+        "meta": "Originally published in German in 2007"
+    }
 }

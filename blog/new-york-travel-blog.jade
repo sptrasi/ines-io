@@ -1,16 +1,20 @@
 include ../_includes/_mixins
 
-header.blog-header
-  .content
-    h1 New York#[br]Travel Blog
+mixin post(headline)
+    +divider
 
-    p In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York. To read my travel guide, go #[a(href=url + "/blog/new-york-travel-guide" target="_blank") here].
+    .blog-post(id=date)
+        h2
+            a(href="#" + date)=headline
+            .text-meta=convertDate(date).full
 
-.single-content
-  .blog-post
-    .meta Monday, 16 March 2015
-    h2 Coney Island
+        block
 
+p
+    em In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York. To read my travel guide, go #[a(href=url + "/blog/new-york-travel-guide" target="_blank") here].
+    
+
++post("Coney Island", "2015-03-16")
     +image("new-york-travel-blog/coneyisland8.jpg")
 
     p Today was a really beautiful day so I met up with friends and we finally went down to Coney Island.  We stopped by a really cute Russian restaurant near Brighton Beach for some pelmeni with sour cream and then walked along the Boardwalk by the sea. All the attractions and food stands were obviously closed but it was still so beautiful and relaxing and the perfect way to spend one of my last days in New York. I’ll miss this place.
@@ -26,10 +30,7 @@ header.blog-header
     +image("new-york-travel-blog/coneyisland10.jpg")
     +image("new-york-travel-blog/coneyisland11.jpg")
 
-  .blog-post
-    .meta Monday, 16 March 2015
-    h2 Six week recap
-
++post("Six week recap", "2015-03-15")
     +image("new-york-travel-blog/aloha.jpg")
 
     p It’s been six weeks now and I’m flying back home on Wednesday. I have to keep reminding myself that this wasn’t just a holiday and that I’m not just going to return back to my old life. I’m moving back to Berlin and my life is going to be #[em very] different. But I really needed this break. I don’t think I ever spent more than three weeks away from Berlin since I moved there five years ago. I needed being able to live for the moment, taking in a new place and the uncertainty that comes with it. When I first got here I had a pretty hard time dealing with the travel pressure. I was in fucking #[em New York], staying at home felt like a waste of time. I received so many messages from friends asking how I was doing and I felt like I owed them updates and Instagram photos.
@@ -38,11 +39,7 @@ header.blog-header
 
     p And I never thought I would ever say this but yes, I’m actually really looking forward to getting back to Berlin!
 
-
-  .blog-post
-    .meta Thursday, 12 March 2015
-    h2 Bronx Zoo
-
++post("Bronx Zoo", "2015-03-12")
     +image("new-york-travel-blog/zoo1.jpg")
 
     p When I was a child we went to the zoo a lot but as I got older, I kind of lost interest and I hadn’t really been to a zoo in about a decade. So when the weather forecast predicted 16°C (like, about 30 degrees warmer than only a few weeks ago!), we decided to check out the #[a(href="http://bronxzoo.com/" target="_blank") Bronx Zoo], which is free in Winter season by the way. I had an amazing day with good weather, lots of walking around outside and got to see some of my favourties (Red pandas! Otters!). But aside from that, it was still mostly sad animals in very small spaces with handpainted backdrops.
@@ -54,10 +51,7 @@ header.blog-header
     +image("new-york-travel-blog/zoo5.jpg")
 
 
-  .blog-post
-    .meta Saturday, 7 March 2015
-    h2 Random snapshots, part 2
-
++post("Random snapshots, part 2", "Saturday, 7 March 2015")
     +image("new-york-travel-blog/centralpark1.jpg")
 
     p Got snowed in, did quite a bit of walking, went out to a jazz club, had drinks at The Stonewall Inn on Christopher Street and spent #[em a lot] of time curled up in bed with sushi, thai food and pizza. Only 12 days left and I slowly need to prepare for leaving New York City and going back to Berlin.
@@ -66,11 +60,7 @@ header.blog-header
     +image("new-york-travel-blog/chinatown.jpg")
     +image("new-york-travel-blog/snow.jpg")
 
-
-  .blog-post
-    .meta Friday, 27 February 2015
-    h2 Lobsters &amp; Street Art
-
++post("Lobsters &amp; Street Art", "2015-02-27")
     +image("new-york-travel-blog/lobster.jpg")
 
     p Today I somehow ended up back in Chinatown and had my first #[em real] lobster! (The lobster sauce from my favourite dish at #[a(href="http://www.schwarzescafe-berlin.de/" target="_blank") Schwarzes Café] in Berlin doesn’t count.) It was surprisingly good. I also saw some more of lower Manhattan and came across lots of pretty buildings.
@@ -80,10 +70,7 @@ header.blog-header
     +image("new-york-travel-blog/streetart2.jpg")
     +image("new-york-travel-blog/streetart4.jpg")
 
-  .blog-post
-    .meta Tuesday, 24 February 2015
-    h2 On top
-
++post("On top", "2015-02-24")
     +image("new-york-travel-blog/topoftherock1.jpg")
 
     p I have to admit, New York City #[em is] quite beautiful. I’ve been looking forward to the skyscraper experience since I got here and the view did not disappoint.
@@ -99,11 +86,7 @@ header.blog-header
     +image("new-york-travel-blog/topoftherock4.jpg")
     +image("new-york-travel-blog/topoftherock3.jpg")
 
-
-  .blog-post
-    .meta Monday, 23 February 2015
-    h2 Random snapshots
-
++post("Random Snapshots", "2015-02-23")
     p Some random photos including yesterday’s walk around snowy northern Brooklyn. Ended up in a cute boardgame shop and discovered the magic of staying in on a Saturday night, drinking nice beer and playing card games. Welcome to my glamourous life in NYC!
 
     +image("new-york-travel-blog/random2.jpg")
@@ -112,11 +95,7 @@ header.blog-header
     +image("new-york-travel-blog/random5.jpg")
     +image("new-york-travel-blog/random6.jpg")
 
-
-  .blog-post
-    .meta Monday, 16 February 2015
-    h2 Chinatown
-
++post("Chinatown", "2015-02-16")
     +image("new-york-travel-blog/chinatown1.jpg")
 
     p Today I met up with my friend Irina and we tried our best to ignore the cold (-10°C!), walked through Chinatown, had amazing $3 dumplings (you get a full plate of 10 dumplings with spicy sauce!), tried weird snacks and walked over to the East Village for some coffee and shopping.
@@ -127,11 +106,7 @@ header.blog-header
     +image("new-york-travel-blog/chinatown6.jpg")
     +image("new-york-travel-blog/chinatown7.jpg")
 
-
-  .blog-post
-    .meta Sunday, 15 February 2015
-    h2 Bridges &amp; burgers
-
++post("Bridges &amp; Burgers", "2015-02-15")
     +image("new-york-travel-blog/brooklynbridge1.jpg")
 
     p Another day of walking around exploring the city, wrapped in my fluffly leopard coat. I realised how much I love city skylines with tall buildings – and how useless I am at posing for photos.
@@ -147,22 +122,14 @@ header.blog-header
     +image("new-york-travel-blog/timessquare2.jpg")
     +image("new-york-travel-blog/timessquare3.jpg")
 
-
-  .blog-post
-    .meta Saturday, 14 February 2015
-    h2 Friday the 13th
-
++post("Friday the 13th", "2015-02-14")
     +image("new-york-travel-blog/tattoo1.jpg")
 
     p Even before I arrived in New York, I knew I was going to get a tattoo over here. I still #[em love] getting tattoed and it’s just the perfect memory of a trip like this that marks such an important change in my life. A lot of studios were offering special Friday the 13th tattoos (that were mostly Valentine’s Day designs with a twist) and I found a #[a(href="http://www.bigbangink.com/" target="_blank") nice place] just around the corner. So here’s the new addition to the family.
 
     +image("new-york-travel-blog/tattoo2.jpg")
 
-
-  .blog-post
-    .meta Wednesday, 11 February 2015
-    h2 #tourist
-
++post("#tourist", "2015-02-11")
     +image("new-york-travel-blog/manhattan2.jpg")
 
     p A few snapshots from Manhattan. Walked 50 blocks all the way up to Central Park yesterday. It was nice and sunny and we got approached (and harassed) by several squirrels.
@@ -170,11 +137,7 @@ header.blog-header
     +image("new-york-travel-blog/manhattan1.jpg")
     +image("new-york-travel-blog/manhattan3.jpg")
 
-
-  .blog-post
-    .meta Tuesday, 10 February 2015
-    h2 Out and about
-
++post("Out and about", "2015-02-10")
     +image("new-york-travel-blog/winter2.jpg")
 
     p I can’t believe I’ve been here for a week already. Today I’m up early and we’re gonna wander around Manhattan some more. I haven’t really seen many of the sights or the touristy New York and it’s fine, I prefer the “normal” stuff to the over the top tourist attractions anyway. But after a week of relaxing and mostly hanging out in Brooklyn (and doing things that were a #[em tiny] bit too similar to my everyday life in Berlin), I’m ready for something a little different.
@@ -185,11 +148,7 @@ header.blog-header
 
     +image("new-york-travel-blog/winter1.jpg")
 
-
-  .blog-post
-    .meta Friday, 6 February 2015
-    h2 Settling in
-
++post("Settling in", "2015-02-06")
     +image("new-york-travel-blog/apartment2.jpg")
 
     p I’m slowly starting to feel at home. There’s still so much to explore and it’s quite overwhelming but I keep reminding myself that I’m gonna be here for six more weeks and there’s no need to feel guilty for spending a day inside and snuggled up in bed. After all, this was the plan: find a place that’s as liveable as possible and just #[em live there].
@@ -204,11 +163,7 @@ header.blog-header
     +image("new-york-travel-blog/street.jpg")
     +image("new-york-travel-blog/dog.jpg")
 
-
-  .blog-post
-    .meta Wednesday, 4 February 2015
-    h2 Hello, NYC!
-
++post("Hello, NYC!", "2015-02-04")
     +image("new-york-travel-blog/flight.jpg")
 
     p I’m here! I arrived safely after blurry hours of slothing around on the plane with my laptop, listening to music and wrapped in a blanket with a steady supply of free food, water and alcohol. Nine hours without internet or any real connection to the outside world – and for the first time I was really able to think about what was going on. So many things have happened in the past few months and I knew I’d only realise this once the plane was up in the sky and I was leaving Berlin behind.
@@ -220,11 +175,7 @@ header.blog-header
     +image("new-york-travel-blog/lights2.jpg")
     +image("new-york-travel-blog/lights.jpg")
 
-
-  .blog-post
-    .meta Sunday, 1 February 2015
-    h2 The beginning
-
++post("The beginning", "2015-02-01")
     +image("new-york-travel-blog/passport.jpg")
 
     p The past few months have been turbulent, exciting and brought a lot of changes to my life. I left my job at #[a(href="http://www.exberliner.com/" target="_blank") Exberliner] after four years to take advantage of amazing new opportunities and finally become self-employed. I was blown away by the incredible support I got from everyone around me, the help that people offered me and how things just kind of fell into place as soon as I opened myself up for them. Don’t worry, I’m still not superstitious, my days of obsessing over self-help blogs are long gone and I couldn’t care less about #[em the universe]. But it did serve as reminder that somehow, everything will be ok in the end.</p>
@@ -232,6 +183,3 @@ header.blog-header
     p Tomorrow I’m flying to New York City where I’m going to be living for a month and a half, exploring a new city in a new country, before returning to Berlin at the end of March to start a new chapter of my life. If you had told me this a year ago, I would have laughed at you.
 
     p To document my trip and collect memories, I have set up this little blog. I’m also open for New York suggestions – from food to going out to (maybe not so conventional) sightseeing.
-
-  .block-center.color
-    !=partial("../_includes/_share-icons", { posturl: getCurrentUrl() })

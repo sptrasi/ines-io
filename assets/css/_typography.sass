@@ -1,0 +1,41 @@
+//  Typography
+// =============================================================================
+
+.text
+    font: normal normal 2.2rem/#{1.375} $font-primary
+
+.text-meta
+    font: normal normal 1.6rem/#{1.375} $font-tertiary
+
+.text-meta-small
+    font: normal normal 1.3rem/#{1.375} $font-tertiary
+
+.text-code
+    font: normal 600 1.4rem/#{1.75} $font-code
+
+.text-label
+    font: normal bold 1.4rem/#{1} $font-secondary
+    letter-spacing: 1px
+    text-transform: uppercase
+
+%heading
+    color: $color-text
+    font-family: $font-secondary
+    font-weight: bold
+    line-height: 1.25
+
+h1,
+.heading-1
+    @extend %heading
+    font-size: 5.2rem
+    text-transform: uppercase
+
+@each $level, $font-size in (2, 3.8rem), (3, 2.8rem), (4, 1.8rem)
+    h#{$level},
+    .heading-#{$level}
+        @extend %heading
+        font-size: $font-size
+
+::selection
+    background: $color-text
+    color: $color-bg

@@ -1,25 +1,29 @@
 include _includes/_mixins
 
+//-  Feed
+//- ============================================================================
+
 doctype xml
 rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
-  channel  
-    title= title
-    link= url
-    description= description
-    atom:link(href="#{ url }/feed.xml", rel="self", type="application/rss+xml")
-    for post, slug in public.blog._data
-        if post.published != false
-          item
-            title=(post.subheadline) ? post.headline + ' — ' + post.subheadline : post.headline
-            description <![CDATA[ 
-              if post.image
-                p: img(src=url + "/blog/img/" + post.image.file)
+    channel  
+        title=title
+        link=url
+        description= description
+        atom:link(href="#{ url }/feed", rel="self", type="application/rss+xml")
+            
+        each post, slug in public.blog._data
+            if post.published != false
+                item
+                    title=(post.subheadline) ? post.headline + ' — ' + post.subheadline : post.headline
+                    description <![CDATA[ 
+                        if post.image
+                            p: img(src=url + "/blog/img/" + post.image.file)
               
-              !=partial("blog/" + slug, { absolute: url + "/blog/" })
-              | ]]>
+                        !=partial("blog/" + slug, { absolute: url + "/blog/" })
+                        | ]]>
 
-            if post.date
-              pubDate=convertPubDate(post.date)
+                    if post.date
+                        pubDate=convertPubDate(post.date)
 
-            link #{ url }/blog/#{ slug }
-            guid(isPermaLink="true") #{ url }/blog/#{ slug }
+                    link #{ url }/blog/#{ slug }
+                    guid(isPermaLink="true") #{ url }/blog/#{ slug }

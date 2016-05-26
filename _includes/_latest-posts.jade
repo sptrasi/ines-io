@@ -1,28 +1,26 @@
 include _mixins
 
-- var post_max = posts || 0 
+- var teaser_size = size || 400
+- var post_max = posts || 0
 - var post_counter = 1
-- var post_style_counter = 1
 
-//- ----------------------------------------------------------------------------
-//-  Display latest posts
-//- ----------------------------------------------------------------------------
+//-  Latest Posts
+//- ============================================================================
 
 section.teasers
-  each post, slug in public.blog._data
-    if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
-      
-      article.teaser(class="teaser--style-" + post_style_counter)
-        a.teaser-text(href=getRoot() + 'blog/' + slug)
+    each post, slug in public.blog._data
+        if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
 
-          h5.meta=post.subheadline
-          h2=post.headline
+            article.teaser
+                a.teaser-link(href="/blog/" + slug)
+                    h2.teaser-headline=post.headline
 
-          if post.description
-            p.caption=post.description.substring(0, excerpt_length) + ' ...'
+                    svg.teaser-image(width=teaser_size height=teaser_size viewBox="0 0 " + teaser_size + " " + teaser_size style="background: rgb(" + ((post.colors) ? post.colors[1] : '255, 255, 255') + ")")
+                        defs
+                            filter(id="duotone-filter-" + post_counter)
+                                feColorMatrix(type="matrix" values=getColorMatrix(post.colors || false))
+                        
+                        if post.image
+                            image(width="100%" height="100%" filter="url(#duotone-filter-" + post_counter + ")" xlink:href="/blog/img/" + post.image.file preserveAspectRatio="xMidYMin slice")
 
-        a.teaser-image(href=getRoot() + 'blog/' + slug style='background-image: url(' + getRoot() + 'blog/img/' + post.image.file + ')')
-
-      - if(post_style_counter === 6) post_style_counter = 1
-      - else post_style_counter++
-      - post_counter++
+            - post_counter++

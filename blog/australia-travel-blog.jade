@@ -1,43 +1,76 @@
 include ../_includes/_mixins
 
-//- ----------------------------------------------------------------------------
-//-  Blog Post Mixin
-//- ----------------------------------------------------------------------------
-
 mixin post(headline, date)
-  .blog-post(id=date)
-    h2
-      a(href="#" + date)=headline
-    .meta=convertDate(date).full
-    
-    block
+    +divider
+
+    .blog-post(id=date)
+        h2
+            a(href="#" + date)=headline
+            .text-meta=convertDate(date).full
+
+        block
+
+p
+    em=description
+
++post("Goodbye", "2016-04-14")
+    p I originally wrote most of this post from the airport in Abu Dhabi during our three hour stopover. Eight hours before we got back home to Berlin, a place where fun #[em isn&apos;t] illegal, a place where I leave my house and am right in the middle of the city, a place where rent is still affordable, and a place without carpets #[em everywhere] in every house. Still, it felt weird to leave Australia behind just when I was starting to get used to it. Not only to the country, but also to the general lifestyle of being away from home and travelling, while still trying to have a life that's as normal as possible. I really want to get better at this and do it more often, and we've already been making plans for Autumn and discussed potential interesting destinations. Here are a few more photos from my last days in Sydney, and the trip back home.
+
+    +image("australia-travel-blog/plane1.jpg", "Leaving Sydney behind", true)
+    +image("australia-travel-blog/plane2.jpg", "Leaving Australia behind", true)
+    +image("australia-travel-blog/plane3.jpg", "The Australian desert", true)
+    +image("australia-travel-blog/park.jpg", false, true)
+    +image("australia-travel-blog/bird.jpg", false, true)
+    +image("australia-travel-blog/burger.jpg", "Lunch at WellCo in Leichhardt", true)
+    +image("australia-travel-blog/marypoppins.jpg", "Just loved that Mary Poppins tip jar at Mr Falcon's in Glebe. M. thinks that this is one of the last cool bars left in the city.", true)
+    +image("australia-travel-blog/rat.jpg", "Went to visit friends who have rats and... I'm in love! This one was my favourite, and he blended in perfectly with my outit.", true)
+    +image("australia-travel-blog/victoriapark.jpg", "Hanging out at Victoria Park at night. The park comes with an odd adult-sized playground and the view from the climbing frame is pretty cool.", true)
 
 
-//- ----------------------------------------------------------------------------
-//-  Template
-//- ----------------------------------------------------------------------------
++post("Summer goth", "2016-04-08")
+    p I've been trying to dress appropriately for the weather and it feels incredibly weird. I don't remember the last time I left the house #[em not] wearing some form of tights or even my beloved leather jacket. On the other hand, people here seem so used to the hot weather, that it's totally normal to wear a jacket or long sleeves in 25-degree weather, and I get less weird looks for refusing to dress like a maniac on a beach holiday (read: wearing more than 1.5 colours at a time). We went to the beach again the other night for a swim, and I finally decided that beaches are completely impractical. You end up with soaked hair, this awkward plastic bag with a wet swimsuit and sand in your underwear, eyes and nose. All for an hour or two of inhaling salt water and huddling up on a towel, thinking about all the things you could be doing on the internet, but can't, since you purposely left your phone at home so it won't get stolen. Not to mention the sun mercilessly invading your private space if you're crazy enough to do this during the day. I know I'm being cynical, but it did take me a long time to realise that people lie in the sun because they legitimately #[em like the feeling]. As a young teenager, I would often try to copy our neighbours who spent hours sunbathing in the garden, and I became really impressed by their endurance and willpower to stand this absolutely painful and uncomfortable feeling #[em just for that tan]. It was the first time young me was introduced to the concept of "beauty knows no pain", despite for all the wrong reasons.
 
-header.blog-header
-  h1 
-    span Australia Travel Blog
-    a.credit.caption(href="http://www.freepik.com/free-photos-vectors/travel" target="_blank") Vector Graphic: Freepik
+    +image("australia-travel-blog/me.jpg", false, true)
+    +image("australia-travel-blog/me2.jpg", false, true)
 
-.single-content
-  +post("Everyday Life", "2016-03-30")
-    p I haven't updated in about a week and I don't even know why. I'm back in Rutherglen now, but we spent a few more days in Melbourne last week to see more of the city. We walked along Lygon St, where I had some of the best ice cream I've ever had in my life (a huge scroop of salted caramel) and spent a day in Brunswick where I had amazing Lebanese food and did a bit of vintage shopping. I'm always very sceptical when people recommend vintage shopping or say it's particularly great in a certain place, because usually that still means that it's the same hip overpriced stuff you find everywhere else. I like second hand clothes as much as the next person, but after all, it's #[em second hand] and I sort of refuse spending more on it than I would on new pieces. (I'm not talking about vintage designer collectibles or something, that's not really the stuff I am into anyways). But long story short, I was pleasantly surprised by the quality of the vintage shops in Brunswick. I found an amazing leather bag in great condition, probably the one important item that was still missing from my #[a(href=url + "blog/guide-everyday-life-minimalism") new, minimalist wardrobe]. I was pretty sad to leave the apartment behind. Being so high above the city in this very open, yet isolated space really did me good. I've come to terms with the fact that the random circumstances of my everyday life do have a huge impact on my mood and productivity. And in my bed overlooking the big city I definitely felt much more calm and focucsed than I do back here in the countryside. In the early mornings, I'd often go swimming in our apartment building's pool, then get ready for the day with coffee and breakfast. Having a pool is this kind of novelty, though, that is probably only fun if it's new and you're on holidays. If my apartment building at home came with a pool, I know I'd probably use it like twice and then forget about it. It's kind of a shame, really. But anyways, here are a few snapshots from the past week:
+    p Aside from complaining about hot weather, I mostly spent my time getting things done, seeing more of the city and having fancy-ish breakfasts at random cafes. It's weird to think that I'm already leaving Australia on Wednesday next week – I feel like I'm finally at a point where I've settled in and set up my life in a way that's sort of convenient and productive. While my trip to #[a(href=url + "/blog/new-york-travel-blog" target="_blank") New York] last year convinced me that it was worth it to set up my life so that I could be more independent of my physical location, this trip was the final proof that it works out well for me, and that it really does add so much more value to my life. I've never really understood the romanticising of jobs that come with a lot of travel, and I always knew this wasn't something I wanted for myself. Yeah, it all looks so glamorous, but it's still making the travelling part of the work, rather than decoupling those two aspects of life. This was always my idea of what I wanted. It started with a naive thought and eventually turned into a real, feasible plan. I still have moments sometimes when I think I don't actually deserve this. Can I really claim that I #[em worked hard], or did it all fall into place? And if it did, how much of that is random, and how much of it is a result of being logical and reasonable about things? I mean, it's not like I only ever "manifested my dreams" because #[a(href=blog + "/blog/i-fell-for-self-help-so-you-dont-have-to" target="_blank") ~the universe~]. I'm actually doing things, for real. But this is the kind of stuff I think about at night while counting the glow in the dark stickers on the ceiling and listening to the soothing sound of the air conditioner.
+
+    +image("australia-travel-blog/cafe1.jpg", "Breakfast at Carousel in Leichhardt", true)
+    +image("australia-travel-blog/cafe2.jpg", "Sappho Books in Glebe", true)
+    +image("australia-travel-blog/cafe3.jpg", false, true)
+    +image("australia-travel-blog/cafe4.jpg", "Breakfast at Clipper Café in Glebe", true)
+
++post("Night Swim", "2016-04-04")
+    p Last night, we went for walk and a nightly swim at the beach. It's quite dangerous to swim out at night, but there are a lot of smaller sea water pools right by the beach, that occasionally even get hit by one of the big waves. We got fish and chips from a nearby shop and walked all the way up to the cliffs, from where you had an amazing view across the city and the black nothingness of the ocean at night. We'd spent most of the day walking around Newtown, starting with an amazing salmon breakfast and shopping for cheap clothes at vintage stores and factory outlets, and I ended up so frustrated and overheated that I almost considered not leaving the house at night. But this was definitely worth it.
+
+    +image("australia-travel-blog/nightswim1.jpg", false, true)
+    +image("australia-travel-blog/nightswim2.jpg", false, true)
+    +image("australia-travel-blog/nightswim3.jpg", false, true)
+    +image("australia-travel-blog/car.jpg", "After we got out of the water, it started pouring down and didn't stop all night.", true)
+
++post("Back in Sydney", "2016-04-03")
+    p We arrived back in Sydney on Friday afternoon and it's been pretty good so far. The days have been fairly hot, but luckily, most places here have reliable air conditioning. We're staying in Stanmore and the house reminds me a lot of my old flat in Berlin - slightly run down but charming and pretty cosy. (One thing I'll never understand, though, is why Australians insist on having carpet #[em everywhere]. It's pretty convenient if you drop your phone, but that's about it.) Last night, we went to McMahons Point to visit M.'s brother, who just moved into a new apartment there. We went for a walk by the water (aka. their "back yard"), had dinner at a North African Restaurant and ended up in a karaoke pub, which was a fairly... interesting cultural experience. All in all, Sydney is a weird place when it comes to "traditional" nightlife, and the concept of #[a(href="http://www.nsw.gov.au/newlaws" target="_blank") lockout laws] still feels pretty confusing. I'm kinda glad I'm not so much into nightlife anymore these days... it's so cliché, but the older I get, the more I seem to appreciate not being hungover on a Sunday. And Australia seems to be a good place for that.
+
+    +image("australia-travel-blog/sydney1.jpg", "Driving across the city", true)
+    +image("australia-travel-blog/sydney2.jpg", false, true)
+    +image("australia-travel-blog/sydney3.jpg", false, true)
+    +image("australia-travel-blog/sydney4.jpg", false, true)
+    +image("australia-travel-blog/sydney5.jpg", false, true)
+    +image("australia-travel-blog/sydney6.jpg", false, true)
+
++post("Everyday Life", "2016-03-30")
+    p I haven't updated in about a week and I don't even know why. I'm back in Rutherglen now, but we spent a few more days in Melbourne last week to see more of the city. We walked along Lygon St, where I had some of the best ice cream I've ever had in my life (a huge scroop of salted caramel) and spent a day in Brunswick where I had amazing Lebanese food and did a bit of vintage shopping. I'm always very sceptical when people recommend vintage shopping or say it's particularly great in a certain place, because usually that still means that it's the same hip overpriced stuff you find everywhere else. I like second hand clothes as much as the next person, but after all, it's #[em second hand] and I sort of refuse spending more on it than I would on new pieces. (I'm not talking about vintage designer collectibles or something, that's not really the stuff I am into anyways). But long story short, I was pleasantly surprised by the quality of the vintage shops in Brunswick. I found an amazing leather bag in great condition, probably the one important item that was still missing from my #[a(href=url + "blog/guide-everyday-life-minimalism" target="_blank") new, minimalist wardrobe]. I was pretty sad to leave the apartment behind. Being so high above the city in this very open, yet isolated space really did me good. I've come to terms with the fact that the random circumstances of my everyday life do have a huge impact on my mood and productivity. And in my bed overlooking the big city I definitely felt much more calm and focucsed than I do back here in the countryside. In the early mornings, I'd often go swimming in our apartment building's pool, then get ready for the day with coffee and breakfast. Having a pool is this kind of novelty, though, that is probably only fun if it's new and you're on holidays. If my apartment building at home came with a pool, I know I'd probably use it like twice and then forget about it. It's kind of a shame, really. But anyways, here are a few snapshots from the past week:
 
     +image("australia-travel-blog/deadman.jpg", "My favourite neighbourhood cafe in Melbourne", true)
     +image("australia-travel-blog/offscreen.jpg", "Discovered a great magazine shop in Melbourne and I finally got my hands on a copy of Offscreen", true)
     +image("australia-travel-blog/rutherglen2.jpg", false, true)
     +image("australia-travel-blog/rutherglen3.jpg", "The lake in Rutherglen where we went for a walk and a picnic", true)
 
-
-
-  +post("Sunset / Sunrise", "2016-03-23")
++post("Sunset / Sunrise", "2016-03-23")
     +image("australia-travel-blog/sunset.jpg", false, true)
     +image("australia-travel-blog/sunrise.jpg", false, true)
 
-  +post("Hello Melbourne!", "2016-03-22")
++post("Hello Melbourne!", "2016-03-22")
     p This morning, we finally arrived in Melbourne. Going by train was so much nicer than flying - you first go past all the little suburbs and little houses until the city skyline finally appears and gets closer and closer. After about a week in the countryside, it felt so nice to be back in a big city. The apartment, which we had organised fairly last-minute, turned out to be amazing - a flat on the 23rd floor with huge floor to ceiling windows overlooking the city all the way to the coast. I can't wait to wake up in the big white bed tomorrow and watch the sunrise from here. I've always wanted to stay at a place like this and I'm so happy I found one that is #[em not] a fancy hotel (because quite frankly, I hate hotels, especially fancy ones). After dropping our bags off at the flat, we had really good coffee and breakfast at #[a(href="http://deadmanespresso.com.au/" target="_blank") Dead Man], one of the many nice cafés we randomly stumbled upon. It's kind of a shame that the "typical" hip Australian breakfast already seems so much less novel to me, since Berlin has finally managed to do a good job at copying it. Maybe I now get what people mean when they say that Berlin's kinda become like Melbourne, minus the good weather. Whatever that means, really. After breakfast, we headed down to St Kilda and went for a long walk by the beach. The cool breeze made the heat pretty bearable – you could even say, I almost enjoyed it. I really liked walking along the Esplanade, drinking overpriced fresh juices, doing a bit of window shopping and finding so many interesting restaurants that I all want to try while I'm here. (I guess it's one of those neighbourhoods that are quite fun when you're visiting, but probably a pain in the arse if you actually live here. Also, hippies. Damn hippies.) I'm actually quite sad I'll only be here until the end of the week. Compared to last year and New York, my motivation to go out and do things has about tripled, and there's really a lot that I still want to see and explore. Whenever I visit a new place, I try to think about what it must be like living there, and if I actually would – and it doesn't happen often that I can totally see myself living somewhere for a certain period of time. Melbourne is definitely one of those places.
 
     +image("australia-travel-blog/beach.jpg", "From my new photo series titled \"Goths on the beach\"", true)
@@ -46,7 +79,7 @@ header.blog-header
     +image("australia-travel-blog/lunapark.jpg", false, true)
     +image("australia-travel-blog/melbourne.jpg", "The view from the bedroom window", true)
 
-  +post("Country life", "2016-03-21")
++post("Country life", "2016-03-21")
     p On Saturday, we drove out through the country between Rutherglen and Corowa to try and spot some kangaroos. (Unsucessfully, because it was fairly hot and they were hiding.) On our way, we stopped by a farm owned by a family friend, whose great grandfather was part of the Corowa conference that #[a(href="http://www.murrayriver.com.au/about-the-murray/corowa-federation/" target="_blank") started] the Australian Federation, something the town is still proud of today. The farms here are massive and very industrial, but probably still fairly small for Australian standards. A while ago, M. and I ended up talking about #[a(href="https://en.wikipedia.org/wiki/Farmer_Wants_a_Wife" target="_blank") "Farmer Wants a Wife"], a show that exists in both Germany and Australia, and we soon realised that the two adaptations were very, very different. The stereotype of an Australian farmer is a successful entrepreneur running a multi-million dollar high-tech business, making the show a slightly weird version of The Bachelor. The German stereotype however is a guy in his fifties with a complete lack of social skills, living in the middle of nowhere with his mum who has to be subtitled throughout the entire show. Not to mention the general concept of German daytime television that mostly consists of lower class stereotypes being portrayed in the most ridiculous and dehumanizing way possible so that even the biggest loser can watch this and smugly laugh because hey, at least they're not #[em that] bad. But anyway, back to the Australian countryside.
 
     +image("australia-travel-blog/farm.gif", "Driving around the farms", true)
@@ -60,16 +93,10 @@ header.blog-header
     +image("australia-travel-blog/eldorado.jpg", "The remains of the Eldorado dredge", true)
     +image("australia-travel-blog/road.gif", false, true)
 
-    
-
-  +post("Rutherglen & jetlag", "2016-03-18")
++post("Rutherglen & jetlag", "2016-03-18")
     p We left our hotel at around 6:30 in the morning to head back to Sydney airport and catch a domestic flight to Albury. I was pretty tired, which made the whole experience slightly bizarre: a tiny plane with only about 25 people on it and only one flight attendant dressed in a retro uniform who took her job very seriously. An hour later, we arrived in Albury and drove out to Rutherglen, a small rural town between Sydney and Melbourne. "Victoria's Tidiest Town 1996" reads the sign that greets you upon driving into the city and it kinda leaves open more questions than it answers. (Who decides this? What are the criteria? For some reason, I can't stop thinking about #[a(href="http://www.imdb.com/title/tt0425112/" target="_blank") #[em Hot Fuzz]].) Despite being such a small coutryside town, Rutherglen has excellent food offerings, including a gourmet restaurant (where I tried champagne baked oysters and my first wallaby) and an Australian pie shop (where I tried both kangaroo and emu). I spent most of my afternoon sleeping off the jetlag in a cosy bed in a nicely air-conditioned room. Being 10 hours ahead of Berlin is pretty great since I can stay up late and answer emails at night when everyone else just got up and started working. At night we went for a little walk around the fields. The stars were out and it was the clearest I'd ever seen them, up into all the tiny little details. It feels ridiculous saying that, but I've lived in cities all my life so things like seeing more than five stars at a time feel weirdly novel to me. I've always preferred impressive concrete buildings and illuminated skylines over hiking through nature and stargazing. Being in the countryside makes me realise how much of a city person I really am. But I'm also finally at a point in my life where seeing the sun and a blue sky doesn't make me go into cynical rants about how much I hate various aspects of the human existence.
 
     +image("australia-travel-blog/rutherglen.jpg", "The view from my bed", true)
 
-
-  +post("Hello Sydney!", "2016-03-17")
++post("Hello Sydney!", "2016-03-17")
     p It's funny to think that it's been almost exactly a year since I got back from #[a(href=url + "/blog/new-york-travel-blog" target="_blank") New York]. So many things have changed. I'm less worried about the future and for the first time in years, I feel like I can go away and explore new places and be able to #[em actually] enjoy it. So a year later, I'm on an Etihad Airways plane that's taking me from Abu Dhabi to Sydney, Australia. I've been incredibly scared of the 24-hour trip — my motion sickness is quite unpredictable and the idea of being in one place for such a long time, pretty much cut off from the outside world (and most likey without internet) makes me feel slightly uncomfortable. But when I found myself on this massive two-story plane, equipped with a modern entertainment system and a free seat right next to me, I knew that it would be alright. I honestly have no idea how I passed the twelve hours. We arrived in Sydney around 7pm, got through security and customs in no time and took a cab to a nearby pub that rented out cheap rooms upstairs. Even though we had to catch another regional flight early in the morning, we decided to head to the city center and had seafood at Chinatown restaurant that's known to be a go-to place for local chefs after work, since it's open till 4am in the morning. I'm really looking forward to this trip and I'm glad everything just worked out perfectly so far. We'll be spending the first week in Rutherglen where M.'s family lives, then head down to Melbourne and finally back to Sydney on April 1. I'm slightly worried about the heat (especially considering the recent heat wave), but I've come up with a few good coping strategies. Wish me luck!
-
-  .block-center.color
-    !=partial("../_includes/_share-icons", { posturl: getCurrentUrl() })

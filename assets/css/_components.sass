@@ -1,0 +1,152 @@
+//  Components
+// =============================================================================
+
+// Paragraphs
+
+p
+    @extend .block, .text
+
+    a
+        @extend .link
+
+
+// Links
+
+.link:not(.button)
+    border-bottom: 2px solid
+    transition: padding 0.1s ease-out
+
+    &:hover
+        padding-bottom: 1px
+
+
+// Buttons
+
+.button
+    @extend .text-label
+    background: $color-text
+    color: $color-bg
+    display: inline-block
+    padding: 15px 20px
+
+
+
+// Code
+
+code
+    @extend .text-code
+    text-shadow: 1px 1px 0 $color-bg
+
+.code-block
+    @extend .block
+    background: $color-grey
+    margin-top: 15px
+    overflow: auto
+    padding: 40px 30px
+
+    @media (min-width: #{$breakpoint-m})
+        &:hover,
+        .codepen:hover
+            width: 125%
+
+.block code
+  background: $color-grey
+  display: inline-block
+  padding: 0 5px
+
+
+// Dividers
+
+.divider
+    border-color: $color-text
+    border-style: solid
+    border-width: 8px 0 0 0
+    margin: 75px 0
+    width: 20%
+
+
+// Embeds
+
+.embed
+    @extend .block
+
+.video
+    @extend .block
+    position: relative
+    height: 0
+
+    @each $ratio1, $ratio2 in (16, 9), (4, 3)
+        &--#{$ratio1}x#{$ratio2}
+            padding-bottom: (100% * $ratio2 / $ratio1)
+
+    iframe
+        @include position(absolute, top, left, 0, 0)
+        @include size(100%)
+
+
+// Images
+
+.image-inline
+    @extend .block
+
+.image-inline-caption
+    @extend .text-meta
+    margin-top: 10px
+
+
+// Quotes
+
+.blockquote
+    @extend .block
+
+.blockquote-body
+    font-size: 2.6rem
+    font-style: italic
+    margin-bottom: 20px
+
+    a
+        @extend .link
+
+.blockquote-footer
+    @extend .text-meta
+    font-weight: bold
+    text-transform: uppercase
+
+
+// Lists
+
+.list
+    @extend .block, .text
+
+    &--numbered
+        counter-reset: li
+
+        .list-item
+            position: relative
+
+            &:before
+                @include position(absolute, top, left, auto, -35px)
+                content: counter(li) '.'
+                counter-increment: li
+                font: normal bold 2.4rem/#{1} $font-secondary
+                width: 25px
+
+    &--unnumbered
+        list-style-type: square
+
+    &--footnotes
+        @extend .text-meta
+
+        &:before
+            @extend .divider
+            content: ''
+            display: block
+
+.list-item
+    margin: 0 0 20px 35px
+
+    a
+        @extend .link
+
+.list-inline > *
+    margin: 0 15px

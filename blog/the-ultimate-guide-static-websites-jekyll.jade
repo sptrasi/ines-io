@@ -22,24 +22,24 @@ p WordPress and similar blogging software got us very used to just accepting wha
 
 p It's actually pretty inspiring and fun to start this whole process all over again from scratch and ask youself the most basic questions:
 
-ul
-    li What information do I want to store with each blog post?
-    li How do I want to use and display those pieces of information?
-    li What settings or logic do I want to implement?
-    li How do I want to organise my files?
++list
+    +item What information do I want to store with each blog post?
+    +item How do I want to use and display those pieces of information?
+    +item What settings or logic do I want to implement?
+    +item How do I want to organise my files?
 
 
 p For example, here's what it says at the top of this blog post:
 
 +code("yaml").
-  title: "The ultimate guide to static websites with Jekyll"
-  subhead: "Going static for beginners – with free template!"
-  categories: [ 'web', 'code', 'tutorial' ]
-  layout: post
+    title: "The ultimate guide to static websites with Jekyll"
+    subhead: "Going static for beginners – with free template!"
+    categories: [ 'web', 'code', 'tutorial' ]
+    layout: post
 
-  image: "jekyll.jpg"
-  color: "#CD1E23"
-  highlight_code: true
+    image: "jekyll.jpg"
+    color: "#CD1E23"
+    highlight_code: true
 
 p For each blog post, I set the layout to #[code post] so it uses my blog post template. I also store a title and a subhead, a list of categories, the name of the title image, a custom colour and a bunch of other random settings. For example, if I set #[code highlight_code] to #[code true], it includes the syntax highlighter and displays all code highlighted. There's also #[code readmore] which automatically displays a "Read more" button at the bottom of a blog post linking to whichever URL I add. Sure, there might be best practices, but yes, you can totally come up with all of those things yourself!
 
@@ -47,22 +47,22 @@ h2 The Setup
 
 p If you're familiar with the command line and/or already have Ruby (and Ruby Gems) installed, simply skip this part and go ahead and install the #[a(href="https://jekyllrb.com/docs/installation/#install-with-rubygems" target="_blank") Jekyll Gem]. If not, don't worry, it's easy. The idea of building your blog and doing this in the Terminal might seem weird at first, but you'll mostly be using one simple command only.
 
-ol
-    li #[strong Install version 2.0 of the programming language #[a(href="https://www.ruby-lang.org" target="_blank") Ruby].] If you use OSX Mavericks or a newer version, it should already be there. To check, type in #[code ruby -v]. Otherwise, there are plenty of #[a(href="https://www.ruby-lang.org/en/documentation/installation/" target="_blank") tools] to help you install it. If you're on a Mac, make sure that you also have the #[a(href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/" target="_blank") Xcode Command Line Tools] installed.
-    li #[strong Install the #[a(href="https://jekyllrb.com/docs/installation/#install-with-rubygems" target="_blank") Jekyll Gem].] Ruby comes with RubyGems, a package manager that lets you install plugins and libraries easily. To install, type in #[code gem install jekyll]. If you get an error saying you don't have the right permissions, use #[code sudo gem install jekyll] and type in your admin password. That's it!
++list('numbers')
+    +item #[strong Install version 2.0 of the programming language #[a(href="https://www.ruby-lang.org" target="_blank") Ruby].] If you use OSX Mavericks or a newer version, it should already be there. To check, type in #[code ruby -v]. Otherwise, there are plenty of #[a(href="https://www.ruby-lang.org/en/documentation/installation/" target="_blank") tools] to help you install it. If you're on a Mac, make sure that you also have the #[a(href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/" target="_blank") Xcode Command Line Tools] installed.
+    +item #[strong Install the #[a(href="https://jekyllrb.com/docs/installation/#install-with-rubygems" target="_blank") Jekyll Gem].] Ruby comes with RubyGems, a package manager that lets you install plugins and libraries easily. To install, type in #[code gem install jekyll]. If you get an error saying you don't have the right permissions, use #[code sudo gem install jekyll] and type in your admin password. That's it!
 
 
 h2 How It Works
 
 p To get a feeling for the file structure, it's important to understand how Jekyll works: Every time you run #[code jekyll build] in your website folder, it goes through all the files and folders and compiles your website into #[code _site]. You end up with all your source files and a perfect, ready-to-upload static copy of your website in your #[code _site] folder.
 
-ul
-    li #[strong Posts in the #[code _posts] folder] all need to have names like #[code 2015-11-01-your-post-title.html] (or #[code .md] if you prefer to write in Markdown)
-    li #[strong Files and folders #[em without] an underscore (_)] are simply copied over – this is great for images, fonts, stylsheets and scripts
-    li #[strong Drafts in the #[code _drafts] folder] are not compiled by default, but you can optionally preview/build your site with drafts
-    li #[strong Pages] can be saved as files in your main folder (for example, #[code about.html]) or as an index in their own folder (for example, #[code about/index.html])
-    li #[strong #[code .sass], #[code .scss] and #[code .coffee] files] are compiled automatically in the same location
-    li #[strong Settings and all basic configuration], like the page title, the site URL, the permalink structure or the time zone, live in a file called #[code _config.yml]
++list
+    +item #[strong Posts in the #[code _posts] folder] all need to have names like #[code 2015-11-01-your-post-title.html] (or #[code .md] if you prefer to write in Markdown)
+    +item #[strong Files and folders #[em without] an underscore (_)] are simply copied over – this is great for images, fonts, stylsheets and scripts
+    +item #[strong Drafts in the #[code _drafts] folder] are not compiled by default, but you can optionally preview/build your site with drafts
+    +item #[strong Pages] can be saved as files in your main folder (for example, #[code about.html]) or as an index in their own folder (for example, #[code about/index.html])
+    +item #[strong #[code .sass], #[code .scss] and #[code .coffee] files] are compiled automatically in the same location
+    +item #[strong Settings and all basic configuration], like the page title, the site URL, the permalink structure or the time zone, live in a file called #[code _config.yml]
 
 
 h3 Example structure
@@ -70,84 +70,80 @@ h3 Example structure
 p Here's an example very similar to the structure of this blog, #[a(href=url target="_blank") ines.io]:
 
 +code.
-  ├── _config.yml
-  ├── _drafts
-  |   └── this-is-a-draft-post.html
-  ├── _includes
-  |   ├── footer.html
-  |   ├── head.html
-  |   ├── header.html
-  |   └── share-buttons.html
-  ├── _layouts
-  |   ├── default.html
-  |   ├── page.html
-  |   └── post.html
-  ├── _plugins
-  |   └── rssgenerator.rb
-  ├── _posts
-  |   ├── 2015-11-01-this-is-a-blog-post.html
-  |   └── 2015-11-02-this-is-another-blog-post.html
-  ├── _site
-  ├── assets
-  |   ├── css
-  |   ├── fonts
-  |   ├── img
-  |   └── js
-  ├── about.html
-  └── index.html
+    ├── _config.yml
+    ├── _drafts
+    |   └── this-is-a-draft-post.html
+    ├── _includes
+    |   ├── footer.html
+    |   ├── head.html
+    |   ├── header.html
+    |   └── share-buttons.html
+    ├── _layouts
+    |   ├── default.html
+    |   ├── page.html
+    |   └── post.html
+    ├── _plugins
+    |   └── rssgenerator.rb
+    ├── _posts
+    |   ├── 2015-11-01-this-is-a-blog-post.html
+    |   └── 2015-11-02-this-is-another-blog-post.html
+    ├── _site
+    ├── assets
+    |   ├── css
+    |   ├── fonts
+    |   ├── img
+    |   └── js
+    ├── about.html
+    └── index.html
 
 h2 Creating Your Own Template
 
 p The #[a(href="https://github.com/jekyll/jekyll/wiki/Sites" target="_blank") Jekyll Wiki] provides a #[em very] long list of websites using Jekyll to get inspired (all open source, of course!) but ultimately, it's up to you how you decide to structure your site – which can be #[em super] overwhemlming.
 
-p To get you started, I've put together a basic skeleton template for a personal blog. It includes all the required files, a nice and clean structure, examples for all the cool stuff you can do (layouts, includes, custom logic) and descriptions here and there to help you understand what all those files are about. I only added the most basic formatting so the rest is up to you. You can check it out on #[a(href="https://github.com/" + profiles.github + "/pretty-jekyll-skeleton" target="_blank") GitHub] or download a zipped version of it here:
+p To get you started, I've put together a basic skeleton template for a personal blog. It includes all the required files, a nice and clean structure, examples for all the cool stuff you can do (layouts, includes, custom logic) and descriptions here and there to help you understand what all those files are about. I only added the most basic formatting so the rest is up to you.
 
-p: +button(href="https://github.com/" + profiles.github + "/pretty-jekyll-skeleton/archive/master.zip") Download Skeleton Theme
++image("jekyll_skeleton.jpg")
 
-h3 The first test run
+p.block-center
+    +button(href="https://github.com/" + profiles.github + "/pretty-jekyll-skeleton/" target="_blank") View Skeleton Theme on GitHub
 
-
-p This template is already complete and ready to test. To give it a try, open the Terminal, navigate to your website folder (#[code cd websites/my-cool-website]), then run #[code jekyll serve]. Wait for it to complete and check out the #[code _site] folder. Jekyll simulates a local server to preview your site at #[code http:&#47;&#47;localhost:4000]. If everthing worked out, you'll see this:
-
-+image("jekyll_skeleton.jpg", false, true)
-
-p To stop the server, press CTRL + C.
+p This template is already complete and ready to test. To give it a try, open the Terminal, navigate to your website folder (#[code cd websites/my-cool-website]), then run #[code jekyll serve]. Wait for it to complete and check out the #[code _site] folder. Jekyll simulates a local server to preview your site at #[code http:&#47;&#47;localhost:4000]. To stop the server, press CTRL + C.
 
 h3 The configuration
 
 p The #[code _config.yml] file contains all global information about your site. Here's an example from my skeleton theme:
 
 +code("yaml").
-  name: My Blog
-  description: This is my blog where I post stuff
-  author: Me
-  permalink: /blog/:title
-  timezone: Europe/Berlin
+      name: My Blog
+      description: This is my blog where I post stuff
+      author: Me
+      permalink: /blog/:title
+      timezone: Europe/Berlin
 
-  email: me@domain.com
-  twitter: mytwitteraccount
+      email: me@domain.com
+      twitter: mytwitteraccount
 
-  # This is the default that's used to preview.
-  # Change this to your website's URL when you publish your site.
-  url: http://localhost:4000
+      # This is the default that's used to preview.
+      # Change this to your website's URL when you publish your site.
+      url: http://localhost:4000
 
 p The #[code url] is set to your localhost, the location Jekyll uses to preview your site. Once you're done and the site is ready to go live, you can replace it with your domain and build your site.
 
 p The permalink setting will create links like #[code domain.com/blog/this-is-a-post]. All global variables above can be used in our theme. Writing #[code &#123;&#123;site.name&#125;&#125;] for example will return "My Blog" anywhere in our templates. If you want to display a link to your Twitter account somewhere, you could do this:
 
 +code.
-  &lt;a href="https:&#47;&#47;twitter.com/&#123;&#123;site.twitter&#125;&#125;"&gt;Follow me on Twitter!&lt;/a&gt;
+      &lt;a href="https:&#47;&#47;twitter.com/&#123;&#123;site.twitter&#125;&#125;"&gt;Follow me on Twitter!&lt;/a&gt;
 
 h3 The templating language
 
 p Jekyll uses the templating engine #[a(href="http://liquidmarkup.org/" target="_blank") Liquid] which comes with easy to write and easy to read template tags. No more messy PHP or template tags you don't actually understand. Let's look at the file #[code post.html] in the #[code _layouts] folder. It contains the basic template for a blog post:
 
 +code.
-  ---
-  layout: default
-  ---
+    ---
+    layout: default
+    ---
 
-  &lt;article class="single"&gt;
+    &lt;article class="single"&gt;
     &lt;header&gt;
         &lt;h2&gt;&#123;&#123;page.title&#125;&#125;&lt;/h2&gt;
 
@@ -173,7 +169,7 @@ p Jekyll uses the templating engine #[a(href="http://liquidmarkup.org/" target="
 
       &#123;% include share-buttons.html %&#125;
     &lt;/div&gt;
-  &lt;/article&gt;
+    &lt;/article&gt;
 
 p The Front Matter block at the beginning tells Jekyll to use our default page template #[code default.html] in the same folder for the page and insert everything in this file as the content. It inserts the page title as a headline and – only if it exists – the subhead. It also inserts the author name and formats the date as "December 14, 2015" (for more options, check out #[a(href="http://alanwsmith.com/jekyll-liquid-date-formatting-examples" target="_blank") this blog post]). Once you build the site, all the main blog content will be inserted in place of #[code &#123;&#123;content&#125;&#125;].
 
@@ -184,8 +180,8 @@ h3 The loop
 p Here's an excerpt from our #[code index.html] that contains a loop to display all posts:
 
 +code.
-  &#123;% for post in site.posts %&#125;
-  &lt;article&gt;
+    &#123;% for post in site.posts %&#125;
+    &lt;article&gt;
       
       &#123;% if post.image %&#125;
       &lt;div class="image"&gt;
@@ -201,8 +197,8 @@ p Here's an excerpt from our #[code index.html] that contains a loop to display 
         &#123;&#123;post.excerpt | strip_html | strip_newlines&#125;&#125;
       &lt;/div&gt;
 
-  &lt;/article&gt;
-  &#123;% endfor %&#125;
+    &lt;/article&gt;
+    &#123;% endfor %&#125;
 
 p #[code &#123;&#123;post.excerpt | strip_html | strip_newlines&#125;&#125;] displays an excerpt from the post and adds two #[a(href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#advanced-output-filters" target="_blank") filters]: it removes all HTML and all new lines to make sure the excerpt only contains text.
 
@@ -212,13 +208,12 @@ p To build your site, navigate to your website folder (#[code cd websites/my-coo
 
 h3 The most important commands
 
-ul
-  li #[code jekyll build]
-  li #[code jekyll build --drafts] — include drafts
-  li #[code jekyll build --watch] — automatically rebuild if there are changes
-  li #[code jekyll build --safe] — disable custom plugins
-  li #[code jekyll serve] — creates a preview of the site at #[code http:&#47;&#47;localhost:4000/]
-
++list
+    +item #[code jekyll build]
+    +item #[code jekyll build --drafts] — include drafts
+    +item #[code jekyll build --watch] — automatically rebuild if there are changes
+    +item #[code jekyll build --safe] — disable custom plugins
+    +item #[code jekyll serve] — creates a preview of the site at #[code http:&#47;&#47;localhost:4000/]
 
 +image("jekyll_terminal.jpg", false, true)
 
@@ -232,11 +227,10 @@ h2 Plugins
 
 p Before going static, I was worried about all the seemingly "dynamic" elements of my blog, like my RSS feed. But of course, that was kinda stupid. Every time my site is updated and rebuilt, it also rebuilds my RSS feed, making sure it stays "dynamic". There are a bunch of #[a(href="https://jekyllrb.com/docs/plugins/#available-plugins" target="_blank") additional plugins] and third-party services you can use (sparingly) too add custom functionality. Here are some of my favourites:
 
-ul
-  li #[a(href="https://github.com/agelber/jekyll-rss" target="_blank") RSS Feed Generator] — probably the easiest way to add a simple RSS feed to your site
-  li #[a(href="https://github.com/stereobooster/jekyll-press" target="_blank") Jekyll Press] — automatically minifies HTML, JavaScript and CSS files
-  li #[a(href="https://disqus.com/admin/signup/" target="_blank") Disqus] – adds a modern comment system to any site (click #[a(href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions" target="_blank") here] for a Jekyll tutorial)
-
++list
+    +item #[a(href="https://github.com/agelber/jekyll-rss" target="_blank") RSS Feed Generator] — probably the easiest way to add a simple RSS feed to your site
+    +item #[a(href="https://github.com/stereobooster/jekyll-press" target="_blank") Jekyll Press] — automatically minifies HTML, JavaScript and CSS files
+    +item #[a(href="https://disqus.com/admin/signup/" target="_blank") Disqus] – adds a modern comment system to any site (click #[a(href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions" target="_blank") here] for a Jekyll tutorial)
 
 p When it comes to plugins, an important question to ask yourself is: Do I actually want this and if so, does it make sense to install a plugin for it? WordPress comes with an enormous range of built-in functionalities and an almost ridiculous amount of random easy to install plugins on top of that, including #[em a lot] of useless and badly developed stuff. This has resulted in people running simple blogs with 50+ plugins and completely losing touch with their CMS.
 
@@ -251,10 +245,10 @@ h3 Pretty URLs for pages and RSS feeds
 p If you only have very few pages, it might seem annoying to save them as the #[code index.html] of their own folder, just so you can use #[code domain.com/about]. To automatically rewrite the URLs, add this to your #[code .htaccess] file on your server (or create one – go #[a(href="http://code.tutsplus.com/tutorials/the-ultimate-guide-to-htaccess-files--net-4757" target="_blank") here] for more info and tips):
 
 +code("apacheconf").
-  &lt;IfModule mod_rewrite.c&gt;
-  RewriteRule ^feed$ feed.xml [L]
-  RewriteRule ^about$ about.html [L]
-  &lt;/IfModule&gt;
+    &lt;IfModule mod_rewrite.c&gt;
+    RewriteRule ^feed$ feed.xml [L]
+    RewriteRule ^about$ about.html [L]
+    &lt;/IfModule&gt;
 
 p Each request to #[code domain.com/about] will now automatically show the file #[code about.html]. By the way, this is also very similar to how WordPress or your old CMS did it!
 
@@ -263,13 +257,13 @@ h3 Dynamic page titles
 p Sometimes you want to display a different page title, depending on whether you're on the home page or a blog post or page. Simply add this to your site's #[code &lt;head&gt;], in my skeleton theme, this is in the #[code header.html]:
 
 +code.
-  &lt;title&gt;
+    &lt;title&gt;
     &#123;% if page.title %&#125;
       &#123;&#123; page.title &#125;&#125; | &#123;&#123;site.name&#125;&#125;
     &#123;% else %&#125;
       &#123;&#123; site.name &#125;&#125;
     &#123;% endif %&#125;
-  &lt;/title&gt;
+    &lt;/title&gt;
 
 p In human language, here's what it says: If a #[code page.title] exists (which must mean that we're one a blog post or page), display it followed by the title of the site. For example: "This is a blog post | My Blog". Otherwise, just displays the #[code site.title]. For example: "My Blog".
 
@@ -278,14 +272,14 @@ h3 Style posts differently based on category
 p To add tags or categories to your posts, simply add a list of them to the Front Matter block at the top of your post:
 
 +code("yaml").
-  categories: [ 'web', 'code', 'tutorial' ]
+    categories: [ 'web', 'code', 'tutorial' ]
 
 p To add classes named #[code category-web], #[code category-code] and #[code category-tutorial] to the post, you can simply do this within your loop in the #[code index.html]:
 
 +code.
-  &lt;article class="&#123;% for category in post.categories %&#125;category-&#123;&#123;category&#125;&#125; &#123;% endfor %&#125;"&gt;
-  &lt;!-- your post stuff goes here --&gt;
-  &lt;/article&gt;
+    &lt;article class="&#123;% for category in post.categories %&#125;category-&#123;&#123;category&#125;&#125; &#123;% endfor %&#125;"&gt;
+    &lt;!-- your post stuff goes here --&gt;
+    &lt;/article&gt;
 
 p This goes through every category that's assigned to the post, and adds a class named #[code category-name] for each one. In your CSS you could then do something like #[code .category-web { background: blue; }].
 
@@ -297,16 +291,16 @@ p Once you like the look and feel of your site and decide to publish it, you wil
 p A simple trick to solve this problem is to use two different config files. Here's the command I use to preview and test my site:
 
 +code("bash").
-  jekyll serve --config _config_local.yml --drafts --safe
+    jekyll serve --config _config_local.yml --drafts --safe
 
 p The #[code _config_local.yml] file uses the local paths. When I run #[code jekyll build], it uses the default #[code _config.yml] with my domain set as the URL. This system also makes it possible to add other settings and variables to your local preview version.
 
 p For example, you could add #[code preview: true] to your local config file to easily preview and test new parts of your theme locally. If you build the site using the regular config file, those parts won't even be rendered and created. You can do this by using template logic:
 
 +code.
-  &#123;% if site.preview %&#125;
+    &#123;% if site.preview %&#125;
       stuff that's only displayed when the site is previewed locally using _config_local.yml
-  &#123;% endif %&#125;]
+    &#123;% endif %&#125;]
 
 h3 Combine commands and create your own
 
@@ -317,23 +311,23 @@ p The perfect example: Before building and uploading my site, I want to check th
 p You don't want to end up with 10 different commands you have to remember and type in to publish your blog so we're simply gonna create our own. This, once again, is surprisingly easy. All you have to do is create a text file, name it something like #[code publish-blog] (no file extension necessary) and add your list of commands:
 
 +code("bash").
-  #!/bin/bash
-  imageoptim --directory assets/img
-  jekyll build
+    #!/bin/bash
+    imageoptim --directory assets/img
+    jekyll build
 
 p This runs #[a(href="https://imageoptim.com" target="_blank") ImageOptim] in our image folder and then builds the site. If you're on a Mac, place the file in the #[code /usr/local/bin] folder (you can easily get there by clicking "Go to" in the Finder and "Go to folder..."). To turn it into a command, we just need to change the file permissions and make it executable using this command:
 
 +code("bash").
-  chmod +x /usr/local/bin/publish-blog
+    chmod +x /usr/local/bin/publish-blog
 
 p Now all you have to do is type #[code publish-blog] into the command line!
 
 h2 Helpful Links &amp; Resources
 
-ul
-  li #[a(href="https://jekyllrb.com/docs/home/" target="_blank") The official Jekyll Docs] for even more details and in-depth explanations
-  li #[a(href="https://github.com/" + profiles.github + "/pretty-jekyll-skeleton" target="_blank") My very simple skeleton template] for a personal blog to get you started and help create your first custom blog design
-  li #[a(href="https://github.com/barryclark/jekyll-now" target="_blank") Jekyll Now] helps you set up Jekyll with GitHub Pages in only a few minutes – without touching the command line
-  li #[a(href="http://ricostacruz.com/cheatsheets/jekyll.html" target="_blank") Jekyll Cheatsheet] is a nice and clean list of the most important formatting rules
-  li #[a(href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers" target="_blank") Liquid for Designers] explains the templating language Liquid (which is used in Jekyll templates) and all its possibilities in detail
-  li #[a(href="https://www.staticgen.com/" target="_blank") StaticGen] lists over 100 static website generator and a lot of interesting alternatives
++list
+    +item #[a(href="https://jekyllrb.com/docs/home/" target="_blank") The official Jekyll Docs] for even more details and in-depth explanations
+    +item #[a(href="https://github.com/" + profiles.github + "/pretty-jekyll-skeleton" target="_blank") My very simple skeleton template] for a personal blog to get you started and help create your first custom blog design
+    +item #[a(href="https://github.com/barryclark/jekyll-now" target="_blank") Jekyll Now] helps you set up Jekyll with GitHub Pages in only a few minutes – without touching the command line
+    +item #[a(href="http://ricostacruz.com/cheatsheets/jekyll.html" target="_blank") Jekyll Cheatsheet] is a nice and clean list of the most important formatting rules
+    +item #[a(href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers" target="_blank") Liquid for Designers] explains the templating language Liquid (which is used in Jekyll templates) and all its possibilities in detail
+    +item #[a(href="https://www.staticgen.com/" target="_blank") StaticGen] lists over 100 static website generator and a lot of interesting alternatives

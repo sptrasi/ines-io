@@ -1,83 +1,143 @@
 include _includes/_mixins
 
-- var root = getRoot()
-- var meta_title_page = getMetaTitle()
-- var meta_title_social = getMetaTitle(true)
-- var meta_image = url + getMetaImage()
-
-//- ----------------------------------------------------------------------------
-//-  Global layout
-//- ----------------------------------------------------------------------------
+//-  Layout
+//- ============================================================================
 
 doctype html
 html(lang="en")
-  head
-    title!=meta_title_page
 
-    meta(http-equiv="content-type" content="text/html; charset=utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel="shortcut icon" href=root + "assets/img/favicon.ico")
-    link(rel="alternate" type="application/rss+xml" title="RSS" href=root + "feed")
-    link(rel="stylesheet" href=root + "assets/css/style.css?v" + version)
+    head
+        title=getMetaTitle()
 
-    if stylesheet
-      link(rel="stylesheet" href=root + stylesheet)
+        meta(http-equiv="content-type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
-    meta(property="og:type" content="website")
-    meta(property="og:site_name" content=site)
-    meta(property="og:url" content=getCurrentUrl())
-    meta(property="og:title" content=meta_title_social)
-    meta(property="og:description" content=description)
-    meta(property="og:image" content=meta_image)
+        link(rel="shortcut icon" href="/assets/img/favicon.ico")
+        link(rel="alternate" type="application/rss+xml" title="RSS" href="/feed")
+        link(rel="stylesheet" href="/assets/css/style.css?v" + version)
 
-    meta(name="twitter:card" content="summary_large_image")
-    meta(name="twitter:site" content="@" + profiles.twitter)
-    meta(name="twitter:title" content=meta_title_social)
-    meta(name="twitter:description" content=description)
-    meta(name="twitter:image" content=meta_image)
+        //- Social Media Meta
 
-    if color
-      style .color, .color:before, .color:after { color: #{color}; border-color: #{color} }
+        meta(property="og:type" content="website")
+        meta(property="og:site_name" content=site)
+        meta(property="og:url" content=getCurrentUrl())
+        meta(property="og:title" content=getMetaTitle(true))
+        meta(property="og:description" content=description)
+        meta(property="og:image" content=url + getMetaImage())
 
-  body
-
-    header
-      nav.nav#nav
-        button.nav-icon#nav-icon: span
-
-        ul.nav-list
-          each slug, item in navigation
-            li.nav-list-item: a(href=(root + slug) || "/")=item
+        meta(name="twitter:card" content="summary_large_image")
+        meta(name="twitter:site" content="@" + profiles.twitter)
+        meta(name="twitter:title" content=getMetaTitle(true))
+        meta(name="twitter:description" content=description)
+        meta(name="twitter:image" content=url + getMetaImage())
 
 
-    main(class=(current.path[0] == 'index') ? 'home' : '')
-      if current.path[0] == 'index'
-        !=yield
+    body
+        main(role="main" class=(current.path[0] == 'index') ? 'home' : '')
+        
+            if current.path[0] == 'index'
+            
+                //- Homepage
+                
+                header.header(role="banner")
+                    a.header-item(href="/about") About me
+                    .header-item #[+logo]
+                    a.header-item(href="https://twitter.com/" + profiles.twitter target="_blank") Twitter
+            
+                !=yield
 
-      else if current.path[0] == 'blog'
-        !=partial("_includes/_post")
+            else
+            
+                //- Blogs / Pages
+                
+                article.article(role="article")
+                
+                    //- Art-directed posts
+                    
+                    if artdirected
+                        !=yield
 
-      else
-        !=partial("_includes/_page")
+                    else
+                        
+                        //- Article header
 
+                        header.article-header
+                            a(href="/")
+                                +logo(125)
+                        
+                            h1.article-headline=headline
+                            
+                            if date
+                                .article-meta
+                                    if category
+                                        span.article-meta-category=category
+                            
+                                    span.article-meta-date 
+                                        +date(date)
+                                    
+                                    span.article-meta-share
+                                        !=partial("_includes/_share-icons", { posturl: getCurrentUrl() })
+                        
+                        if image && image.display != false
+                        
+                            //- Hero Image
+                            
+                            .article-hero(class="article-hero--" + ((wide) ? 'wide' : 'narrow') style="background-image: url(" + ((current.path[0] == 'blog') ? '/blog/img/' : '/assets/img/') + image.file + ")")
+                                
+                                if image.credit_text
+                                    .article-hero-credit
+                                
+                                        if image.credit_url
+                                            a(href=image.credit_url target="_blank")=image.credit_text
+                                            
+                                        else
+                                            !=image.credit_text
 
-    footer.caption &copy; 2015-#{new Date().getFullYear()} #{site}
-      each slug, item in footer_links
-        |  | #[a(href=root + slug)=item]
+                        //- Article content
 
+                        .article-content(class=(image && image.display == false) ? 'article-content--full' : '')
+                            !=yield
 
-    script(src=root + "assets/js/main.js?v" + version async)
+                            if meta
+                                p.article-meta=meta
 
-    if highlight_code
-      script(src=root + "assets/js/prism.js")
+                            if readmore
+                                p
+                                    +button(href=readmore target="_blank") Read more
+                
+                    //- Article footer        
 
-    if codepen_embed
-      script(src="https://assets.codepen.io/assets/embed/ei.js" async)
+                    footer.article-footer
+                        h2.article-footer-headline Latest Posts
 
-    if environment == 'production'
-      script.
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', #{google_analytics}, 'auto'); ga('send', 'pageview');
+                        !=partial("_includes/_latest-posts", { posts: 3 })
+
+            //- Footer
+
+            footer.footer
+                .footer-list
+                    span.footer-item &copy; 2015-#{new Date().getFullYear()} 
+                    a.footer-item(href="/") #{site.toUpperCase()}
+                    a.footer-item(href="/about") About me
+                    a.footer-item(href="/impressum") Impressum &amp; Datenschutz
+                    a.footer-item(href="https://github.com/" + profiles.github + "/ines-io" target="_blank") Source
+                    a.footer-item(href="/feed" target="_blank" aria-label="RSS")
+                        +icon("feed", 14)
+                    
+                !=partial("_includes/_social-icons")
+
+        //- Scripts
+
+        if highlight_code
+            script(src="/assets/js/prism.js")
+
+        if codepen_embed
+            script(src="https://assets.codepen.io/assets/embed/ei.js" async)
+
+        if environment == 'production'
+            script.
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', #{google_analytics}, 'auto'); ga('send', 'pageview');

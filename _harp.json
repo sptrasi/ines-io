@@ -1,32 +1,21 @@
 {
-  "globals": {
-    "version": "2.2",
-    "title": "ines.io",
-    "site": "ines.io",
-    "url": "https://ines.io",
-    "description": "Hello, I'm Ines. I'm a freelance web developer, marketing consultant and digital strategist based in Berlin.",
-    "google_analytics": "'UA-65631754-1'",
-    "excerpt_length": 160,
+    "globals": {
+        "version": "3",
+        "title": "ines.io",
+        "site": "ines.io",
+        "url": "https://ines.io",
+        "description": "Hi, I'm Ines. I'm a web developer and marketing strategist from Germany.",
+        "google_analytics": "'UA-65631754-1'",
 
-    "author": "Ines Montani",
-    "email": "ines@ines.io",
-    "profiles": {
-      "twitter": "_inesmontani",
-      "instagram": "ines.montani",
-      "linkedin": "inesmontani",
-      "github": "inesmontani",
-      "codepen": "inesmontani",
-      "medium": "inesmontani"
-    },
-
-    "navigation": {
-      "Home": "",
-      "About": "about"
-    },
-
-    "footer_links": {
-      "Impressum & Datenschutz": "impressum",
-      "RSS": "feed"
+        "author": "Ines Montani",
+        "email": "ines@ines.io",
+        "profiles": {
+            "twitter": "_inesmontani",
+            "instagram": "ines.montani",
+            "linkedin": "inesmontani",
+            "github": "inesmontani",
+            "codepen": "inesmontani",
+            "medium": "inesmontani"
+        }
     }
-  }
 }

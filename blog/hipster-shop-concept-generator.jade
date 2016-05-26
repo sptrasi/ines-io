@@ -2,22 +2,21 @@ p Berlin is full of concept stores selling the weirdest combinations of random p
 
 style @import url(https://fonts.googleapis.com/css?family=Rye)
 
-.block.block-center
+p(style="text-align: center")
+    img(src="img/shopconcept_logo.png")
 
-  img(src="img/shopconcept_logo.png")
+    span#generator-concepts(style="display: block; font: 36px 'Rye', Georgia, 'Times New Roman', serif; text-transform: capitalize; text-align: center; padding: 1em 15%")
 
-  #generator-concepts(style="font: 36px 'Rye', Georgia, 'Times New Roman', serif; text-transform: capitalize; text-align: center; padding: 1em 15%")
-
-  button(onclick="generateConcept()" style="width: 330px; height: 60px; background: url(img/shopconcept_button.png) top left no-repeat; text-indent: -9999px; cursor: pointer") Another one
+    button(onclick="generateConcept()" style="width: 330px; height: 60px; background: url(img/shopconcept_button.png) top left no-repeat; text-indent: -9999px; cursor: pointer") Another one
 
 script.
-  var container = document.getElementById('generator-concepts');
+    var container = document.getElementById('generator-concepts');
 
-  var nationalities = [ 'German', 'British', 'American', 'Japanese', 'French', 'Turkish', 'Australian', 'Korean', 'Arabic', 'Malaysian', 'African', 'Egyptian', 'Portuguese', 'Spanish', 'Mexican', 'Russian', 'Polish', 'Swedish', 'Finnish', 'Norwegian', 'Danish', 'Estonian', 'Croatian', 'Irish', 'Scottish', 'Italian', 'Slowenian', 'Dutch', 'Belgian', 'Lithuanian', 'Greek', 'Chinese', 'South African', 'Peruvian', 'Brazilian', 'Indonesian', 'Chilean' ];
+    var nationalities = [ 'German', 'British', 'American', 'Japanese', 'French', 'Turkish', 'Australian', 'Korean', 'Arabic', 'Malaysian', 'African', 'Egyptian', 'Portuguese', 'Spanish', 'Mexican', 'Russian', 'Polish', 'Swedish', 'Finnish', 'Norwegian', 'Danish', 'Estonian', 'Croatian', 'Irish', 'Scottish', 'Italian', 'Slowenian', 'Dutch', 'Belgian', 'Lithuanian', 'Greek', 'Chinese', 'South African', 'Peruvian', 'Brazilian', 'Indonesian', 'Chilean' ];
 
-  var objects = [ 'stationery', 'vodka', 'tofu', 'burgers', 'toys', 'garden gnomes', 'wine', 'pastries', 'sausages', 'hot dogs', 'dumplings', 'cutlery', 'plates', 'pet food', 'books', 'magazines', 'decoration', 'cosmetics', 'makeup', 'whiskey', 'shoes', 'hats', 'fashion', 'perfume', 'tea', 'coffee', 'gin', 'rum', 'knitwear', 'swimwear', 'jewellery', 'graphic novels', 'newspapers', 'cigars', 'records', 'wallpaper', 'furniture', 'cheese', 'plants', 'bikes', 'hot sauce', 'cocktails', 'stew', 'fast food', 'sunglasses', 'oils', 'art prints' ];
+    var objects = [ 'stationery', 'vodka', 'tofu', 'burgers', 'toys', 'garden gnomes', 'wine', 'pastries', 'sausages', 'hot dogs', 'dumplings', 'cutlery', 'plates', 'pet food', 'books', 'magazines', 'decoration', 'cosmetics', 'makeup', 'whiskey', 'shoes', 'hats', 'fashion', 'perfume', 'tea', 'coffee', 'gin', 'rum', 'knitwear', 'swimwear', 'jewellery', 'graphic novels', 'newspapers', 'cigars', 'records', 'wallpaper', 'furniture', 'cheese', 'plants', 'bikes', 'hot sauce', 'cocktails', 'stew', 'fast food', 'sunglasses', 'oils', 'art prints' ];
 
-  function generateConcept() {
+    function generateConcept() {
     var nationality1 = nationalities[Math.floor(Math.random() * nationalities.length)];
     var nationality2 = nationalities[Math.floor(Math.random() * nationalities.length)];
     var object1 = objects[Math.floor(Math.random() * objects.length)];
@@ -32,6 +31,6 @@ script.
     }
 
     container.innerHTML = nationality1 + ' ' + object1 + ' &amp; ' + nationality2 + ' ' + object2;
-  }
+    }
 
-  generateConcept();
+    generateConcept();
