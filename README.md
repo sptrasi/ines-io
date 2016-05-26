@@ -2,7 +2,7 @@
 
 # Info
 
-The site is built with [Harp](http://harpjs.com), using [Jade](http://jade-lang.com/) for templating and [Sass](http://sass-lang.com/) / [Autoprefixer](https://github.com/postcss/autoprefixer) for CSS pre-processing. To see how this work in detail, check out my [Ultimate Guide to Static Websites with Harp & Jade](https://ines.io/blog/the-ultimate-guide-static-websites-harp-jade)
+The site is built with [Harp](http://harpjs.com), using [Jade](http://jade-lang.com/) for templating and [Sass](http://sass-lang.com/) / [Autoprefixer](https://github.com/postcss/autoprefixer) for CSS pre-processing. To see how this work in detail, check out my [Ultimate Guide to Static Websites with Harp & Jade](https://ines.io/blog/the-ultimate-guide-static-websites-harp-jade).
 
 # License
 
