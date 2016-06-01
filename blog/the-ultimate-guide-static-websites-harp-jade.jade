@@ -240,12 +240,12 @@ h2 Layout partials with Harp
 p Think of Harp's layout partials as somewhere in between regular includes and flexible mixins. The #[code !=partial()] function lets you include other files using their relative path. This one includes the file #[code _header.jade] from a folder called #[code _layout]:
 
 +code("jade").    
-    !=partial("_layout/header")
+    !=partial("_layout/_header")
     
 p Partials can also be included dynamically. For example, you could have different pages include different widgets that are specified in the metadata, using the same template:
 
 +code("jade").    
-    - var widget = "newsletter-signup"
+    - var widget = "_newsletter-signup"
     !=partial(widget)              
 
 p Partials can also take a second argument, an object with additional data you want to pass on. This is not necessary for global or post metadata, which will always be available for the page that's currently rendered. But you could have a general template for a sidebar, that's populated with different content, or you could create a partial to display a flexible number of posts, like so:
@@ -265,7 +265,7 @@ p Partials can also take a second argument, an object with additional data you w
 p If no post count is specified, it defaults to #[code 0] - which will render all posts that are available. The partial can then be called anywhere in your templates like this:
 
 +code("jade").
-    !=partial("latest-posts", { posts: 6 })
+    !=partial("_latest-posts", { posts: 6 })
 
 h2 Building the site
 
