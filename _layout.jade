@@ -42,8 +42,8 @@ html(lang="en")
                 
                 header.header(role="banner")
                     a.header-item(href="/about") About me
-                    .header-item #[+logo]
                     a.header-item(href="https://twitter.com/" + profiles.twitter target="_blank") Twitter
+                    !=partial("_includes/_logo")
             
                 !=yield
 
@@ -64,7 +64,7 @@ html(lang="en")
 
                         header.article-header
                             a(href="/")
-                                +logo(125)
+                                !=partial("_includes/_logo", { size: 125 })
                         
                             h1.article-headline=headline
                             

@@ -10,14 +10,15 @@ body
     padding: 50px
     width: 100%
 
-.header-logo
-    min-width: 100px
-
 .header-item
     @extend .text-label
 
     &:not(:last-child)
         margin-right: 50px
+
+.header-logo
+    flex: 0 1 auto
+    max-width: 100%
 
 .footer
     @extend .text-meta-small
