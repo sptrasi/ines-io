@@ -16,7 +16,6 @@ html(lang="en")
 
         link(rel="shortcut icon" href="/assets/img/favicon.ico")
         link(rel="alternate" type="application/rss+xml" title="RSS" href="/feed")
-        link(rel="stylesheet" href="/assets/css/style.css?v" + version)
 
         //- Social Media Meta
 
@@ -32,6 +31,8 @@ html(lang="en")
         meta(name="twitter:title" content=getMetaTitle(true))
         meta(name="twitter:description" content=description)
         meta(name="twitter:image" content=url + getMetaImage())
+            
+        link(rel="stylesheet" href="/assets/css/style.css")
 
     body
         main(role="main" class=(current.path[0] == 'index') ? 'home' : '')

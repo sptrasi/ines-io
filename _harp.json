@@ -1,11 +1,9 @@
 {
     "globals": {
-        "version": "3",
         "title": "ines.io",
         "site": "ines.io",
         "url": "https://ines.io",
         "description": "Hi, I'm Ines. I'm a web developer and marketing strategist from Germany.",
-        
         "author": "Ines Montani",
         "email": "ines@ines.io",
         "profiles": {
