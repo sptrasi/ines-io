@@ -41,9 +41,9 @@ html(lang="en")
                 //- Homepage
                 
                 header.header(role="banner")
-                    a.header-item(href="/about") About me
-                    a.header-item(href="https://twitter.com/" + profiles.twitter target="_blank") Twitter
+                    a(href="/about") About me
                     !=partial("_includes/_logo")
+                    a(href="https://twitter.com/" + profiles.twitter target="_blank") Twitter
             
                 !=yield
 
