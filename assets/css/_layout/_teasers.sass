@@ -2,8 +2,13 @@
 // =============================================================================
 
 .teasers
-    @include flex(center, false, row wrap)
+    @include flex(center, center, row wrap)
+    max-width: 100%
     width: 100%
+    overflow: hidden
+
+    @media (max-width: #{$breakpoint-m})
+        flex-flow: column nowrap
 
 .teaser
     margin: 20px
