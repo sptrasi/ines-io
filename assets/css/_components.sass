@@ -4,7 +4,7 @@
 // Paragraphs
 
 p
-    @extend .block, .text
+    @extend .block, %text
 
     a
         @extend .link
@@ -23,7 +23,7 @@ p
 // Buttons
 
 .button
-    @extend .text-label
+    @extend %text-label
     background: $color-text
     color: $color-bg
     display: inline-block
@@ -34,7 +34,7 @@ p
 // Code
 
 code
-    @extend .text-code
+    @extend %text-code
     text-shadow: 1px 1px 0 $color-bg
 
 .code-block
@@ -90,7 +90,7 @@ code
     @extend .block
 
 .image-inline-caption
-    @extend .text-meta
+    @extend %text-meta
     margin-top: 10px
 
 
@@ -108,7 +108,7 @@ code
         @extend .link
 
 .blockquote-footer
-    @extend .text-meta
+    @extend %text-meta
     font-weight: bold
     text-transform: uppercase
 
@@ -116,7 +116,7 @@ code
 // Lists
 
 .list
-    @extend .block, .text
+    @extend .block, %text
 
     &--numbered
         counter-reset: li
@@ -135,7 +135,7 @@ code
         list-style-type: square
 
     &--footnotes
-        @extend .text-meta
+        @extend %text-meta
 
         &:before
             @extend .divider
