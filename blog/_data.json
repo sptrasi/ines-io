@@ -318,6 +318,18 @@
         "meta": "Published in Exberliner, issue #112, January 2013"
     },
 
+    "the-drums-interview": {
+        "headline": "The Drums Interview",
+        "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
+        "date": "2010-05-31",
+        "category": "pop",
+        "image": {
+            "file": "thedrums.jpg"
+        },
+        "colors": [[2, 204, 131], [4, 56, 104]],
+        "meta": "Originally published in German in 2010"
+    },
+
     "adam-ficek-interview": {
         "headline": "Adam Ficek (Babyshambles) Interview",
         "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
