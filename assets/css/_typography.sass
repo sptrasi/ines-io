@@ -30,11 +30,16 @@ h1,
     font-size: 5.2rem
     text-transform: uppercase
 
-@each $level, $font-size in (2, 3.8rem), (3, 2.8rem), (4, 1.8rem)
+@each $level, $font-size in (2, 3.8rem), (3, 2.8rem), (4, 2.2rem)
     h#{$level},
     .heading-#{$level}
         @extend %heading
         font-size: $font-size
+
+h4,
+.heading-4
+    text-transform: uppercase
+    margin-bottom: 20px
 
 ::selection
     background: $color-text
