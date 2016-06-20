@@ -1,0 +1,84 @@
+include ../_includes/_mixins
+
+p Debugging JavaScript can be painful and often means spending hours looking at boring console logs. Inspired by #[a(href="http://tholman.com/console-dot-frog/" target="_blank") console.frog] by Tim Holman, a little script that displays your messages with an ASCII frog, I made my own console logger &mdash; but with customizable commands and emoji. Logging to the console is finally fun again, thanks to #[code console.beer] 🍺 and #[code console.unicorn] 🦄.
+
+p #[a(href="https://github.com/" + profiles.github + "/console-dot-emoji" target="_blank") Go here] to head straight to the code on GitHub.
+
++image("emoji-console_preview.jpg")
+
+h2 Better Programming with Emoji
+
+p Emoji are not just silly icons to add to tweets and text messages &mdash; they can actually help you write better code and make debugging more fun:
+
++quote("How Emoji Can Improve Your Code—Seriously", "https://www.tjvantoll.com/2016/06/10/emoji-and-coding/") We, as developers, routinely look at large amounts of text—whether it’s code, production logs, commit messages, documentation, or whatever—and emoji inherently stand out in what is normally a wall of text. It’s far easier to pick an emoji out of a list than a random string, and that skimmability can lead to real productivity gains.
+
+p You can add them as part of a comment to make it easier to find todos, or mark sections that require testing or refactoring. Or you can add them to your commit messages on GitHub to tag different types of updates or mark particularly important ones. 
+
+h2 The Script
+
+p The idea behind this is pretty simple: all we have to do is add custom functions for each command to the #[code window.console] object. Each function logs the message and emoji to the console. To see it in action, check out the JavaScript console for this page.
+
++code("javascript").
+    // Define your custom commands and emoji
+    var commands = [
+      [ "unicorn", "🦄" ],
+      [ "pizza", "🍕" ],
+      [ "beer", "🍺"],
+      [ "poo", "💩"]
+    ];
+
+    (function() {
+      if(!window.console) return;
+
+      // Create custom commands
+      commands.forEach(function(command) {
+        window.console[command[0]] = function() {
+            
+          // Get arguments as a string
+          var args = Array.prototype.slice.call(arguments).toString().split(',').join(', ');
+                
+          // Log to the console with emoji
+          console.log(command[1] + "  " + args);
+        }
+      });
+    })();
+
+    // Log to the console!
+    console.unicorn("Magical!");
+    console.beer("Cheers!");
+    console.pizza("Tasty!");
+    console.poo("Oh f*ck!");
+
+p.block-center
+    +button(href="https://github.com/" + profiles.github + "/console-dot-emoji" target="_blank") View Code on GitHub
+
+script.
+    // Define your custom commands and emoji
+    var commands = [
+        [ "unicorn", "🦄" ],
+        [ "pizza", "🍕" ],
+        [ "beer", "🍺"],
+        [ "poo", "💩"]
+    ];
+
+    (function() {
+        if(!window.console) return;
+
+        // Create custom commands
+        commands.forEach(function(command) {
+            window.console[command[0]] = function() {
+                
+                // Get arguments as a string
+                var args = Array.prototype.slice.call(arguments).toString().split(',').join(', ');
+                
+                // Log to the console with emoji
+                console.log(command[1] + "  " + args);
+            }
+        });
+    })();
+
+    // Log to the console!
+    console.unicorn("Magical!");
+    console.beer("Cheers!");
+    console.pizza("Tasty!");
+    console.poo("Oh f*ck!");

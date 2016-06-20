@@ -1,4 +1,16 @@
 {
+    "custom-console-logging-emoji": {
+        "headline": "Custom Console Logging with Emoji",
+        "description": "",
+        "date": "2015-06-20",
+        "category": "code",
+        "image": {
+            "file": "emoji-console.jpg"
+        },
+        "colors": [[0, 255, 132], [44, 50, 232]],
+        "highlight_code": true
+    },
+
     "the-ultimate-guide-static-websites-harp-jade": {
         "headline": "The Ultimate Guide to Static Websites with Harp & Jade",
         "description": "In this blog post, I'll explain how to install and set up your blog with Harp in about a minute (yes, really!) and how to write powerful templates using Jade. I'll also share a couple of useful tips and tricks, as well as a nice-looking skeleton blog template I wrote to get you started.",
