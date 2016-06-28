@@ -14,7 +14,7 @@ rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
         each post, slug in public.blog._data
             if post.published != false
                 item
-                    title=(post.subheadline) ? post.headline + ' — ' + post.subheadline : post.headline
+                    title=post.headline
                     description <![CDATA[ 
                         if post.image
                             p: img(src=url + "/blog/img/" + post.image.file)
