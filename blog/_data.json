@@ -1,7 +1,7 @@
 {
     "custom-console-logging-emoji": {
         "headline": "Custom Console Logging with Emoji",
-        "description": "",
+        "description": "Debugging JavaScript can be painful and often means spending hours looking at boring console logs. Inspired by console.frog by Tim Holman, a little script that displays your messages with an ASCII frog, I made my own console logger — but with customizable commands and emoji. Logging to the console is finally fun again, thanks to console.beer 🍺 and console.unicorn 🦄.",
         "date": "2015-06-20",
         "category": "code",
         "image": {
