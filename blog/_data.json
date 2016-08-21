@@ -2,7 +2,7 @@
     "custom-console-logging-emoji": {
         "headline": "Custom Console Logging with Emoji",
         "description": "Debugging JavaScript can be painful and often means spending hours looking at boring console logs. Inspired by console.frog by Tim Holman, a little script that displays your messages with an ASCII frog, I made my own console logger — but with customizable commands and emoji. Logging to the console is finally fun again, thanks to console.beer 🍺 and console.unicorn 🦄.",
-        "date": "2015-06-20",
+        "date": "2016-06-20",
         "category": "code",
         "image": {
             "file": "emoji-console.jpg"
@@ -14,7 +14,7 @@
     "the-ultimate-guide-static-websites-harp-jade": {
         "headline": "The Ultimate Guide to Static Websites with Harp & Jade",
         "description": "In this blog post, I'll explain how to install and set up your blog with Harp in about a minute (yes, really!) and how to write powerful templates using Jade. I'll also share a couple of useful tips and tricks, as well as a nice-looking skeleton blog template I wrote to get you started.",
-        "date": "2015-05-26",
+        "date": "2016-05-26",
         "category": "code",
         "image": {
             "file": "harp-jade.jpg",
