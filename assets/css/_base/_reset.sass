@@ -1,23 +1,3 @@
-// normalize.css
-
-@import normalize
-
-
-// Clearfix
-
-%clearfix
-    *zoom: 1
-
-    &:before,
-    &:after
-        content: ''
-        display: table
-
-    &:after
-        clear: both
-
-
-// Custom Resets
 //- ----------------------------------
 //- ⚡️ BASE > RESET
 //- ----------------------------------
@@ -31,15 +11,21 @@
     -webkit-font-smoothing: antialiased
 
 html
+    font-family: sans-serif
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
     @media (min-width: #{$breakpoint-m})
         font-size: 10px
 
     @media (max-width: #{$breakpoint-m})
         font-size: 7px
 
-header,
-footer,
-figure
+article, aside, details, figcaption, figure, footer, header, main, menu, nav,
+section, summary
+    display: block
+
+header, footer, figure
     width: 100%
     max-width: 100%
 
@@ -49,22 +35,49 @@ table
     text-align: left
     width: 100%
 
-    td,
-    th
+    td, th
         vertical-align: top
 
-ul,
-ol
+ul, ol
     list-style: none
 
 a
+    background-color: transparent
     color: inherit
     text-decoration: none
 
 img
     height: auto
     max-width: 100%
+    border: 0
 
 svg
     color-interpolation-filters: sRGB
     fill: currentColor
+
+    &:not(:root)
+        overflow: hidden
+
+mark
+    background-color: #ff0
+    color: #000
+
+small
+    font-size: 80%
+
+sub, sup
+    font-size: 75%
+    line-height: 0
+    position: relative
+    vertical-align: baseline
+
+sup
+    top: -0.5em
+
+sub
+    bottom: -0.25em
+
+hr
+    box-sizing: content-box
+    height: 0
+    overflow: visible
