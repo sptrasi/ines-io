@@ -4,5 +4,9 @@
 
 include _includes/_mixins
 
+header.header(role="banner")
+    a.text-label(href="/about") About me
+    include _includes/_logo
+    a.text-label(href="https://twitter.com/" + profiles.twitter target="_blank") Twitter
 
 !=partial("_includes/_latest-posts")

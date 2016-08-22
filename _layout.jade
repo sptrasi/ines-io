@@ -39,14 +39,6 @@ html(lang="en")
         main(role="main" class=(current.path[0] == 'index') ? 'home' : '')
         
             if current.path[0] == 'index'
-            
-                //- Homepage
-                
-                header.header(role="banner")
-                    a(href="/about") About me
-                    !=partial("_includes/_logo")
-                    a(href="https://twitter.com/" + profiles.twitter target="_blank") Twitter
-            
                 !=yield
 
             else
