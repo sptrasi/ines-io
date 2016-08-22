@@ -1,0 +1,67 @@
+//- ----------------------------------
+//- ⚡️ INCLUDES > ARTICLE
+//- ----------------------------------
+
+include _mixins
+
+article.article(role="article")
+
+    //- Art-directed posts
+
+    if artdirected
+        !=yield
+
+    else
+
+        //- Article header
+
+        header.article-header
+            a(href="/" aria-label="Home")
+                !=partial("_includes/_logo", { size: 125 })
+
+            h1.article-headline=headline
+
+            if date
+                .article-meta.text-meta
+                    if category
+                        strong.article-meta-category=category
+
+                    span.article-meta-date
+                        +date(date)
+
+                    span.article-meta-share
+                        !=partial("_includes/_share-icons", { posturl: getCurrentUrl() })
+
+        if image && image.display != false
+
+            //- Hero Image
+
+            .article-hero(class="article-hero--" + ((wide) ? "wide" : "narrow") style="background-image: url(" + ((current.path[0] == "blog") ? "/blog/img/" : "/assets/img/") + image.file + ")")
+
+                if image.credit_text
+                    .article-hero-credit.text-meta-small
+
+                        if image.credit_url
+                            a(href=image.credit_url target="_blank")=image.credit_text
+
+                        else
+                            !=image.credit_text
+
+        //- Article content
+
+        .article-content(class=(image && image.display == false) ? "article-content--full" : "article-content--" + ((wide) ? "narrow" : "wide"))
+            !=yield
+
+            if meta
+                p.article-meta.text-meta=meta
+
+            if readmore
+                p
+                    +button(href=readmore target="_blank") Read more
+
+    //- Article footer
+
+    footer.article-footer
+        h2.article-footer-headline Latest Posts
+
+        !=partial("_includes/_latest-posts", { posts: 3 })
