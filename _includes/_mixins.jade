@@ -12,7 +12,7 @@ mixin image(filename, caption)
         img(src=(absolute || '') + 'img/' + filename)
 
         if caption
-            figcaption.image-inline-caption!=caption
+            figcaption.image-caption.text-meta!=caption
 
 
 //- List
@@ -46,7 +46,7 @@ mixin quote(source, link)
             block
 
         if source
-            footer.blockquote-footer
+            footer.quote-footer.text-meta
 
                 if link
                     a(href=link target="_blank")=source

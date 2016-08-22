@@ -23,7 +23,7 @@ p
 // Buttons
 
 .button
-    @extend %text-label
+    @extend .text-label
     background: $color-text
     color: $color-bg
     display: inline-block
@@ -33,7 +33,7 @@ p
 // Code
 
 code
-    @extend %text-code
+    @extend .text-code
     text-shadow: 1px 1px 0 $color-bg
 
 .code-block
@@ -88,8 +88,7 @@ code
 .image-inline
     @extend .block
 
-.image-inline-caption
-    @extend %text-meta
+.image-caption
     margin-top: 10px
 
 
@@ -103,11 +102,6 @@ code
     font-style: italic
     margin-bottom: 20px
 
-    a
-        @extend .link
-
-.blockquote-footer
-    @extend %text-meta
     font-weight: bold
     text-transform: uppercase
 
@@ -115,7 +109,7 @@ code
 // Lists
 
 .list
-    @extend .block, %text
+    @extend .block
 
     &--numbered
         counter-reset: li
@@ -134,7 +128,7 @@ code
         list-style-type: square
 
     &--footnotes
-        @extend %text-meta
+        @extend .text-meta
 
         &:before
             @extend .divider
@@ -143,9 +137,6 @@ code
 
 .list-item
     margin: 0 0 20px 35px
-
-    a
-        @extend .link
 
 .list-inline > *
     line-height: 5

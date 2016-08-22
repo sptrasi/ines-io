@@ -13,8 +13,8 @@ section.teasers
         if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
 
             article.teaser
-                    h2.teaser-headline=post.headline
                 a.teaser-link(href="/blog/#{slug}")
+                    h2.heading-3.teaser-headline=post.headline
 
                     svg.teaser-image(width=teaser_size height=teaser_size viewBox="0 0 " + teaser_size + " " + teaser_size style="background: rgb(" + ((post.colors) ? post.colors[1] : '255, 255, 255') + ")")
                         defs

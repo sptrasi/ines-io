@@ -26,12 +26,11 @@
     position: relative
 
 .teaser-headline
-    @extend .heading-1
     @include position(absolute, top, left, 0, 0)
     @include size(100%)
     @include flex(center, center)
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAF0lEQVQIW2NkwAIYgWKS6OIgQQxAoUoAE4AAUnD/0ugAAAAASUVORK5CYII=) repeat
     color: $color-bg
-    font-size: 3rem
+    text-transform: uppercase
     padding: 25px 35px
     text-align: center

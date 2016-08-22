@@ -41,7 +41,6 @@
         position: relative
 
 .article-hero-credit
-    @extend %text-meta-small
     background: rgba($color-bg, 0.5)
     bottom: 10px
     padding: 3px 5px
@@ -68,14 +67,11 @@
         width: 100%
 
 .article-headline
-    @extend .heading-1
 
 .article-meta
-    @extend %text-meta
     @include flex(false, center)
 
 .article-meta-category
-    font-weight: bold
     margin-right: 15px
     text-transform: uppercase
 
