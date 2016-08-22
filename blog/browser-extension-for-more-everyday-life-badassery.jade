@@ -12,7 +12,7 @@ h2 What's Scheidify?
 
 p The internet can be frustrating and full of bullshit. Scheidify is a little #[a(href="https://chrome.google.com/webstore/detail/scheidify/noehlhgcfmnllodacehfablpkegjdkho" target="_blank") browser extension] for Chrome that can help make the internet a better place. It adds a little button to your toolbar that lets you "scheidify" any website instantly by replacing images with empowering and fun graphics and gifs celebrating badassery and vaginas.
 
-+image("scheidify_screenshot.jpg")
++image("scheidify_screenshot.jpg", false, "Screenshot of the Scheidify browser extension")
 
 h2 How does it work?
 
@@ -128,7 +128,7 @@ h3 Testing the extension
 
 p Chrome comes with a handy developer mode that lets you run and test extensions. You can activate it at the top of the extensions settings and then simply install the extension by clicking "Load unpacked extension" and selecting the folder on your harddrive:
 
-+image("scheidify_chrome.jpg", false, true)
++image("scheidify_chrome.jpg", false, "Screenshot of how to load extension in Chrome")
 
 p It also lets you reload your extension whenever you make changes so you don't have to reinstall it every time.
 
@@ -136,7 +136,7 @@ h3 Imgur API integration
 
 p Since we wanted to use a huge pool of images that could be updated without having to change the code and thus making the users update their browser extension contstantly, I set up an album on #[a(href="https://www.imgur.com" target="_blank") Imgur]. To use their API, you first have to #[a(href="https://api.imgur.com/oauth2/addclient" target="_blank") register] your app. The site looks something like this:
 
-+image("scheidify_imgur.jpg", false, true)
++image("scheidify_imgur.jpg", false, "Screenshot of Imgur API settings")
 
 p Select "Anonymous usage without user authorization" and put whatever you want in the "Authorization callback URL" field. In this case, it's not relevant since we only want to request a bunch of images and not interact with the site at all apart from that. After the registration, Imgur assigns you a Client ID.
 
