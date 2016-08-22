@@ -18,7 +18,9 @@ section.teasers
 
                     svg.teaser-image(width=teaser_size height=teaser_size viewBox="0 0 " + teaser_size + " " + teaser_size style="background: rgb(" + ((post.colors) ? post.colors[1] : '255, 255, 255') + ")")
                         defs
+                            filter(id="duotone-filter-#{post_counter}")
                                 feColorMatrix(type="matrix" values=getColorMatrix(post.colors || false))
+
                         if post.image
                             image(width="100%" height="100%" filter="url(#duotone-filter-#{post_counter})" xlink:href="/blog/img/#{post.image.file}" preserveAspectRatio="xMidYMin slice")
 

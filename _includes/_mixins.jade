@@ -7,9 +7,9 @@ include _functions
 
 //- Inline Image
 
-mixin image(filename, caption)
-    figure.image-inline&attributes(attributes)
-        img(src=(absolute || '') + 'img/' + filename)
+mixin image(filename, caption, alt)
+    figure.image&attributes(attributes)
+        img(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="800")
 
         if caption
             figcaption.image-caption.text-meta!=caption
@@ -41,8 +41,8 @@ mixin date(input)
 //- Blockquote
 
 mixin quote(source, link)
-    blockquote.blockquote&attributes(attributes)
-        p.blockquote-body
+    blockquote.quote&attributes(attributes)
+        p.quote-body
             block
 
         if source
