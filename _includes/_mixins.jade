@@ -1,7 +1,9 @@
+//- ----------------------------------
+//- ⚡️ INCLUDES > MIXINS
+//- ----------------------------------
+
 include _functions
 
-//-  Mixins
-//- ============================================================================
 
 //- Inline Image
 
@@ -47,7 +49,7 @@ mixin quote(source, link)
             footer.blockquote-footer
 
                 if link
-                    a(href=link target='_blank')=source
+                    a(href=link target="_blank")=source
 
                 else
                     !=source
@@ -57,21 +59,21 @@ mixin quote(source, link)
 
 mixin codepen(slug, height, default_tab)
     .embed&attributes(attributes)
-        .codepen(data-height=height data-theme-id='23801' data-slug-hash=slug data-default-tab=(default_tab || 'result') data-embed-version='2' data-user=profiles.codepen) 
-            a(href='https://codepen.io/' + profiles.codepen + '/' + slug + '/' target='_blank') View on CodePen
+        .codepen(data-height=height data-theme-id="23801" data-slug-hash=slug data-default-tab=(default_tab || "result") data-embed-version="2" data-user=profiles.codepen) 
+            a(href="https://codepen.io/#{profiles.codepen}/#{slug}/" target="_blank") View on CodePen
 
 
 //- Video Embeds
 
 mixin youtube(id, ratio)
-    .video(class='video--' + (ratio || '16x9'))&attributes(attributes)
-        iframe(src='https://www.youtube.com/embed/' + id frameborder='0' allowfullscreen)
+    .video(class="video--" + (ratio || '16x9'))&attributes(attributes)
+        iframe(src="https://www.youtube.com/embed/#{id}" frameborder='0' allowfullscreen)
 
 
 //- Code Block
 
 mixin code(language)
-    pre.code-block(class='language-' + (language || 'markup'))&attributes(attributes)
+    pre.code-block(class="language-" + (language || "markup"))&attributes(attributes)
         code
             block
 
@@ -89,8 +91,8 @@ mixin icon(name, size)
     - var size = size || 24;
     
     span.icon(aria-hidden="true")&attributes(attributes)
-        svg(viewBox='0 0 ' + size + ' ' + size width=size height=size)
-            use(xlink:href='/assets/img/icons.svg#icon-' + name)
+        svg(viewBox="0 0 #{size} #{size}" width=size height=size)
+            use(xlink:href="/assets/img/icons.svg#icon-#{name}")
 
 //- Divider
 

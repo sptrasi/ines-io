@@ -1,26 +1,25 @@
+//- ----------------------------------
+//- ⚡️ INCLUDES > LATEST POSTS
+//- ----------------------------------
+
 include _mixins
 
 - var teaser_size = size || 400
 - var post_max = posts || 0
 - var post_counter = 1
 
-//-  Latest Posts
-//- ============================================================================
-
 section.teasers
     each post, slug in public.blog._data
         if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
 
             article.teaser
-                a.teaser-link(href="/blog/" + slug)
                     h2.teaser-headline=post.headline
+                a.teaser-link(href="/blog/#{slug}")
 
                     svg.teaser-image(width=teaser_size height=teaser_size viewBox="0 0 " + teaser_size + " " + teaser_size style="background: rgb(" + ((post.colors) ? post.colors[1] : '255, 255, 255') + ")")
                         defs
-                            filter(id="duotone-filter-" + post_counter)
                                 feColorMatrix(type="matrix" values=getColorMatrix(post.colors || false))
-                        
                         if post.image
-                            image(width="100%" height="100%" filter="url(#duotone-filter-" + post_counter + ")" xlink:href="/blog/img/" + post.image.file preserveAspectRatio="xMidYMin slice")
+                            image(width="100%" height="100%" filter="url(#duotone-filter-#{post_counter})" xlink:href="/blog/img/#{post.image.file}" preserveAspectRatio="xMidYMin slice")
 
             - post_counter++

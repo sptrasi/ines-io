@@ -1,9 +1,10 @@
+//- ----------------------------------
+//- ⚡️ INCLUDES > SHARE ICONS
+//- ----------------------------------
+
 include _mixins
 
-//- Share Icons
-//- ============================================================================
-
-a(href="https://twitter.com/share?text=" + headline + "&amp;via=" + profiles.twitter target="_blank" aria-label="Share on Twitter")
+a(href="https://twitter.com/share?text=#{headline}&amp;via=#{profiles.twitter}" target="_blank" aria-label="Share on Twitter")
     +icon("twitter", 16)
 
 a(href="https://www.facebook.com/sharer.php?u=" + (posturl || "") target="_blank" aria-label="Share on Facebook")

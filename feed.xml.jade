@@ -1,7 +1,8 @@
-include _includes/_mixins
+//- ----------------------------------
+//- ⚡️ RSS FEED
+//- ----------------------------------
 
-//-  Feed
-//- ============================================================================
+include _includes/_mixins
 
 doctype xml
 rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
@@ -9,15 +10,15 @@ rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
         title=title
         link=url
         description= description
-        atom:link(href="#{ url }/feed", rel="self", type="application/rss+xml")
-            
+        atom:link(href="#{url}/feed", rel="self", type="application/rss+xml")
+
         each post, slug in public.blog._data
             if post.published != false
                 item
                     title=post.headline
                     description <![CDATA[ 
                         if post.image
-                            p: img(src=url + "/blog/img/" + post.image.file)
+                            p: img(src="#{url}/blog/img/#{post.image.file}")
               
                         !=partial("blog/" + slug, { absolute: url + "/blog/" })
                         | ]]>
@@ -26,4 +27,4 @@ rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
                         pubDate=convertPubDate(post.date)
 
                     link #{ url }/blog/#{ slug }
-                    guid(isPermaLink="true") #{ url }/blog/#{ slug }
+                    guid(isPermaLink="true") #{url}/blog/#{slug}
