@@ -60,6 +60,7 @@
         "image": {
             "file": "modular-markup.jpg"
         },
+        "wide": true,
         "colors": [[0, 228, 255], [46, 20, 55]],
         "readmore": "https://spacy.io/blog/modular-markup"
     },
@@ -398,7 +399,6 @@
         "description": "This post is part of a series of music interviews I did back when I was running an indie music website and going to gigs almost every other day.",
         "date": "2007-10-10",
         "category": "pop",
-        "wide": true,
         "image": {
             "file": "theindelicates.jpg"
         },
