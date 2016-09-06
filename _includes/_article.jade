@@ -6,13 +6,7 @@ include _mixins
 
 article.o-article(class=(image && image.display == false) ? "o-article--full" : "o-article--" + ((wide) ? "narrow" : "wide"))
 
-    //- Art-directed posts
     //- Article header
-
-    if artdirected
-        !=yield
-
-    else
 
     header.o-article__header
         a(href="/" aria-label="Home")
