@@ -24,7 +24,9 @@ rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
                         | ]]>
 
                     if post.date
-                        pubDate=convertPubDate(post.date)
+                        - var date = new Date(post.date).toString().split(' ')
+
+                        pubDate=[ date[0] + ",", date[2], date[1], date[3], date[4], date[5].match(/[-+]\d{4}/) || date[5] ].join(" ")
 
                     link #{ url }/blog/#{ slug }
                     guid(isPermaLink="true") #{url}/blog/#{slug}

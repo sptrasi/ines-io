@@ -6,7 +6,9 @@ mixin post(headline, date)
 
         h2
             a.u-heading-2(href="#" + date)=headline
-            .u-text-meta=convertDate(date).full
+
+        .o-block
+            +date(date).u-text-meta
 
         block
 

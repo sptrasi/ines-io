@@ -6,7 +6,9 @@ mixin post(headline)
     .blog-post(id=date)
         +h(2)
             a(href="#" + date)=headline
-            .u-text-meta=convertDate(date).full
+
+        .o-block
+            +date(date).u-text-meta
 
         block
 
