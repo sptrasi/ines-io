@@ -8,13 +8,13 @@ include _mixins
 - var post_max = posts || 0
 - var post_counter = 1
 
-section.teasers
+section.o-tiles
     each post, slug in public.blog._data
         if (post_max === 0 || post_counter <= post_max) && slug != current.source && post.published != false
 
-            article.teaser
-                a.teaser-link(href="/blog/#{slug}")
-                    h2.heading-3.teaser-headline=post.headline
+            article.c-teaser
+                a.c-teaser__link(href="/blog/#{slug}")
+                    h2.c-teaser__headline.u-heading-3.u-text-upper.u-text-center=post.headline
 
                     svg.teaser-image(width=teaser_size height=teaser_size viewBox="0 0 " + teaser_size + " " + teaser_size style="background: rgb(" + ((post.colors) ? post.colors[1] : '255, 255, 255') + ")")
                         defs

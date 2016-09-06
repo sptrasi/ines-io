@@ -8,26 +8,26 @@ include _functions
 //- Inline Image
 
 mixin image(filename, caption, alt)
-    figure.image&attributes(attributes)
-        img(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="800")
+    figure.o-block&attributes(attributes)
+        img(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="1200")
 
         if caption
-            figcaption.image-caption.text-meta!=caption
+            figcaption.u-text-meta!=caption
 
 
 //- List
 
 mixin list(style)
     if style
-        ol.list.list--numbered&attributes(attributes)
-            block
-    
-    else
-        ul.list.list--unnumbered&attributes(attributes)
+        ol.c-list.c-list--numbered.o-block&attributes(attributes)
             block
 
-mixin item
-    li.list-item&attributes(attributes)
+    else
+        ul.c-list.c-list--unnumbered.o-block&attributes(attributes)
+            block
+
+mixin item()
+    li.c-list__item&attributes(attributes)
         block
 
 
@@ -41,15 +41,15 @@ mixin date(input)
 //- Blockquote
 
 mixin quote(source, link)
-    blockquote.quote&attributes(attributes)
-        p.quote-body
+    blockquote.o-block&attributes(attributes)
+        p.u-text-large.u-text-italic
             block
 
         if source
-            footer.quote-footer.text-meta
+            footer.u-text-meta.u-text-upper
 
                 if link
-                    a(href=link target="_blank")=source
+                    +a(link)=source
 
                 else
                     !=source
@@ -58,23 +58,23 @@ mixin quote(source, link)
 //- Codepen Embed
 
 mixin codepen(slug, height, default_tab)
-    .embed&attributes(attributes)
-        .codepen(data-height=height data-theme-id="23801" data-slug-hash=slug data-default-tab=(default_tab || "result") data-embed-version="2" data-user=profiles.codepen) 
             a(href="https://codepen.io/#{profiles.codepen}/#{slug}/" target="_blank") View on CodePen
+    .o-block&attributes(attributes)
+        .codepen(data-height=height data-theme-id="23801" data-slug-hash=slug data-default-tab=(default_tab || "result") data-embed-version="2" data-user=profiles.codepen)
 
 
 //- Video Embeds
 
 mixin youtube(id, ratio)
-    .video(class="video--" + (ratio || '16x9'))&attributes(attributes)
-        iframe(src="https://www.youtube.com/embed/#{id}" frameborder='0' allowfullscreen)
+    .c-video.o-block(class="c-video--" + (ratio || "16x9"))&attributes(attributes)
+        iframe.c-video__iframe(src="https://www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen)
 
 
 //- Code Block
 
 mixin code(language)
-    pre.code-block(class="language-" + (language || "markup"))&attributes(attributes)
-        code
+    pre.c-code-block.o-block(class="language-" + (language || "markup"))&attributes(attributes)
+        code.u-text-code
             block
 
 
@@ -90,11 +90,11 @@ mixin button
 mixin icon(name, size)
     - var size = size || 24;
     
-    span.icon(aria-hidden="true")&attributes(attributes)
+    span.o-icon(aria-hidden="true")&attributes(attributes)
         svg(viewBox="0 0 #{size} #{size}" width=size height=size)
             use(xlink:href="/assets/img/icons.svg#icon-#{name}")
 
 //- Divider
 
 mixin divider
-    hr.divider
+    hr.c-divider

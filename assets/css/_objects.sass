@@ -1,0 +1,106 @@
+//- ----------------------------------
+//- ⚡️ OBJECTS
+//- ----------------------------------
+
+//- Header
+
+.o-header
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 5rem 5rem 0
+    width: 100%
+    max-width: 100%
+
+    & > *:not(:last-child)
+        margin-right: 5rem
+
+.o-header__logo
+    flex: 0 1 auto
+    max-width: 100%
+
+
+//- Footer
+
+.o-footer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-flow: row wrap
+    position: relative
+    background: $color-back
+    padding: 5rem 7.5rem
+    width: 100%
+    z-index: 10
+
+
+//- Article
+
+.o-article
+    padding: 5rem 5rem 5rem 7.5rem
+
+    @media (min-width: #{$breakpoint-m})
+        &.o-article--wide
+            width: 55%
+
+        &.o-article--narrow
+            width: 50%
+
+        &.o-article--full
+            width: 85%
+
+    @media (max-width: #{$breakpoint-m})
+        width: 100%
+
+.o-article__header
+    padding-right: 5%
+    margin-bottom: 2.5rem
+
+
+//- Box
+
+.o-box
+    position: relative
+    background: $color-front
+    color: $color-back
+    padding: 5rem 0
+    overflow-x: hidden
+    width: 100%
+    z-index: 10
+
+.o-box__header
+    margin: 0 0 2.5rem 7.5rem
+
+
+//- Tiles
+
+.o-tiles
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-flow: row wrap
+    overflow: hidden
+    width: 100%
+    max-width: 100%
+
+    @media (max-width: #{$breakpoint-m})
+        flex-flow: column nowrap
+
+    & > *
+        margin: 2rem
+
+
+//- Block
+
+.o-block
+    margin-bottom: 5rem
+
+
+//- Inline list
+
+.o-inline-list > *
+    display: inline
+    line-height: 5
+
+    &:not(:last-child)
+        margin-right: 2rem

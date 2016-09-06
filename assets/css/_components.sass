@@ -2,49 +2,36 @@
 //- ⚡️ COMPONENTS
 //- ----------------------------------
 
-// Buttons
+//- Buttons
 
-.button
-    @extend .text-label
-    background: $color-text
-    color: $color-bg
+.c-button
     display: inline-block
-    padding: 15px 20px
+    background: $color-front
+    color: $color-back
+    padding: 2rem 2.5rem
 
 
-// Code
+//- Code
 
-code
-    @extend .text-code
-    text-shadow: 1px 1px 0 $color-bg
-
-.code-block
-    @extend .block
-    background: $color-grey
-    margin-top: 15px
+.c-code-block
+    background: $color-subtle
+    padding: 4rem 3rem
+    margin-top: 1.5rem
     overflow: auto
-    padding: 40px 30px
 
     @media (min-width: #{$breakpoint-m})
-        &:hover,
-        .codepen:hover
+        &:hover
             width: 125%
 
-.block code
-  background: $color-grey
-  display: inline-block
-  padding: 0 5px
+:not(.c-code-block) > code
+    @extend .u-text-code
+    background: $color-subtle
+    display: inline-block
+    padding: 0 0.5rem
 
 
-// Dividers
 //- Syntax Highlighting
 
-.divider
-    border-color: $color-text
-    border-style: solid
-    border-width: 8px 0 0 0
-    margin: 75px 0
-    width: 20%
 [class*="language-"] .token
     &.comment, &.prolog, &.doctype, &.cdata, &.punctuation
         color: map-get($syntax-highlighting, comment)
@@ -52,96 +39,126 @@ code
     &.property, &.tag, &.constant, &.symbol, &.deleted
         color: map-get($syntax-highlighting, tag)
 
-// Embeds
     &.boolean, &.number
         color: map-get($syntax-highlighting, number)
 
-.embed
-    @extend .block
     &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted
         color: map-get($syntax-highlighting, selector)
 
-.video
-    @extend .block
-    position: relative
-    height: 0
     @at-root .language-css .token.string,
     &.operator, &.entity, &.url, &.variable
         color: map-get($syntax-highlighting, operator)
 
-    @each $ratio1, $ratio2 in (16, 9), (4, 3)
-        &--#{$ratio1}x#{$ratio2}
-            padding-bottom: (100% * $ratio2 / $ratio1)
     &.atrule, &.attr-value, &.function
         color: map-get($syntax-highlighting, function)
 
-    iframe
-        @include position(absolute, top, left, 0, 0)
-        @include size(100%)
     &.regex, &.important
         color: map-get($syntax-highlighting, regex)
 
     &.keyword
         color: map-get($syntax-highlighting, keyword)
 
-// Images
     &.italic
         font-style: italic
 
-.image
-    @extend .block
 
-.image-caption
-    margin-top: 10px
+//- Dividers
 
-
-// Quotes
-
-.quote
-    @extend .block
-
-.quote-body
-    font-size: 2.6rem
-    font-style: italic
-    margin-bottom: 20px
-
-.quote-footer
-    font-weight: bold
-    text-transform: uppercase
+.c-divider
+    @include size(30%, 0)
+    border: 0.5rem solid
+    margin: 7.5rem 0
 
 
-// Lists
+//- Embeds
 
-.list
-    @extend .block
+.c-video
+    position: relative
+    height: 0
 
-    &--numbered
+    @each $ratio1, $ratio2 in (16, 9), (4, 3)
+        &.c-video--#{$ratio1}x#{$ratio2}
+            padding-bottom: (100% * $ratio2 / $ratio1)
+
+.c-video__iframe
+    @include position(absolute, top, left, 0, 0)
+    @include size(100%)
+
+
+//- Lists
+
+.c-list
+    &.c-list--numbered
         counter-reset: li
 
-        .list-item
+        .c-list__item
             position: relative
 
             &:before
-                @include position(absolute, top, left, auto, -35px)
+                @include position(absolute, top, left, auto, -3.5rem)
                 content: counter(li) "."
                 counter-increment: li
                 font: normal bold 2.4rem/#{1} $font-secondary
-                width: 25px
+                width: 2.5rem
 
-    &--unnumbered
+    &.c-list--unnumbered
         list-style-type: square
 
-    &--footnotes
-        @extend .text-meta
+.c-list__item
+    @extend p
+    margin: 0 0 2rem 3.5rem
 
-        &:before
-            @extend .divider
-            content: ""
-            display: block
 
-.list-item
-    margin: 0 0 20px 35px
+//- Hero Images
 
-.list-inline > *
-    line-height: 5
-    margin: 0 15px
+.c-hero
+    position: relative
+
+    @media (min-width: #{$breakpoint-m})
+        @include position(fixed, top, right, 0, 0)
+        height: 100%
+
+        &.c-hero--wide
+            width: 45%
+
+        &.c-hero--narrow
+            width: 30%
+
+    @media (max-width: #{$breakpoint-m})
+        @include size(100%, 50rem)
+        position: relative
+
+.c-hero__credit
+    @include position(absolute, bottom, right, 1rem, 1rem)
+    background: $color-back
+    padding: 0.25rem 0.5rem
+    transform-origin: 100% 100%
+    transform: rotate(-90deg) translateX(100%)
+
+    &:before
+        content: "\00a9" " "
+
+
+//- Teasers
+
+.c-teaser
+    &:hover
+         animation: noise 0.75s ease 1
+
+.c-teaser__link
+    @include size(100%)
+    display: block
+    position: relative
+
+.c-teaser__headline
+    @include position(absolute, top, left, 0, 0)
+    @include size(100%)
+    display: flex
+    align-items: center
+    justify-content: center
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAF0lEQVQIW2NkwAIYgWKS6OIgQQxAoUoAE4AAUnD/0ugAAAAASUVORK5CYII=) repeat
+    color: $color-back
+    padding: 2.5rem 3.5rem
+
+    .c-teaser:hover &
+        animation: noise2 0.5s ease 1

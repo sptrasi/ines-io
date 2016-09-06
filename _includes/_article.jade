@@ -4,64 +4,56 @@
 
 include _mixins
 
-article.article(role="article")
+article.o-article(class=(image && image.display == false) ? "o-article--full" : "o-article--" + ((wide) ? "narrow" : "wide"))
 
     //- Art-directed posts
+    //- Article header
 
     if artdirected
         !=yield
 
     else
 
-        //- Article header
+    header.o-article__header
+        a(href="/" aria-label="Home")
+            !=partial("_includes/_logo", { size: 125 })
 
-        header.article-header
-            a(href="/" aria-label="Home")
-                !=partial("_includes/_logo", { size: 125 })
-
-            h1.article-headline=headline
+        h1
+            span.u-heading-1.u-text-upper=headline
 
             if date
-                .article-meta.text-meta
+                .o-inline-list.u-text-meta
                     if category
-                        strong.article-meta-category=category
+                        strong.u-text-upper=category
 
-                    span.article-meta-date
-                        +date(date)
+                    +date(date)
 
-                    span.article-meta-share
-                        !=partial("_includes/_share-icons", { posturl: getCurrentUrl() })
+                    !=partial("_includes/_share-icons", { posturl: getCurrentUrl() })
 
-        if image && image.display != false
+    if image && image.display != false
 
-            //- Hero Image
+        //- Hero Image
 
             .article-hero(class="article-hero--" + ((wide) ? "wide" : "narrow") style="background-image: url(" + ((current.path[0] == "blog") ? "/blog/img/" : "/assets/img/") + image.file + ")")
 
-                if image.credit_text
-                    .article-hero-credit.text-meta-small
+            if image.credit_text
+                +a(image.credit_url).c-hero__credit.u-text-meta-small=image.credit_text
 
-                        if image.credit_url
-                            a(href=image.credit_url target="_blank")=image.credit_text
+    //- Article content
 
-                        else
-                            !=image.credit_text
+    .o-article__content
+        !=yield
 
-        //- Article content
+        if meta
+            p.u-text-meta=meta
 
-        .article-content(class=(image && image.display == false) ? "article-content--full" : "article-content--" + ((wide) ? "narrow" : "wide"))
-            !=yield
-
-            if meta
-                p.article-meta.text-meta=meta
-
-            if readmore
-                p
                     +button(href=readmore target="_blank") Read more
+        if readmore
+            p
 
-    //- Article footer
+//- Latest Posts
 
-    footer.article-footer
-        h2.article-footer-headline Latest Posts
+.o-box
+    h2.o-box__header.u-heading-2 Latest Posts
 
-        !=partial("_includes/_latest-posts", { posts: 3 })
+    !=partial("_includes/_latest-posts", { posts: 3 })

@@ -1,0 +1,50 @@
+//- ----------------------------------
+//- ⚡️ UTILITIES
+//- ----------------------------------
+
+//- Text
+
+.u-text
+    font: normal normal 2.2rem/#{1.375} $font-primary
+
+.u-text-large
+    font: normal normal 2.6rem/#{1.375} $font-primary
+
+.u-text-meta
+    font: normal normal 1.6rem/#{1.375} $font-tertiary
+
+.u-text-meta-small
+    font: normal normal 1.3rem/#{1.375} $font-tertiary
+
+.u-text-code
+    font: normal 600 1.4rem/#{1.75} $font-code
+    text-shadow: 1px 1px 0 $color-back
+
+.u-text-label
+    font: normal bold 1.4rem/#{1} $font-secondary
+    letter-spacing: 1px
+    text-transform: uppercase
+
+.u-text-italic
+    font-style: italic
+
+.u-text-center
+    text-align: center
+
+.u-text-upper
+    text-transform: uppercase
+
+
+//- Headlines
+
+%heading
+    font-family: $font-secondary
+    font-weight: bold
+    line-height: 1.25
+    padding: 20px 0
+
+@each $level, $font-size in (1: 5.2, 2: 3.8, 3: 2.8, 4: 2.2)
+    h#{$level},
+    .u-heading-#{$level}
+        @extend %heading
+        font-size: #{$font-size}rem

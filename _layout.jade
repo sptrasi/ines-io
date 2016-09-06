@@ -48,15 +48,16 @@ html(lang="en")
 
             //- Footer
 
-            footer.footer
-                nav.footer-list.text-meta-small
-                    span.footer-item &copy; 2015-#{new Date().getFullYear()} 
-                    a.footer-item(href="/") #{site.toUpperCase()}
-                    a.footer-item(href="/about") About me
-                    a.footer-item(href="/impressum") Impressum &amp; Datenschutz
                     a.footer-item(href="https://github.com/" + profiles.github + "/ines-io" target="_blank") Source
                     a.footer-item(href="/feed" target="_blank" aria-label="RSS")
                         +icon("feed", 14)
+            footer.o-footer
+                nav.o-inline-list.u-text-meta-small
+                    span &copy; 2015-#{new Date().getFullYear()}
+                    a(href="/") #{site.toUpperCase()}
+                    a(href="/about") About me
+                    a(href="/impressum") Impressum &amp; Datenschutz
+
 
                 !=partial("_includes/_social-icons")
 
