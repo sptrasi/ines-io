@@ -139,7 +139,7 @@ mixin button(url, trusted)
 
 mixin icon(name, size)
     - var size = size || 24;
-    
+
     span.o-icon(aria-hidden="true")&attributes(attributes)
         svg(viewBox="0 0 #{size} #{size}" width=size height=size)
             use(xlink:href="/assets/img/icons.svg#icon-#{name}")

@@ -32,17 +32,17 @@ html(lang="en")
         meta(name="twitter:title" content=getMetaTitle(true))
         meta(name="twitter:description" content=description)
         meta(name="twitter:image" content=url + getMetaImage())
-            
+
         link(rel="stylesheet" href="/assets/css/style.css")
 
     body
-        
+        main
+
             //- Main Content
-        
 
             if current.path[0] == "index" || artdirected
                 !=yield
-                
+
             else
                 include _includes/_article
 
