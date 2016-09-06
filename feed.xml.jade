@@ -5,8 +5,8 @@
 include _includes/_mixins
 
 doctype xml
-rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
-    channel  
+rss(version="2.0" xmlns:atom="http://www.w3.org/2005/Atom")
+    channel
         title=title
         link=url
         description= description
@@ -16,10 +16,10 @@ rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
             if post.published != false
                 item
                     title=post.headline
-                    description <![CDATA[ 
+                    description <![CDATA[
                         if post.image
                             p: img(src="#{url}/blog/img/#{post.image.file}")
-              
+
                         !=partial("blog/" + slug, { absolute: url + "/blog/" })
                         | ]]>
 
@@ -28,5 +28,5 @@ rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
 
                         pubDate=[ date[0] + ",", date[2], date[1], date[3], date[4], date[5].match(/[-+]\d{4}/) || date[5] ].join(" ")
 
-                    link #{ url }/blog/#{ slug }
+                    link #{url}/blog/#{slug}
                     guid(isPermaLink="true") #{url}/blog/#{slug}
