@@ -37,6 +37,7 @@ code
 
 
 // Dividers
+//- Syntax Highlighting
 
 .divider
     border-color: $color-text
@@ -44,28 +45,48 @@ code
     border-width: 8px 0 0 0
     margin: 75px 0
     width: 20%
+[class*="language-"] .token
+    &.comment, &.prolog, &.doctype, &.cdata, &.punctuation
+        color: map-get($syntax-highlighting, comment)
 
+    &.property, &.tag, &.constant, &.symbol, &.deleted
+        color: map-get($syntax-highlighting, tag)
 
 // Embeds
+    &.boolean, &.number
+        color: map-get($syntax-highlighting, number)
 
 .embed
     @extend .block
+    &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted
+        color: map-get($syntax-highlighting, selector)
 
 .video
     @extend .block
     position: relative
     height: 0
+    @at-root .language-css .token.string,
+    &.operator, &.entity, &.url, &.variable
+        color: map-get($syntax-highlighting, operator)
 
     @each $ratio1, $ratio2 in (16, 9), (4, 3)
         &--#{$ratio1}x#{$ratio2}
             padding-bottom: (100% * $ratio2 / $ratio1)
+    &.atrule, &.attr-value, &.function
+        color: map-get($syntax-highlighting, function)
 
     iframe
         @include position(absolute, top, left, 0, 0)
         @include size(100%)
+    &.regex, &.important
+        color: map-get($syntax-highlighting, regex)
 
+    &.keyword
+        color: map-get($syntax-highlighting, keyword)
 
 // Images
+    &.italic
+        font-style: italic
 
 .image
     @extend .block
