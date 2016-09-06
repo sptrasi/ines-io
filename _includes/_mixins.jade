@@ -121,6 +121,13 @@ mixin code(language)
             block
 
 
+//- External Link
+
+mixin a(url, trusted)
+    a(href=url target="_blank" rel=(!trusted) ? "noopener nofollow" : "")&attributes(attributes)
+        block
+
+
 //- Button
 
 mixin button
