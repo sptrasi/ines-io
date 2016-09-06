@@ -28,7 +28,9 @@ article.o-article(class=(image && image.display == false) ? "o-article--full" : 
 
         //- Hero Image
 
-            .article-hero(class="article-hero--" + ((wide) ? "wide" : "narrow") style="background-image: url(" + ((current.path[0] == "blog") ? "/blog/img/" : "/assets/img/") + image.file + ")")
+        .c-hero.o-block(class="c-hero--" + ((wide) ? "wide" : "narrow"))
+            svg.c-hero__image(width="100%" height="100%" role="presentation")
+                image(width="100%" height="100%"  xlink:href=((current.path[0] == "blog") ? "/blog/" : "/assets/") + "img/#{image.file}" preserveAspectRatio="xMidYMin slice")
 
             if image.credit_text
                 +a(image.credit_url).c-hero__credit.u-text-meta-small=image.credit_text
