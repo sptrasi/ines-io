@@ -2,7 +2,7 @@ include ../_includes/_mixins
 
 p What's holding back Artificial Intelligence? While researchers rightly focus on better algorithms, there are a lot more things to be done. In this post I'll discuss three ways in which front-end development can improve AI technology: by improving the collection of annotated data, communicating the capabilities of the technology to key stakeholders, and exploring the system's behaviours and errors.
 
-h2 Data Collection and Training
++h(2, "data-collection-training") Data Collection and Training
 
 p Contrary to popular belief, #[a(href="https://www.edge.org/response-detail/26587" target="_blank") the bottleneck in AI is data], not algorithms. Data collection strongly relies on humans doing efficient work on computers. Humans interact with computers through interfaces, and the design, user experience and technology of those interfaces determines the quality of those interactions. Thus, front-end development is actually a key part of developing AI technologies.
 
@@ -22,7 +22,7 @@ p Now, if our goal is not to design a profitable mobile game, but to actually #[
 
 p The "task" completed by the user in "94%" is a prime example of the type of data you'll want to collect to train your AI model on. It's inherently #[em human] and so intuitive to us that we barely even think about it – and that makes it so hard for a computer to learn, and so valuable to us. If mobile games are able to #[em make people pay] to do these things, imagine all the possibilities once we apply modern knowledge of gamification, UX psychology, UI design, #[a(href="http://a11yproject.com/" target="_blank") accessibility standards] and cross-platform front-end technologies to the current state of data collection tools.
 
-h2 Demonstration and Education
++h(2, "demonstration-education") Demonstration and Education
 
 p A big part of AI development and research is showing people how the technology works and what it's able to do. The more we understand what's possible, the better we are at building software using those new technologies. Artificial Intelligence is often presented as a magical black box, and the mystery behind it is what makes it so intriguing. But in reality, our aim should be to make it more transparent and accessible for everyone. It's not enough to just show the results. People need to be able to see what's going on behind the scenes from the computer's perspective, and be able to interact with the technology directly. That's where front-end development comes in once again.
 
@@ -36,7 +36,7 @@ p While demos typically tease future functionality, they can also be useful tool
 
 +image("ai-frontend_displacy.jpg", "displaCy, the interactive dependency parse tree visualiser for the spaCy NLP tools", "Screenshot of displaCy demo")
 
-h2 Debugging and Iteration
++h(2, "debugging-iteration") Debugging and Iteration
 
 p Whether it's an app, a consumer service or part of an internal process, the end goal is to use AI technology to power a product. One of the biggest challenges is understanding and addressing the system's error profile. Your system is almost certainly going to make mistakes. When it does, you want to fail gracefully. It's hard to do that if you're running blind, without a good overview of your system's behaviours. The best way to get that overview is to hook your model up with a front-end as soon as possible.
 
@@ -52,9 +52,9 @@ p A more principled solution is to use #[em active learning]: you let the model 
 
 p Ultimately, what we're trying to do is have a human teach things to the computer. In those cases, deciding whether the model is right or wrong is trivial. Netflix is a technology company, "Snorlax" isn't. If the model "thinks" otherwise, it's clearly wrong. However, the computer will often know and "remember" a lot of things that the human doesn't. Active learning lets you exploit this and focus on the interesting cases where a human's input is actually going to have an impact.
 
-h2 Conclusion
++h(2, "conclusion") Conclusion
 
-p Artificial Intelligence is a fairly abstract area of study. The abstraction seems to reduce, but actually increases the need for front-end development. Abstract technologies are difficult to intuit, making visualisation an indispensible part of the debugging process. They're also inherently hard to communicate — and when words fail, demos rule. But most importantly, machine learners need human teachers. The task of training a system is fundamentally repetitive, but the lesson from gamification is that a repetitive task #[em can] be rewarding rather than aversive, depending on the interaction design. 
+p Artificial Intelligence is a fairly abstract area of study. The abstraction seems to reduce, but actually increases the need for front-end development. Abstract technologies are difficult to intuit, making visualisation an indispensible part of the debugging process. They're also inherently hard to communicate — and when words fail, demos rule. But most importantly, machine learners need human teachers. The task of training a system is fundamentally repetitive, but the lesson from gamification is that a repetitive task #[em can] be rewarding rather than aversive, depending on the interaction design.
 
 p Just as front-end development is essential for any web-based product's success today, I believe it will add immeasurable value to the development process of up and coming AI technologies, powering better user-facing products.
 

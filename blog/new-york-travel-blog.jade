@@ -4,15 +4,15 @@ mixin post(headline)
     +divider
 
     .blog-post(id=date)
-        h2
+        +h(2)
             a(href="#" + date)=headline
-            .text-meta=convertDate(date).full
+            .u-text-meta=convertDate(date).full
 
         block
 
 p
-    em In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York. To read my travel guide, go #[a(href=url + "/blog/new-york-travel-guide" target="_blank") here].
-    
+    em In early 2015, I left my job and got on a flight to New York City. This is my diary about a month and a half in New York. To read my travel guide, go #[+a(url + "/blog/new-york-travel-guide", true) here].
+
 
 +post("Coney Island", "2015-03-16")
     +image("new-york-travel-blog/coneyisland8.jpg")
@@ -42,7 +42,7 @@ p
 +post("Bronx Zoo", "2015-03-12")
     +image("new-york-travel-blog/zoo1.jpg")
 
-    p When I was a child we went to the zoo a lot but as I got older, I kind of lost interest and I hadn’t really been to a zoo in about a decade. So when the weather forecast predicted 16°C (like, about 30 degrees warmer than only a few weeks ago!), we decided to check out the #[a(href="http://bronxzoo.com/" target="_blank") Bronx Zoo], which is free in Winter season by the way. I had an amazing day with good weather, lots of walking around outside and got to see some of my favourties (Red pandas! Otters!). But aside from that, it was still mostly sad animals in very small spaces with handpainted backdrops.
+    p When I was a child we went to the zoo a lot but as I got older, I kind of lost interest and I hadn’t really been to a zoo in about a decade. So when the weather forecast predicted 16°C (like, about 30 degrees warmer than only a few weeks ago!), we decided to check out the #[+a("http://bronxzoo.com/") Bronx Zoo], which is free in Winter season by the way. I had an amazing day with good weather, lots of walking around outside and got to see some of my favourties (Red pandas! Otters!). But aside from that, it was still mostly sad animals in very small spaces with handpainted backdrops.
 
     +image("new-york-travel-blog/zoo3.jpg")
     +image("new-york-travel-blog/zoo2.jpg")
@@ -63,7 +63,7 @@ p
 +post("Lobsters &amp; Street Art", "2015-02-27")
     +image("new-york-travel-blog/lobster.jpg")
 
-    p Today I somehow ended up back in Chinatown and had my first #[em real] lobster! (The lobster sauce from my favourite dish at #[a(href="http://www.schwarzescafe-berlin.de/" target="_blank") Schwarzes Café] in Berlin doesn’t count.) It was surprisingly good. I also saw some more of lower Manhattan and came across lots of pretty buildings.
+    p Today I somehow ended up back in Chinatown and had my first #[em real] lobster! (The lobster sauce from my favourite dish at #[+a("http://www.schwarzescafe-berlin.de/") Schwarzes Café] in Berlin doesn’t count.) It was surprisingly good. I also saw some more of lower Manhattan and came across lots of pretty buildings.
 
     +image("new-york-travel-blog/streetart1.jpg")
     +image("new-york-travel-blog/houses.jpg")
@@ -77,7 +77,7 @@ p
 
     h3 Today I...
 
-    p ■ woke up late feeling surprisingly motivated and positive ■ went out to Manhattan again ■ had a burger, cheese fries and beer for lunch at #[a(href="https://www.shakeshack.com/" target="_blank") Shake Shack] ■ almost got so cold that I wanted to go back home again ■ discovered the magic of 99¢ pocket warmers from Duane Reade ■ went up 70 floors to the #[a(href="http://www.topoftherocknyc.com/" target="_blank") Top of the Rock] at Rockefeller Center ■ realised that it was the first time I spent money on entertainment in three weeks – everything else was free (except the $10 for some shitty club but whatever) ■ arrived upstairs just in time for the beautiful sunset over NYC and had the best 360° view ever ■ will cook something nice for dinner and curl up in the warm bed
+    p ■ woke up late feeling surprisingly motivated and positive ■ went out to Manhattan again ■ had a burger, cheese fries and beer for lunch at #[+a("https://www.shakeshack.com/") Shake Shack] ■ almost got so cold that I wanted to go back home again ■ discovered the magic of 99¢ pocket warmers from Duane Reade ■ went up 70 floors to the #[+a("http://www.topoftherocknyc.com/") Top of the Rock] at Rockefeller Center ■ realised that it was the first time I spent money on entertainment in three weeks – everything else was free (except the $10 for some shitty club but whatever) ■ arrived upstairs just in time for the beautiful sunset over NYC and had the best 360° view ever ■ will cook something nice for dinner and curl up in the warm bed
 
     +image("new-york-travel-blog/burger.jpg")
     +image("new-york-travel-blog/flag.jpg")
@@ -125,7 +125,7 @@ p
 +post("Friday the 13th", "2015-02-14")
     +image("new-york-travel-blog/tattoo1.jpg")
 
-    p Even before I arrived in New York, I knew I was going to get a tattoo over here. I still #[em love] getting tattoed and it’s just the perfect memory of a trip like this that marks such an important change in my life. A lot of studios were offering special Friday the 13th tattoos (that were mostly Valentine’s Day designs with a twist) and I found a #[a(href="http://www.bigbangink.com/" target="_blank") nice place] just around the corner. So here’s the new addition to the family.
+    p Even before I arrived in New York, I knew I was going to get a tattoo over here. I still #[em love] getting tattoed and it’s just the perfect memory of a trip like this that marks such an important change in my life. A lot of studios were offering special Friday the 13th tattoos (that were mostly Valentine’s Day designs with a twist) and I found a #[+a("http://www.bigbangink.com/") nice place] just around the corner. So here’s the new addition to the family.
 
     +image("new-york-travel-blog/tattoo2.jpg")
 
@@ -144,7 +144,7 @@ p
 
     h3 This week and yesterday I...
 
-    p ■ went to a friend’s exhibition (with free PBR – hipster stereotype: check) ■ discovered my new favourite neighbourhood supermarket ■ fixed the bed and felt like MacGyver ■ bought lots of interesting American drinks ■ wrote a blog about #[a(href=url + "/blog/die-zukunft-ist-da") my future] and thoughts on life and work ■ went to a house party in Bushwick and ended up in a few bars and clubs I don’t really remember ■ realised the bed was still broken ■ went to a #[em huge] shopping mall in Queens ■ went to Walmart (and seriously wondered why I was more excited about this than about – let’s say – seeing the Statue of Liberty) ■ got stuck on a train ■ had amazing burritos
+    p ■ went to a friend’s exhibition (with free PBR – hipster stereotype: check) ■ discovered my new favourite neighbourhood supermarket ■ fixed the bed and felt like MacGyver ■ bought lots of interesting American drinks ■ wrote a blog about #[+a(url + "/blog/die-zukunft-ist-da") my future] and thoughts on life and work ■ went to a house party in Bushwick and ended up in a few bars and clubs I don’t really remember ■ realised the bed was still broken ■ went to a #[em huge] shopping mall in Queens ■ went to Walmart (and seriously wondered why I was more excited about this than about – let’s say – seeing the Statue of Liberty) ■ got stuck on a train ■ had amazing burritos
 
     +image("new-york-travel-blog/winter1.jpg")
 
@@ -178,7 +178,7 @@ p
 +post("The beginning", "2015-02-01")
     +image("new-york-travel-blog/passport.jpg")
 
-    p The past few months have been turbulent, exciting and brought a lot of changes to my life. I left my job at #[a(href="http://www.exberliner.com/" target="_blank") Exberliner] after four years to take advantage of amazing new opportunities and finally become self-employed. I was blown away by the incredible support I got from everyone around me, the help that people offered me and how things just kind of fell into place as soon as I opened myself up for them. Don’t worry, I’m still not superstitious, my days of obsessing over self-help blogs are long gone and I couldn’t care less about #[em the universe]. But it did serve as reminder that somehow, everything will be ok in the end.</p>
+    p The past few months have been turbulent, exciting and brought a lot of changes to my life. I left my job at #[+a("http://www.exberliner.com/") Exberliner] after four years to take advantage of amazing new opportunities and finally become self-employed. I was blown away by the incredible support I got from everyone around me, the help that people offered me and how things just kind of fell into place as soon as I opened myself up for them. Don’t worry, I’m still not superstitious, my days of obsessing over self-help blogs are long gone and I couldn’t care less about #[em the universe]. But it did serve as reminder that somehow, everything will be ok in the end.</p>
 
     p Tomorrow I’m flying to New York City where I’m going to be living for a month and a half, exploring a new city in a new country, before returning to Berlin at the end of March to start a new chapter of my life. If you had told me this a year ago, I would have laughed at you.
 

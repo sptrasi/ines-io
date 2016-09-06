@@ -1,6 +1,6 @@
 include ../_includes/_mixins
 
-p In my #[a(href=url + "/blog/the-ultimate-guide-static-websites-jekyll" target="_blank") guide to static websites with Jekyll] I talked about the many advantages of using a static CMS for your blog: it's faster, more secure and lets you set up your process #[em exactly] the way you want. But I never really found a good solution to make it easy to add content elements like images, code blocks and embeds to blog posts without having to write a bunch of HTML every single time &mdash; and change every instance of it if I ever wanted to change the markup. While looking for the perfect static CMS for the new #[a(href="https://spacy.io" target="_blank") spaCy] website, I finally came across #[a(href="http://harpjs.com/" target="_blank") Harp], a static webserver with built-in pre-processing. Together with #[a(href="http://jade-lang.com/" target="_blank") Jade], a simplified markup language that supports JavaScript code and compiles to HTML, it's been my go-to setup ever since.
+p In my #[+a(url + "/blog/the-ultimate-guide-static-websites-jekyll", true) guide to static websites with Jekyll] I talked about the many advantages of using a static CMS for your blog: it's faster, more secure and lets you set up your process #[em exactly] the way you want. But I never really found a good solution to make it easy to add content elements like images, code blocks and embeds to blog posts without having to write a bunch of HTML every single time &mdash; and change every instance of it if I ever wanted to change the markup. While looking for the perfect static CMS for the new #[+a("https://spacy.io") spaCy] website, I finally came across #[+a("http://harpjs.com/") Harp], a static webserver with built-in pre-processing. Together with #[+a("http://jade-lang.com/") Jade], a simplified markup language that supports JavaScript code and compiles to HTML, it's been my go-to setup ever since.
 
 p In this blog post, I'll explain how to install and set up your blog with Harp in about a minute (yes, really!) and how to write powerful templates using Jade. I'll also share a couple of useful tips and tricks, as well as a nice-looking skeleton blog template I wrote to get you started.
 
@@ -12,40 +12,40 @@ p There are a bunch of benefits that come with this setup, but here are the most
     +item Simplified, clean and readable markup and support for reusable components for layouts and blog entries
     +item Can be easily extended with custom JavaScript functions
 
-h2 Getting started
++h(2) Getting started
 
 p If you're familiar with the command line and/or already have Node  installed, simply skip this first step and go ahead and install Harp. Otherwise, follow these two simple steps:
 
 +list("numbers")
-    +item Install #[a(href="https://nodejs.org/en/download/" target="_blank") Node] via the recommended installer for your platform and operating system. The installer installs the JavaScript runtime as well as the package manager npm, which we'll use to install Harp. 
-    +item Install #[a(href="http://harpjs.com/" target="_blank") Harp] and its dependencies with this simple command:
+    +item Install #[+a("https://nodejs.org/en/download/") Node] via the recommended installer for your platform and operating system. The installer installs the JavaScript runtime as well as the package manager npm, which we'll use to install Harp.
+    +item Install #[+a("http://harpjs.com/") Harp] and its dependencies with this simple command:
         +code("bash").
             sudo npm install -g harp
 
-p This installs Harp globally and adds the #[code harp] command. For a step-by-step installation tutorial, check out #[a(href="https://www.youtube.com/watch?v=SEA0G9kpVJM" target="_blank") this video]. After installation, navigate to the folder you want to create your project in.
+p This installs Harp globally and adds the #[code harp] command. For a step-by-step installation tutorial, check out #[+a("https://www.youtube.com/watch?v=SEA0G9kpVJM") this video]. After installation, navigate to the folder you want to create your project in.
 
-h3 The skeleton template
++h(3) The skeleton template
 
 p To make things easier, I've put together a nice-looking boilerplate designed for a modern, minimal blog. It includes a bunch of example components and functions, easily extendable CSS and a bunch of documentation and explanations throughout the code.
 
 +image("harp-jade_skeleton.jpg", false, "Preview of skeleton blog template")
 
-p.block-center
-    +button(href="https://github.com/" + profiles.github + "/pretty-harp-jade-skeleton/" target="_blank") View Skeleton Theme on GitHub
+p.u-text-center
+    +button("https://github.com/" + profiles.github + "/pretty-harp-jade-skeleton/") View Skeleton Theme on GitHub
 
 p You can either download the theme and add it to your directory manually, or import it directly using Harp. The #[code harp init] command below creates a new directory called "myproject" in the current location and then imports the latest version of my boilerplate from GitHub:
 
 +code("bash").
     harp init myproject --boilerplate inesmontani/pretty-harp-jade-skeleton
 
-p For alternative templates, check out #[a(href="https://github.com/harp-boilerplates" target="_blank") Harp Boilerplates] or use #[code harp init] to install the default. Once you've set up your project, all you need to do is run this and open #[code localhost:9000] in your browser:
+p For alternative templates, check out #[+a("https://github.com/harp-boilerplates") Harp Boilerplates] or use #[code harp init] to install the default. Once you've set up your project, all you need to do is run this and open #[code localhost:9000] in your browser:
 
 +code("bash").
     harp server
 
 p #[code harp server] previews your site locally, watches for any changes in the directory and processes new and updated files.
 
-h2 The folder structure
++h(2) The folder structure
 
 p Now that the site's up and running locally, let's take a look at the folder structure. Harp allows you to structure your project pretty flexibly. My skeleton theme keeps the source files in the root directory and compiles the static site into a directory named #[code www].
 
@@ -78,13 +78,13 @@ p Similar to other generators like Jekyll, files with a leading underscore are n
 
 p Files that can be pre-processed by Harp, like #[code .sass], #[code .scss], #[code .less] or #[code .coffee] are also converted automatically. #[code css/style.sass] simply becomes #[code css/style.css] in the destination directory.
 
-h2 Organizing metadata
++h(2) Organizing metadata
 
 p All metadata is organized in JSON files. There are 2 files that are interpreted by Harp:
 
 +list
     +item #[code _harp.json] &mdash; Used for "globals", i.e. general configuration and other information you want to make easily available to your templates. This could include things like the site name or your Twitter handle.
-    
+
         +code("json").
             {
               "globals": {
@@ -95,11 +95,11 @@ p All metadata is organized in JSON files. There are 2 files that are interprete
                 "twitter": "mytwitteraccount",
               }
             }
-            
+
         | All of these variables can be used in your theme like #[code &#35;{sitename}] (inline syntax) or #[code title=sitename] to set the content of the #[code &lt;title&gt;] element to "My blog". More on the Jade syntax later!
-        
+
     +item #[code _data.json] &mdash; Used for all relevant metadate for files in its respective folder. Folders don't have to contain a #[code _data.json], but they can to keep things neat and organized. Here's an example for a blog post:
-        
+
         +code("json").
             {
               "this-is-a-post": {
@@ -109,19 +109,19 @@ p All metadata is organized in JSON files. There are 2 files that are interprete
                 "image": "post1.jpg"
               }
             }
-        
+
         | Each item is an object and its key (#[code this-is-a-post]) refers to a file with that name in the same folder. So the snippet above belongs to #[code this-is-a-post.jade].
 
-h2 Jade in a nutshell
++h(2) Jade in a nutshell
 
-p While Harp is a pretty powerful static server and a useful tool for any kind of site, the combination with Jade takes it to a whole new level. #[a(href="http://jade-lang.com/" target="_blank") Jade] (soon to be renamed to Pug) is a markup language with simplified syntax that compiles to HTML. To give you an example, let's have a look at a simple loop to render a list of posts. Here's how this would look like using plain HTML and  template tags:
+p While Harp is a pretty powerful static server and a useful tool for any kind of site, the combination with Jade takes it to a whole new level. #[+a("http://jade-lang.com/") Jade] (soon to be renamed to Pug) is a markup language with simplified syntax that compiles to HTML. To give you an example, let's have a look at a simple loop to render a list of posts. Here's how this would look like using plain HTML and  template tags:
 
 +code("markup").
     {% for post in site.posts %}
 
       &lt;article class="{% if %post.featured %}featured{% else % }regular{% endif %}"&gt;
-        &lt;h2 class="headline"&gt;{{ post.title }}&lt;/h2&gt;
-            
+        &lt;+h(2) class="headline"&gt;{{ post.title }}&lt;/+h(2)&gt;
+
           {% if post.excerpt %}
             &lt;div class="excerpt"&gt;{{ post.excerpt }}&lt;/div&gt;
           {% endif %}
@@ -135,14 +135,14 @@ p And here's the same thing in Jade:
 +code("jade").
     each post in site.posts
         article(class=post.featured ? "featured" : "regular")
-            h2.headline=post.title
-            
+            +h(2).headline=post.title
+
             if post.excerpt
                 .excerpt=post.excerpt
 
 p So much cleaner, right? One of the big advantages of Jade is that it simplifies the syntax without actually simplifying the subset that it supports. It lets you express anything you can also express in HTML. On top of that, you can define reusable components, include files and use JavaScript-like statements and even full JavaScript expressions.
 
-h3 The most important features
++h(3) The most important features
 
 +list
     +item Jade is #[strong whitespace sensitive], meaning that you have to use indentation for parent/children relationships. This also lets you omit the closing tag. Before working with Jade, I never realised how much space is taken up by closing tags alone.
@@ -150,61 +150,61 @@ h3 The most important features
             ul
               li I am a list item.
               li Me too.
-    
+
     +item Each line needs to start with a tag. #[strong Plain text] needs to be prefixed with a #[code |] character.
         +code("jade").
-            p This is good.        
+            p This is good.
             This is really bad and will be rendered as &lt;This&gt;
             | This is good again.
-    
+
     +item #[strong Classes] and #[strong IDs] are added after to tags similar to CSS, #[strong attributes] are added in brackets after. #[code div] tags can be left out.
         +code("jade").
             #container
-              a.link(href="http://google.com" target="_blank") Google
-        
+              a.link(href="http://google.com") Google
+
     +item #[strong Variables] containing strings can be displayed inline or as a tag's content.
         +code("jade").
             - var title = "Hello world"
-            
+
             .title=title
             p The title is &#35;{title}
-           
+
     +item For #[strong conditionals] and #[strong iteration], there are simplified versions of #[code if]/#[code else if]/#[code else], #[code each], #[code while] and #[code case] (equals #[code switch] in JS):
         +code("jade").
-            each post in posts                
+            each post in posts
               if post.description
                 p=post.description
-                    
+
               else
                 p.error No description.
 
     +item #[strong JavaScript expressions] can be added inline. A good example of this is using the ternary operator for dynamic classes:
-    
+
         +code("jade").
             .post(class=featured ? "wide" : "narrow")
               p Post categories: &#35;{categories.join(", ")}
 
     +item Any other #[strong JavaScript code], like variable declarations, needs to be prefixed with a hyphen:
-    
+
         +code("jade").
             - var counter = 0
-            
+
             each post in posts
-                h2.title=post.title
+                +h(2).title=post.title
                 - counter++
 
     +item #[strong Mixins] are reusable components or "content functions" and can take arguments.
-    
+
         +code("jade").
             mixin image(file, alt)
               .image
                 img(src="/blog/img/" + file alt=alt)
-                    
+
             +image("example.jpg", "Image description")
 
-p For more examples and an interactive editor, check out the #[a(href="http://jade-lang.com/reference/" target="_blank") Jade docs] or play around with some code on #[a(href="http://codepen.io/" target="_blank") CodePen]. Simply go to the editor settings and choose Jade as your HTML preprocessor.
+p For more examples and an interactive editor, check out the #[+a("http://jade-lang.com/reference/") Jade docs] or play around with some code on #[+a("http://codepen.io/") CodePen]. Simply go to the editor settings and choose Jade as your HTML preprocessor.
 
-h2 Working with mixins and JS
++h(2) Working with mixins and JS
 
 p Using custom complex markup in blog posts can become pretty annoying. If you want components like data tables, responsive embeds or code blocks that require classes and nested elements, you usually had to add them to each post manually. Whenever that markup changed, you had to go back and change every single instance of that component. With mixins, you only need to define the markup in one place:
 
@@ -216,7 +216,7 @@ p Using custom complex markup in blog posts can become pretty annoying. If you w
 
         if source
           footer.quote-source=source
-          
+
     +quote("Rick Astley") Never gonna give you up.
 
 p #[code block] allows you to insert the children of a mixin in a specific place. #[code ...style], also called "rest argument syntax", lets the mixin take an unknown amount of arguments. Every argument after source is then combined into an array that's available to your mixin. #[code .join(" ")] combines the arguments into a string separated by spaces &mdash; perfect for a list of CSS classes for example.
@@ -233,20 +233,20 @@ p Here is a function that turns dates in the #[code YYYY-MM-DD] format into a ni
     -    return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
     -  }
 
-p Jade rendered by Harp requires JavaScript code to be prefixed with a hyphen on #[em each line], which I agree looks a little awkward and will hopefully #[a(href="https://github.com/sintaxi/harp/issues/543#issuecomment-214754669" target="_blank") be fixed] soon.
+p Jade rendered by Harp requires JavaScript code to be prefixed with a hyphen on #[em each line], which I agree looks a little awkward and will hopefully #[+a("https://github.com/sintaxi/harp/issues/543#issuecomment-214754669") be fixed] soon.
 
-h2 Layout partials with Harp
++h(2) Layout partials with Harp
 
 p Think of Harp's layout partials as somewhere in between regular includes and flexible mixins. The #[code !=partial()] function lets you include other files using their relative path. This one includes the file #[code _header.jade] from a folder called #[code _layout]:
 
-+code("jade").    
++code("jade").
     !=partial("_layout/_header")
-    
+
 p Partials can also be included dynamically. For example, you could have different pages include different widgets that are specified in the metadata, using the same template:
 
-+code("jade").    
++code("jade").
     - var widget = "_newsletter-signup"
-    !=partial(widget)              
+    !=partial(widget)
 
 p Partials can also take a second argument, an object with additional data you want to pass on. This is not necessary for global or post metadata, which will always be available for the page that's currently rendered. But you could have a general template for a sidebar, that's populated with different content, or you could create a partial to display a flexible number of posts, like so:
 
@@ -257,9 +257,9 @@ p Partials can also take a second argument, an object with additional data you w
     each post, slug in public.blog.data
       if(post_max === 0 || post_counter &lt;= post_max)
         .post
-            
+
           //- post markup goes here
-            
+
         - post_counter++
 
 p If no post count is specified, it defaults to #[code 0] - which will render all posts that are available. The partial can then be called anywhere in your templates like this:
@@ -267,30 +267,30 @@ p If no post count is specified, it defaults to #[code 0] - which will render al
 +code("jade").
     !=partial("_latest-posts", { posts: 6 })
 
-h2 Building the site
++h(2) Building the site
 
 p Compiling the static version of your side including all necessary pre-processing only takes one simple command:
 
 +code("bash").
     harp compile
-    
+
 p That's it and you're ready to go!
 
 +divider
 
-h2 Tips and Tricks
++h(2) Tips and Tricks
 
-h3 Detecting the current page and section
++h(3) Detecting the current page and section
 
 p To create flexible templates without unnecessary repetition, it's good to know the page you're currently on and which folder it is in. Harp comes with two options:
 
 +list
     +item #[code current.source] returns the name of the current page. For example, #[code some-post] if you're visiting #[code /blog/some-post].
     +item #[code current.path] returns the full path to the current page as an array. For example, #[code ["blog", "some-post"]] if you're visiting #[code /blog/some-post].
-    
+
 p This way, you can easily check if a post is the home page index (#[code current.path[0] == "index"]), a blog post (#[code current.path[0] == "blog"]) or just a very specific page. You could also use this to write WordPress-style #[code isHome()] or #[code isBlog()] functions.
 
-h3 Separate previewing from publishing
++h(3) Separate previewing from publishing
 
 p Sometimes you want to include things in your code that are only rendered when previewing the site locally, like new experimental styles. Or you want to include your Google Analytics only when building the final site that will be uploaded to your server. That's where environments come in handy. By default, Harp sets the environment to "development" when serving the site via #[code harp server] and "production" when building it via #[code harp compile]. The variable #[code environment] outputs the current environment in your theme:
 
@@ -298,9 +298,9 @@ p Sometimes you want to include things in your code that are only rendered when 
     if environment == 'development'
       p For testing purposes only!
 
-h3 Creating an RSS feed
++h(3) Creating an RSS feed
 
-p RSS feeds might seem like a mystery sometimes, but they're really just simple XML files. Harp will compile #[code feed.xml.jade] to #[code feed.xml] and render it with Jade, wihch means you can use simplified syntax. A full RSS feed is part of my #[a(href="https://github.com/" + profiles.github + "/pretty-harp-jade-skeleton/" target="_blank") Skeleton Template], including a little function to convert your post date into a valid RSS date. Here's a simplified version to show the principle:
+p RSS feeds might seem like a mystery sometimes, but they're really just simple XML files. Harp will compile #[code feed.xml.jade] to #[code feed.xml] and render it with Jade, wihch means you can use simplified syntax. A full RSS feed is part of my #[+a("https://github.com/" + profiles.github + "/pretty-harp-jade-skeleton/") Skeleton Template], including a little function to convert your post date into a valid RSS date. Here's a simplified version to show the principle:
 
 +code("jade").
     doctype xml
@@ -309,7 +309,7 @@ p RSS feeds might seem like a mystery sometimes, but they're really just simple 
           title= title
           link= url
           description= description
-          atom:link(href="&#35;{ url }/feed.xml", rel="self", type="application/rss+xml")
+          atom:link(href="&#35;{ url }/feed.xml" rel="self" type="application/rss+xml")
 
           each post, slug in public.blog._data
             item
@@ -327,16 +327,16 @@ p To prevent Harp from compiling the feed as a normal page using your layout, ma
       "layout": false
     }
 
-h3 Pretty URLs
++h(3) Pretty URLs
 
-p By default, Harp compiles all files as separate HTML files with the file extension #[code .html]. This works fine, but it's definitely not as nice as being able to navigate to #[code blog/some-post]. If your server is running Apache (which is the case for most shared hosting), add this to your #[code .htaccess] file on your server (or create one – go #[a(href="http://code.tutsplus.com/tutorials/the-ultimate-guide-to-htaccess-files--net-4757" target="_blank") here] for more info and tips):
+p By default, Harp compiles all files as separate HTML files with the file extension #[code .html]. This works fine, but it's definitely not as nice as being able to navigate to #[code blog/some-post]. If your server is running Apache (which is the case for most shared hosting), add this to your #[code .htaccess] file on your server (or create one – go #[+a("http://code.tutsplus.com/tutorials/the-ultimate-guide-to-htaccess-files--net-4757") here] for more info and tips):
 
 +code("apacheconf").
     Options +MultiViews
-    
+
 p This is the easiest option to make your server look for matching filenames. So if you request #[code blog/some-post], the server will search for matching files, find #[code some-post.html] and show it to you. Keep in mind that you won't be able to have a file and a folder with the same name in the same directory if you're using this solution.
 
-h3 Art-directed Posts
++h(3) Art-directed Posts
 
 p Art-directed posts are blog posts that have their own unique style and layout different from the general template. I love the idea of this and it's very easy to set up. Harp lets you "opt-out" of a layout by setting #[code layout: false] in the post meta data:
 
@@ -349,27 +349,27 @@ p Art-directed posts are blog posts that have their own unique style and layout 
 p Now the content of your post is shown directly and not plugged into your #[code _layout.jade]. This means that you need to set up the whole HTML structure of the page within the post &mdash; so you can basically do anything you want! If you only want to opt out of the general blog post template for certain posts, you could consider doing something like this in the #[code _layout.jade]:
 
 +code("jade").
-    if current.path[0] == 'blog'
+    if current.path[0] == "blog"
       if artdirected
         !=yield
-          
+
       else
         !=partial("_includes/_post")
 
 p This way, you keep the basic structure of your layout intact. #[code yield] simply display the content of the current page.
 
-h2 Any questions or suggestions?
++h(2) Any questions or suggestions?
 
-p Let's talk #[a(href="https://twitter.com/" + profiles.twitter) on Twitter]!
+p Let's talk #[+a("https://twitter.com/" + profiles.twitter) on Twitter]!
 
-h2 Links and Resources
++h(2) Links and Resources
 
 +list
-    +item #[a(href="http://jade-lang.com/reference/" target="_blank") Official Jade Documentation]
-    +item #[a(href="https://naltatis.github.io/jade-syntax-docs/" target="_blank") Interactive Jade Syntax Docs] by naltatis (GitHub)
-    +item #[a(href="http://harpjs.com/docs/" target="_blank") Official Harp Documentation]
-    +item #[a(href="https://github.com/" + profiles.github + "/pretty-harp-jade-skeleton/" target="_blank") Pretty Jade Harp Sekeleton Template] (GitHub)
-    +item #[a(href="https://github.com/" + profiles.github + "/jade-pug-mixins") Collection of my Jade Mixins] (GitHub)
-    +item #[a(href="http://harpjs.com/recipes/" target="_blank") Harp Recipes] for additional functionality
-    +item #[a(href="https://www.harp.io/" target="_blank") Harp Platform] &mdash; Publish your Harp Projects directly via Dropbox
-    +item #[a(href="https://spacy.io/blog/modular-markup" target="_blank") Rebuilding a Website with Modular Markup Components], a more in-depth article I wrote for #[a(href="https://spacy.io" target="_blank") spaCy]
+    +item #[+a("http://jade-lang.com/reference/") Official Jade Documentation]
+    +item #[+a("https://naltatis.github.io/jade-syntax-docs/") Interactive Jade Syntax Docs] by naltatis (GitHub)
+    +item #[+a("http://harpjs.com/docs/") Official Harp Documentation]
+    +item #[+a("https://github.com/" + profiles.github + "/pretty-harp-jade-skeleton/") Pretty Jade Harp Sekeleton Template] (GitHub)
+    +item #[+a("https://github.com/" + profiles.github + "/jade-pug-mixins") Collection of my Jade Mixins] (GitHub)
+    +item #[+a("http://harpjs.com/recipes/") Harp Recipes] for additional functionality
+    +item #[+a("https://www.harp.io/") Harp Platform] &mdash; Publish your Harp Projects directly via Dropbox
+    +item #[+a("https://spacy.io/blog/modular-markup") Rebuilding a Website with Modular Markup Components], a more in-depth article I wrote for #[+a("https://spacy.io") spaCy]

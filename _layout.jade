@@ -48,9 +48,6 @@ html(lang="en")
 
             //- Footer
 
-                    a.footer-item(href="https://github.com/" + profiles.github + "/ines-io" target="_blank") Source
-                    a.footer-item(href="/feed" target="_blank" aria-label="RSS")
-                        +icon("feed", 14)
             footer.o-footer
                 nav.o-inline-list.u-text-meta-small
                     span &copy; 2015-#{new Date().getFullYear()}
@@ -58,6 +55,8 @@ html(lang="en")
                     a(href="/about") About me
                     a(href="/impressum") Impressum &amp; Datenschutz
 
+                    +a("https://github.com/" + profiles.github + "/ines-io") Source
+                    +a("/feed", true)(aria-label="RSS") #[+icon("feed", 14)]
 
                 !=partial("_includes/_social-icons")
 

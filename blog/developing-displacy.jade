@@ -1,34 +1,34 @@
 include ../_includes/_mixins
 
-p My latest project started out as web development job but quickly turned into something much bigger: #[a(href="https://displacy.spacy.io" target="_blank") displaCy], a visualiser for dependency parse trees (grammatical structure) using the #[a(href="https://spacy.io" target="_blank") spaCy] API. It's super lightweight and built entirely with CSS, some basic HTML and a bit of JavaScript. This post is about the development process and how to make the most of CSS to visualise data in a fun and flexible way. (And don't worry, I'll also try to explain a bit of that computational linguistics stuff.)
+p My latest project started out as web development job but quickly turned into something much bigger: #[+a("https://displacy.spacy.io") displaCy], a visualiser for dependency parse trees (grammatical structure) using the #[+a("https://spacy.io") spaCy] API. It's super lightweight and built entirely with CSS, some basic HTML and a bit of JavaScript. This post is about the development process and how to make the most of CSS to visualise data in a fun and flexible way. (And don't worry, I'll also try to explain a bit of that computational linguistics stuff.)
 
-h2 What is spaCy?
++h(2) What is spaCy?
 
-p #[a(href="https://spacy.io" target="_blank") spaCy] is a library for Natural Language Processing (NLP). The basics are actually quite simple: You can feed spaCy all kinds of texts and it will tell you #[em a lot] about those texts in basically no time. For example, it can parse a sentence and tell you everything you want to know about its grammatical structure. This may sound quite abstract and academic (I still have vivid memories of having to draw a bunch of #[a(href="https://en.wikipedia.org/wiki/Head-driven_phrase_structure_grammar#Sample_grammar" target="_blank") those] in uni) and maybe the significance of this is not instantly obvious. But think about it this way:
+p #[+a("https://spacy.io") spaCy] is a library for Natural Language Processing (NLP). The basics are actually quite simple: You can feed spaCy all kinds of texts and it will tell you #[em a lot] about those texts in basically no time. For example, it can parse a sentence and tell you everything you want to know about its grammatical structure. This may sound quite abstract and academic (I still have vivid memories of having to draw a bunch of #[+a("https://en.wikipedia.org/wiki/Head-driven_phrase_structure_grammar#Sample_grammar") those] in uni) and maybe the significance of this is not instantly obvious. But think about it this way:
 
 +quote("spacy.io", "https://spacy.io") Computers don’t understand text. This is unfortunate, because that’s what the web almost entirely consists of. We want to recommend people text based on other text they liked. We want to shorten text to display it on a mobile screen. We want to aggregate it, link it, filter it, categorise it, generate it and correct it.
 
-p So basically, once your computer is able to accurately tag the parts of speech (i.e. knows what's a verb, a noun, an adjective and so on) and the dependencies (i.e. knows that noun A is subject of verb B), you can use this data and build really cool things, like apps, web services or advanced analytics tools that actually, more or less, #[em understand] language. If you want to know more about the theory behind this and how to make a computer learn, check out this #[a(href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank") Visual Introduction to Machine Learning].
+p So basically, once your computer is able to accurately tag the parts of speech (i.e. knows what's a verb, a noun, an adjective and so on) and the dependencies (i.e. knows that noun A is subject of verb B), you can use this data and build really cool things, like apps, web services or advanced analytics tools that actually, more or less, #[em understand] language. If you want to know more about the theory behind this and how to make a computer learn, check out this #[+a("http://www.r2d3.us/visual-intro-to-machine-learning-part-1/") Visual Introduction to Machine Learning].
 
-h2 displaCy in a nutshell
++h(2) displaCy in a nutshell
 
 p What started as a little test to find the best way to present the dependency parse tree examples on the spaCy website, quickly turned into its own project. Most other existing visualisation tools create more or less static images or SVGs and end up more and more confusing the longer the sentence gets. Plus, the output usually looks like your average academic textbook or – no offence – a flash application from the 90s. displaCy is different and uses only CSS, HTML and JavaScript.
 
-h2 What makes displaCy special
++h(2) What makes displaCy special
 
 +list
     +item #[strong lightweight and incredibly small]: the gzipped core is less than 3kb
-    +item #[strong HTML, CSS &amp; JS only]: 100% client-side if necessary. If spaCy runs locally, it can be used without an internet connection and the current DOM can be #[a(href="https://superuser.com/questions/555932/can-i-export-the-contents-of-google-chromes-dom-inspector" target="_blank") copied] for a static HTML file
+    +item #[strong HTML, CSS &amp; JS only]: 100% client-side if necessary. If spaCy runs locally, it can be used without an internet connection and the current DOM can be #[+a("https://superuser.com/questions/555932/can-i-export-the-contents-of-google-chromes-dom-inspector") copied] for a static HTML file
     +item #[strong cross-browser compatible]: can be accessed in any (modern) browser and even looks decent on smartphones
     +item #[strong web standards compatible]: produces no weird or invalid markup, doesn't mess with anything and can easily be extended
 
-h2 How it works
++h(2) How it works
 
 p The idea behind it is this: In a dependency parse tree, you need to be able to connect all words in all possible ways to describe every possible relation between them. For a sentence with five words, it would look something like this:
 
 +codepen("EjGvyV", "450")
 
-p For 5 words, we need 4 short arrows of length 1 to connect them to their direct neighbours, 3 arrows of length 2 to connect them to their second next neighbour and so on. Or a little more abstract: For a sentence of #[code n] words, we need #[code n - 1] arrows to connect all words to their neighbours – this is what I call level 1. On level 2, an arrow spans over 2 arrows on level 1 to connect the words to their second next neighbours. In total, we can potentially have up to #[code n - 1] levels. Level 1 contains #[code n - 1] arrows, level 2 #[code n - 2], level 3 #[code n - 3] and so on. 
+p For 5 words, we need 4 short arrows of length 1 to connect them to their direct neighbours, 3 arrows of length 2 to connect them to their second next neighbour and so on. Or a little more abstract: For a sentence of #[code n] words, we need #[code n - 1] arrows to connect all words to their neighbours – this is what I call level 1. On level 2, an arrow spans over 2 arrows on level 1 to connect the words to their second next neighbours. In total, we can potentially have up to #[code n - 1] levels. Level 1 contains #[code n - 1] arrows, level 2 #[code n - 2], level 3 #[code n - 3] and so on.
 
 p To display the example above, I put together this simple HTML structure:
 
@@ -36,7 +36,7 @@ p To display the example above, I put together this simple HTML structure:
   &lt;div class="arrows"&gt;
     &lt;div class="level level1"&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
-      &lt;span class="arrow"&gt;&lt;/span&gt; 
+      &lt;span class="arrow"&gt;&lt;/span&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
     &lt;/div&gt;
@@ -45,12 +45,12 @@ p To display the example above, I put together this simple HTML structure:
       &lt;span class="arrow"&gt;&lt;/span&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
-    &lt;/div&gt; 
+    &lt;/div&gt;
 
     &lt;div class="level level3"&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
-    &lt;/div&gt; 
+    &lt;/div&gt;
 
     &lt;div class="level level4"&gt;
       &lt;span class="arrow"&gt;&lt;/span&gt;
@@ -65,13 +65,13 @@ p To display the example above, I put together this simple HTML structure:
     &lt;span&gt;word five&lt;/span&gt;
   &lt;/div&gt;
 
-h3 The API
++h(3) The API
 
-p In order to visualise a sentence, we need to feed it to the spaCy API which can be set up to return pretty much anything we need. So #[a(href="https://spacy.io/blog" target="_blank") Matt] set it up to return JSON formatted data that contains the words and arrows in separate objects. Using JavaScript, those can be turned into HTML markup similar to the example above. If an arrow is used, it gets the class #[code left] or #[code right] to style it and set the direction. If it's unused, it's set to #[code display: none]. That way, we are able to keep a flexible structure and calculate size and positions using only CSS.
+p In order to visualise a sentence, we need to feed it to the spaCy API which can be set up to return pretty much anything we need. So #[+a("https://spacy.io/blog") Matt] set it up to return JSON formatted data that contains the words and arrows in separate objects. Using JavaScript, those can be turned into HTML markup similar to the example above. If an arrow is used, it gets the class #[code left] or #[code right] to style it and set the direction. If it's unused, it's set to #[code display: none]. That way, we are able to keep a flexible structure and calculate size and positions using only CSS.
 
 p I'm skipping the detailed explanation of the JavaScript code because it really is quite simple and mostly a bunch of loops iterating over arrows and words, calculating things here and there and adding stuff to the DOM (I might make a separate post about this later). The CSS is where the real magic happens.
 
-h2 The basic CSS
++h(2) The basic CSS
 
 p It all starts with the integral part of the whole thing: the arrow. I knew it was possible to draw all kinds of shapes with CSS so I gave it a quick go on Codepen and it came together surprisingly fast. The arrow needs only one HTML element, #[code &lt;div class="arrow"&gt;] and the CSS pseudo-elements #[code :before] and #[code :after]. See the example here:
 
@@ -85,15 +85,15 @@ p For the arrow head, I used the #[code :after] pseudo-element and a simple upsi
 
 p Here's a dynamic SCSS version of two arrows (left and right) that shows how easy it is to change an arrow's direction. To play around with it, simply change the variables at the top of the SCSS code. It's not perfect but it shows another trick: The arc doesn't have the full length but #[code $length - ($head/2 - $thickness)] – if you take half of the arrow head's width and the thicknesss of the arc off, the arc aligns perfectly in the middle of the arrow.
 
-h2 The complex CSS
++h(2) The complex CSS
 
-p Based on the HTML markup above, I came up with the first draft to connect the arrows and words. I wrote this in #[a(href="http://sass-lang.com/guide" target="_blank") SCSS] which was a tremendous help in maintaining a neat structure and keeping track of the numbers and calculations. I have no idea how I managed to survive before CSS preprocessors. To view the final compiled CSS, click "View compiled" in the SCSS tab. (And even if you're not interested in this particular use of the CSS arrows – you can make pretty cool patterns with them, too.)
+p Based on the HTML markup above, I came up with the first draft to connect the arrows and words. I wrote this in #[+a("http://sass-lang.com/guide") SCSS] which was a tremendous help in maintaining a neat structure and keeping track of the numbers and calculations. I have no idea how I managed to survive before CSS preprocessors. To view the final compiled CSS, click "View compiled" in the SCSS tab. (And even if you're not interested in this particular use of the CSS arrows – you can make pretty cool patterns with them, too.)
 
 +codepen("EjGvyV", "450")
 
 p To make this happen in CSS, all levels have an absolute position and are stacked on top of each other. In order to start the first arrow the middle of the first word, all levels need a left offset of half of the word's width, i.e. #[code 100% &#47; n &#47; 2]. The second child of each level – #[code :nth-child(2)] – starts in the middle of word 2, so it gets an additional offset of the word's width, #[code 100% &#47; n]. The third child is moved even further along to word 3, so #[code :nth-child(3)] receives an offset of #[code 100% &#47; n * 2]. The list goes on.
 
-h3 Automating the logic in SCSS
++h(3) Automating the logic in SCSS
 p To show how this can be automated, here’s a quick SCSS function:
 
 +code("scss").
@@ -104,12 +104,12 @@ p To show how this can be automated, here’s a quick SCSS function:
   @for $i from 1 through $words {
       .level#&#123;$i&#125; {
           height: $height * $i;
-          
+
           .arrow {
               width: #&#123;$width * $i&#125;;
           }
       }
-      
+
       .level .arrow:nth-child(#&#123;$i&#125;) {
           left: #&#123;$width * ($i - 1)&#125;;
       }
@@ -117,26 +117,26 @@ p To show how this can be automated, here’s a quick SCSS function:
 
 p This little loop creates a class for each level (named level1, level2 and so on) and adds the respective level height and arrow  width. It then adds a declaration for every possible arrow. Note #[code $i - 1] because the moving of child elements starts with the second child which is moved by #[code 100% &#47; n * (2 - 1)] = #[code 100% &#47; n].
 
-p This is obviously just a little drafted example of the basic principle. It took a bit of fiddling and calculating to find the perfect ratios for the arrows to expand and add dynamic paddings for each level to avoid arrow overlapping. A crucial ingredient was the CSS3 #[code calc()] function to calculate sizes from different units like px and percent (even though it’s pretty much #[a(href="http://caniuse.com/#feat=calc" target="_blank") supported] by all modern browsers, it’s still fairly underrated). Another helpful strategy was to take advantage of valid native HTML attributes like #[code title] which I added to both arrows and words. This doesn't only make it incredibly easy to add tags to the arcs via #[code content: attr(title)] in CSS, it also adds semantic value.
+p This is obviously just a little drafted example of the basic principle. It took a bit of fiddling and calculating to find the perfect ratios for the arrows to expand and add dynamic paddings for each level to avoid arrow overlapping. A crucial ingredient was the CSS3 #[code calc()] function to calculate sizes from different units like px and percent (even though it’s pretty much #[+a("http://caniuse.com/#feat=calc") supported] by all modern browsers, it’s still fairly underrated). Another helpful strategy was to take advantage of valid native HTML attributes like #[code title] which I added to both arrows and words. This doesn't only make it incredibly easy to add tags to the arcs via #[code content: attr(title)] in CSS, it also adds semantic value.
 
 p The main calculations are now done directly in JavaScript and then added to the DOM to avoid redundant markup and make it even more compact and lightweight.
 
-h2 Using and customising displaCy
++h(2) Using and customising displaCy
 
-p Even without any additional CSS, displaCy renders the arrows and words correctly and looks pretty decent. But since it outputs plain HTML with a bunch of descriptive classes and titles, it can be styled in a lot of different ways to highlight various features. The demo comes with #[a(href="https://spacy.io/displacy" target="_blank") a few different themes] to show that it #[em is] possible to make a dependency parse tree look fun and stylish.
+p Even without any additional CSS, displaCy renders the arrows and words correctly and looks pretty decent. But since it outputs plain HTML with a bunch of descriptive classes and titles, it can be styled in a lot of different ways to highlight various features. The demo comes with #[+a("https://spacy.io/displacy") a few different themes] to show that it #[em is] possible to make a dependency parse tree look fun and stylish.
 
 p Example: All words have several classes like #[code w-noun], #[code w-verb] or #[code w-ent] (named entities) which can be used to style the word or its container. In combination with the #[code title] this means that we’re able to style almost #[em anything] using CSS selectors and pseudo-elements only. Here's a left to right arrow for a nominal subject on level 1 with a red arc and a blue arrow head:
 
 +code("css").
-  .level1 .arrow.right[title="nsubj"]:before { 
+  .level1 .arrow.right[title="nsubj"]:before {
     border-color: red;      /* arc */
   }
   .level1 .arrow.right[title="nsubj"]:after {
     border-top-color: blue; /* arrow head */
   }
 
-h2 Interactive features and future plans
++h(2) Interactive features and future plans
 
-p Aside from the standard view that simply displays a full sentence, we've also added a bunch of interactive features to show what's going on behind the scenes and visualise how computers "understand" language. The #[a(href="https://displacy.spacy.io/?steps=displaCy%20uses%20CSS%20and%20JavaScript%20to%20show%20you%20how%20computers%20understand%20language" target="_blank") "Step through" mode] lets you walk through the annotation process step by step and shows each action in order. The #[a(href="https://displacy.spacy.io/?manual=displaCy%20uses%20CSS%20and%20JavaScript%20to%20show%20you%20how%20computers%20understand%20language" target="_blank") "Annotate" mode] lets you annotate the sentence manually &ndash; even using your keyboard. This could be incredibly useful for companies that need to annotate text efficiently and require an adaptable solution that #[em doesn&#39;t] suck.
+p Aside from the standard view that simply displays a full sentence, we've also added a bunch of interactive features to show what's going on behind the scenes and visualise how computers "understand" language. The #[+a("https://displacy.spacy.io/?steps=displaCy%20uses%20CSS%20and%20JavaScript%20to%20show%20you%20how%20computers%20understand%20language") "Step through" mode] lets you walk through the annotation process step by step and shows each action in order. The #[+a("https://displacy.spacy.io/?manual=displaCy%20uses%20CSS%20and%20JavaScript%20to%20show%20you%20how%20computers%20understand%20language") "Annotate" mode] lets you annotate the sentence manually &ndash; even using your keyboard. This could be incredibly useful for companies that need to annotate text efficiently and require an adaptable solution that #[em doesn&#39;t] suck.
 
-p displaCy is still only a demo but we're planning on implementing new features and making it available as an official addon. If you are interested in spaCy and displaCy, you can follow the development on the #[a(href="https://spacy.io/blog" target="_blank") spaCy blog].
+p displaCy is still only a demo but we're planning on implementing new features and making it available as an official addon. If you are interested in spaCy and displaCy, you can follow the development on the #[+a("https://spacy.io/blog") spaCy blog].

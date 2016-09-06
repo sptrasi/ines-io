@@ -101,9 +101,9 @@ mixin quote(source, link)
 //- Codepen Embed
 
 mixin codepen(slug, height, default_tab)
-            a(href="https://codepen.io/#{profiles.codepen}/#{slug}/" target="_blank") View on CodePen
     .o-block&attributes(attributes)
         .codepen(data-height=height data-theme-id="23801" data-slug-hash=slug data-default-tab=(default_tab || "result") data-embed-version="2" data-user=profiles.codepen)
+            +a("https://codepen.io/" + profiles.codepen + "/" + slug) View on CodePen
 
 
 //- Video Embeds
@@ -130,9 +130,9 @@ mixin a(url, trusted)
 
 //- Button
 
-mixin button
-  a.button(role="button")&attributes(attributes)
-    block
+mixin button(url, trusted)
+    +a(url, trusted)(role="button").c-button.u-text-label&attributes(attributes)
+        block
 
 
 //- Icon

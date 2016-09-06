@@ -4,24 +4,24 @@
 
 include _mixins
 
-    a(href="https://twitter.com/#{profiles.twitter}" target="_blank" aria-label="Twitter")
 .o-inline-list
+    +a("https://twitter.com/" + profiles.twitter)(aria-label="Twitter")
         +icon("twitter")
 
-    a(href="https://medium.com/@#{profiles.medium}" target="_blank" aria-label="Medium")
+    +a("https://medium.com/@" + profiles.medium)(aria-label="Medium")
         +icon("medium")
 
-    a(href="https://github.com/#{profiles.github}" target="_blank" aria-label="GitHub")
+    +a("https://github.com/" + profiles.github)(aria-label="GitHub")
         +icon("github")
 
-    a(href="https://codepen.io/#{profiles.codepen}" target="_blank" aria-label="Codepen")
+    +a("https://codepen.io/" + profiles.codepen)(aria-label="Codepen")
         +icon("codepen")
 
-    a(href="https://instagram.com/#{profiles.instagram}" target="_blank" aria-label="Instagram")
-                +icon("instagram")
+    +a("https://instagram.com/" + profiles.instagram)(aria-label="Instagram")
+        +icon("instagram")
 
-    a(href="https://linkedin.com/in/#{profiles.linkedin}" target="_blank" aria-label="LinkedIn")
+    +a("https://linkedin.com/in/" + profiles.linkedin)(aria-label="LinkedIn")
         +icon("linkedin")
 
-    a(href="https://www.google.com/recaptcha/mailhide/d?k=01XKotRh-TzJXD5ew6LZ7BwA==&c=8fy9Z30NH7ukj8omRyZVuw==" target="_blank" aria-label="Email")
+    +a("https://www.google.com/recaptcha/mailhide/d?k=01XKotRh-TzJXD5ew6LZ7BwA==&c=8fy9Z30NH7ukj8omRyZVuw==")(aria-label="Email")
         +icon("email")
