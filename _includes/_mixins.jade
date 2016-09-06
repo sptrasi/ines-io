@@ -5,6 +5,49 @@
 include _functions
 
 
+//- Headlines Helper Mixin
+
+mixin headline(level, style)
+    if level == 1
+        h1.u-heading-1
+            block
+
+    else if level == 2
+        h2.u-heading-2
+            block
+
+    else if level == 3
+        h3.u-heading-3
+            block
+
+    else if level == 4
+        h4.u-heading-4
+            block
+
+    else if level == 5
+        h5.u-heading-5
+            block
+
+
+//- Permalink rendering
+
+mixin permalink(id)
+    if id
+        a.u-permalink(id=id href="##{id}")
+            block
+
+    else
+        block
+
+
+//- Headlines
+
+mixin h(level, id)
+    +headline(level)
+        +permalink(id)
+            block
+
+
 //- Inline Image
 
 mixin image(filename, caption, alt)
