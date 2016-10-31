@@ -6,7 +6,7 @@ include _mixins
 
 +a("https://twitter.com/share?text=" + headline + "&amp;via=" + profiles.twitter)(aria-label="Share on Twitter") #[+icon("twitter", 16)]
 
-+a("https://www.facebook.com/sharer.php?u=" + posturl)(aria-label="Share on Facebook") #[+icon("facebook", 16)]
++a("https://www.facebook.com/sharer.php?u=" + getCurrentUrl())(aria-label="Share on Facebook") #[+icon("facebook", 16)]
 
 if medium
     +a(medium)(aria-label="Read on Medium") #[+icon("medium", 16)]
