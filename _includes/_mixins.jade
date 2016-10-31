@@ -51,7 +51,7 @@ mixin h(level, id)
 //- Inline Image
 
 mixin image(filename, caption, alt)
-    figure.o-block&attributes(attributes)
+    figure.o-image.o-block&attributes(attributes)
         img(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="1200")
 
         if caption
@@ -86,15 +86,15 @@ mixin date(input)
 //- Blockquote
 
 mixin quote(source, link)
-    blockquote.o-block&attributes(attributes)
-        p.u-text-large.u-text-italic
+    blockquote.c-quote.o-block&attributes(attributes)
+        p.o-block--small.u-text-italic
             block
 
         if source
-            footer.u-text-meta.u-text-upper
+            footer.u-text-meta.u-text-upper.u-text-strong
 
                 if link
-                    +a(link)=source
+                    +a(link)!=source
 
                 else
                     !=source
