@@ -22,7 +22,7 @@ article.o-article(class=(image && image.display == false) ? "o-article--full" : 
 
                     +date(date)
 
-                    !=partial("_includes/_share-icons", { posturl: getCurrentUrl() })
+                    include _share-icons
 
     if image && image.display != false
 
