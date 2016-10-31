@@ -1,4 +1,14 @@
 {
+    "announcing-explosion-ai": {
+        "headline": "Announcing Explosion AI",
+        "description": "Today, we launched the website for our new company, Explosion AI. Explosion is a digital studio specialising in Artificial Intelligence and Natural Language Processing. We design algorithms, applications and data assets, and develop custom solutions to today's AI problems.",
+        "date": "2016-10-03",
+        "category": "personal",
+        "image": {
+            "file": "explosion-ai.jpg"
+        },
+        "colors": [[0, 106, 195], [0, 255, 104]]
+    },
 
     "displacy-js-nlp-visualizer": {
         "headline": "displaCy.js: An open-source NLP visualiser for the modern web",
