@@ -73,7 +73,8 @@
         "image": {
             "file": "australia-travel-blog/beach.jpg"
         },
-        "colors": [[255, 192, 79], [246, 22, 157]]
+        "colors": [[255, 192, 79], [246, 22, 157]],
+        "artdirected": true
     },
 
     "guide-everyday-life-minimalism": {
@@ -220,7 +221,8 @@
         "image": {
             "file": "newyorktravelblog.jpg"
         },
-        "colors": [[245, 246, 0], [107, 17, 202]]
+        "colors": [[245, 246, 0], [107, 17, 202]],
+        "artdirected": true
     },
 
     "die-zukunft-ist-da": {
