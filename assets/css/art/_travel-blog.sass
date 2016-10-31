@@ -1,0 +1,129 @@
+//- ----------------------------------
+//- ⚡️ ARTDIRECTED: TRAVEL BLOG TEMPLATE
+//- ----------------------------------
+
+@import ../_base/mixins
+@import ../_base/fonts
+@import ../_base/reset
+
+$color-back: #fff
+$color-front: #222
+
+$font-primary: 'Proxima Nova', Tahoma, Geneva, sans-serif !default
+$font-secondary: 'GT Walsheim', Helvetica, Arial, sans-serif !default
+$font-code: 'Source Code Pro', Consolas, 'Andale Mono', Menlo, Monaco, Courier, monospace !default
+
+$breakpoint: 768px
+
+html
+    @media (min-width: #{$breakpoint + 1px})
+        font-size: 10px
+
+    @media (max-width: #{$breakpoint})
+        font-size: 7px
+
+body
+    padding: 5rem
+
+.a-header
+    color: $color-back
+
+.a-post
+    font: normal normal 1.6rem/#{1.375} $font-primary
+    max-width: 100%
+
+    @media(min-width: 787px)
+        width: 60%
+
+.a-post__header
+    mix-blend-mode: screen
+    background: $color-back
+    padding: 3rem
+    display: block
+
+.a-post__content
+    background: $color-back
+    padding: 3rem
+
+    p a
+        border-bottom: 2px solid
+
+.a-post__images
+    display: flex
+    flex-flow: row wrap
+    margin-top: -6rem
+    position: relative
+    z-index: 15
+    margin-bottom: 7.5rem
+
+    @media(min-width: 787px)
+        margin-left: 15rem
+
+    .o-image
+        background: $color-back
+        padding: 2.5rem
+
+        @media(min-width: #{$breakpoint + 1px})
+            width: 550px
+            flex: 1 1 550px
+            margin: 1.75rem
+
+        &.o-image--full
+            flex: 1 1 100%
+
+.a-dropdown
+    font: normal bold 2rem $font-secondary
+    text-transform: uppercase
+    appearance: none
+    background: transparent
+    color: $color-back
+    border: 3px solid
+    padding: 1rem
+    border-radius: 0
+    cursor: pointer
+    z-index: 20
+
+.a-title
+    @media(min-width: #{$breakpoint + 1px})
+        text-align: right
+        max-width: 30%
+        @include position(fixed, top, right, 5rem, 6.75rem)
+
+.a-heading-1
+    font: normal bold 80px/#{0.75} $font-secondary
+    text-transform: uppercase
+    margin-bottom: 2rem
+
+.a-heading-2
+    font: normal bold 50px $font-secondary
+    text-transform: uppercase
+
+.a-heading-3
+    font: normal bold 25px $font-secondary
+
+.a-label
+    font: normal normal 1.5rem $font-code
+
+.u-text-meta
+    font: normal normal 1.25rem $font-code
+    padding: 1rem 0
+
+.o-block, p
+    margin-bottom: 3rem
+    display: block
+
+.o-footer
+    margin: 4rem 0
+    background: $color-back
+    width: 800px
+    padding: 2.5rem
+
+.o-inline-list
+    font: normal bold 1.25rem/#{4} $font-secondary
+
+    & > *:not(:last-child)
+        margin-right: 2.5rem
+
+::selection
+    background: $color-front
+    color: $color-back
