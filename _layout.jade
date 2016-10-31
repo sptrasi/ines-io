@@ -33,7 +33,11 @@ html(lang="en")
         meta(name="twitter:description" content=description)
         meta(name="twitter:image" content=url + getMetaImage())
 
-        link(rel="stylesheet" href="/assets/css/style.css")
+        if artdirected
+            link(rel="stylesheet" href="/assets/css/art/#{current.source}.css")
+
+        else
+            link(rel="stylesheet" href="/assets/css/style.css")
 
     body
         main
