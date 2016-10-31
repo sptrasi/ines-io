@@ -120,7 +120,7 @@ p While Harp is a pretty powerful static server and a useful tool for any kind o
     {% for post in site.posts %}
 
       &lt;article class="{% if %post.featured %}featured{% else % }regular{% endif %}"&gt;
-        &lt;+h(2) class="headline"&gt;{{ post.title }}&lt;/+h(2)&gt;
+        &lt;h2 class="headline"&gt;{{ post.title }}&lt;/+h(2)&gt;
 
           {% if post.excerpt %}
             &lt;div class="excerpt"&gt;{{ post.excerpt }}&lt;/div&gt;
@@ -135,7 +135,7 @@ p And here's the same thing in Jade:
 +code("jade").
     each post in site.posts
         article(class=post.featured ? "featured" : "regular")
-            +h(2).headline=post.title
+            h2.headline=post.title
 
             if post.excerpt
                 .excerpt=post.excerpt
@@ -190,7 +190,7 @@ p So much cleaner, right? One of the big advantages of Jade is that it simplifie
             - var counter = 0
 
             each post in posts
-                +h(2).title=post.title
+                h2.title=post.title
                 - counter++
 
     +item #[strong Mixins] are reusable components or "content functions" and can take arguments.
