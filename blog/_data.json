@@ -1,4 +1,15 @@
 {
+    "state-of-ai-oslo": {
+        "headline": "48 hours in Oslo: The State of AI, talks and piñatas",
+        "description": "On Monday, we were invited to Oslo by Bakken & Bæck to talk about the State of AI 2016 and share some of the ideas that inspire our work at Explosion AI. Thanks to everyone involved for putting on the event, and thanks to all the people who showed up. We've had lots of fun and great conversations, and I can't wait to come back!",
+        "date": "2016-11-30",
+        "category": "travel",
+        "image": {
+            "file": "oslo.jpg"
+        },
+        "colors": [[122, 255, 98], [107, 17, 202]]
+    },
+
     "announcing-explosion-ai": {
         "headline": "Announcing Explosion AI",
         "description": "Today, we launched the website for our new company, Explosion AI. Explosion is a digital studio specialising in Artificial Intelligence and Natural Language Processing. We design algorithms, applications and data assets, and develop custom solutions to today's AI problems.",
