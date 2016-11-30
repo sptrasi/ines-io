@@ -110,9 +110,15 @@ mixin codepen(slug, height, default_tab)
 
 //- Video Embeds
 
+mixin embed(url, ratio)
+    figure.c-video.o-block(class="c-video--" + (ratio || "16x9"))
+        iframe.c-video__iframe(src=url frameborder="0" height="500" allowfullscreen)
+
+
+//- Youtube video embed
+
 mixin youtube(id, ratio)
-    .c-video.o-block(class="c-video--" + (ratio || "16x9"))&attributes(attributes)
-        iframe.c-video__iframe(src="https://www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen)
+    +embed("https://www.youtube.com/embed/" + id, ratio)
 
 
 //- Code Block
