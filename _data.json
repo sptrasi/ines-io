@@ -18,5 +18,9 @@
 
     "feed": {
         "layout": false
+    },
+
+    "robots.txt": {
+        "layout": false
     }
 }
