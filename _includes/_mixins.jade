@@ -150,7 +150,7 @@ mixin icon(name, size)
 
     span.o-icon(aria-hidden="true")&attributes(attributes)
         svg(viewBox="0 0 #{size} #{size}" width=size height=size)
-            use(xlink:href="/assets/img/icons.svg#icon-#{name}")
+            use(xlink:href="/assets/img/icons.svg##{name}")
 
 //- Divider
 
