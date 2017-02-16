@@ -18,9 +18,13 @@ rss(version="2.0" xmlns:atom="http://www.w3.org/2005/Atom")
                     title=post.headline
                     description <![CDATA[
                         if post.image
-                            p: img(src="#{url}/blog/img/#{post.image.file}")
+                            p
+                                a(href="#{url}/blog/#{slug}")
+                                    img(src="#{url}/blog/img/#{post.image.file}")
 
-                        !=partial("blog/" + slug, { absolute: url + "/blog/" })
+                        p=post.description
+
+                        p #[a(href="#{url}/blog/#{slug}") Read more &rarr;]
                         | ]]>
 
                     if post.date

@@ -16,7 +16,7 @@
         "headline": "404 Error"
     },
 
-    "feed": {
+    "feed.xml": {
         "layout": false
     },
 
