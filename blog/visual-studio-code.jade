@@ -1,0 +1,142 @@
+include ../_includes/_mixins
+
+p The first "real" code editor I ever used was the minimalist #[+a("https://de.wikipedia.org/wiki/HTML-Editor_Phase_5#/media/File:Proton_Code_Editor.png") Proton] for Windows, with a size of just over 800kb, smaller that many images on the web these days. Over the last decade or so, I went from #[+a("https://itunes.apple.com/us/app/textwrangler/id404010395?mt=12") TextWrangler] to #[+a("https://panic.com/coda/") Coda2] to #[+a("https://www.sublimetext.com/") SublimeText], before finally settling for GitHub's #[+a("https://atom.io/") Atom]. I still love Atom for being 100% hackable, but it would frequently become incredibly slow, to the point where I had to restart it several times a day. This seems to be a #[+a("https://discuss.atom.io/t/why-is-atom-so-slow/11376") very common problem].
+
+p So a few weeks ago, I finally made the switch to Microsoft's #[+a("https://code.visualstudio.com/") Visual Studio Code]. I'm not gonna lie, abandoning Atom broke my heart. But it turned out VSCode wasn't just a rebound – it's #[em really] fast, comes with a bunch of great, built-in features and can be surprisingly pretty, given the right configuration. In this post, I'll show you some of my favourite settings, features and extensions, and share a tips on how to customise it even further – including how to implement my favourite Atom feature, custom stylesheets.
+
++h(2, "features") Favourite features and settings
+
+p Visual Studio Code comes with an integrated terminal, version control, a powerful set of debugging tools, intelligent code completion, a range of accessibility options and all of the usual perks like split panels, customisable key bindings, syntax highlighting, snippets and an open marketplace for extensions.
+
+p Like Atom, VSCode lets you configure the settings via a JSON file. The available settings are searchable and organised in categories, and each setting comes with a button to copy-paste it over to your user settings.
+
++image("vscode_settings.jpg", "Adding to the user settings")
+
++h(3) Integrated terminal
+
+p No more switching between windows when I'm developing in Python or Node, serving a static site via Harp or deploying my projects. You can set your favourite shell via the #[code terminal.integrated.shell.osx] settings, so I get to use #[+a("https://en.wikipedia.org/wiki/Z_shell") zsh], together with #[+a("http://ohmyz.sh/") Oh My Zsh]'s custom themes and plugins.
+
++image("vscode_terminal.jpg", "Integrated terminal using iTerm and zsh")
+
+p You can also change the default external terminal application via the #[code terminal.external.osxExec] setting, and use #[+a("https://www.iterm2.com/") iTerm2] or #[+a("https://hyper.is/") Hyper] instead of the standard macOS Terminal app.
+
++h(3) Native Git integration
+
+p If your project uses Git, you'll be able see its status and quickly sync and switch branches from the editor's status bar. You can even commit straight from the Git panel. I still prefer GitHub Desktop for commits, though, as it gives me a better overview of my repos and makes it easy to compare diffs, do partial commits and undo commits with one click.
+
++h(3) Markdown preview with custom styles
+
+p Most of the time I'm writing Markdown in my editor, I'm actually writing Readmes and other documents for GitHub. The GitHub Markdown theme is pretty nice, so I've put together my own version of it based on #[+a("https://github.com/sindresorhus/github-markdown-css") this template]. It's a bit hacky and I had to add a few #[code !important] declarations to colours here and there, but it works and I can now preview files almost exactly like they'll appear on GitHub.
+
++image("vscode_markdown.jpg", "GitHub-style Markdown preview")
+
++h(3) Emmet support
+
+p #[+a("http://emmet.io/") Emmet] provides shortcuts for writing nested HTML and CSS. You define the structure in one line, for example #[code div>p*4] for a #[code div] with four nested paragraphs, hit tab and the full markup is generated automatically. To see it in action, check out this example from #[+a("https://css-tricks.com/need-lorem-ipsum-inside-html/") CSS Tricks]:
+
++image("vscode_emmet.gif", "Creating a module with lorem ipsum content using Emmet")
+
+p I still haven't managed to get it to work for my ideal use case, nested Jade/Pug mixins. While it works fine for regular markup, it fails on mixins prefixed by #[code +]. Eventually, I'd love to be able to do something like #[code &#43;table(&#91;"Name", "Description"&#93;)&gt;+row*3&gt;+cell*2], using my own pre-defined #[+a("https://github.com/ines/jade-pug-mixins/blob/master/tables.jade") table mixins]. I still have high hopes for getting this to work with a #[+a("http://docs.emmet.io/customization/") custom extension].
+
++h(3) Application zoom
+
+p This sounds like a pretty minor and trivial setting, but it actually made a #[em huge] difference for me. The default UI is just way too large for my taste. On my 13" screen, I like to work with two panels of around 80 characters wide, plus a sidebar with a tree view of the current working directory and VSCode's "activity bar" that lets me switch between the tree-view explorer and the search panel. With the right combination of application zoom (#[code "window.zoomLevel": -0.77]) and editor font size (#[code "editor.fontSize": 15]), I've managed to get the sizing just right. (Admittedly, my eyesight is pretty good and I don't mind small text.)
+
++h(2, "extensions") Extensions
+
+p Extensions and themes can be downloaded from the official #[+a("https://marketplace.visualstudio.com/vscode") Visual Studio Marketplace] and via the extensions panel from within the editor. For a curated overview of some of the best packages and resources, check out the #[+a("https://github.com/viatsko/awesome-vscode/") awesome-vscode] repo. I'm currently using the following extensions:
+
++list
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=RoscoP.ActiveFileInStatusBar") Active File in StatusBar]] — Shows the full (or shortened) path to the current file it the status bar.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=Compulim.vscode-clock") Clock in status bar]] — Shows the current time in the status bar. I usually swipe between two or three editors in different spaces, and it's easy to forget the time when working in fullscreen mode.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize") colorize]] — Adds a background to all colour values. In CSS files, colours are displayed in a little box next to the values, but I haven't yet managed to enable this for Sass and other file formats. So this extension helps a lot.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css") Custom CSS and JS loader]] — Modifies the editor's look and behaviour by loading it with custom CSS and JS –  I'm explaining more about how this works in detail below.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=tinkertrain.theme-panda") Panda Syntax Theme]] — My absolute favourite syntax theme, hands down.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=donjayamanne.python") Python]], #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=magicstack.MagicPython") MagicPython]], #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=robinbentley.sass-indented") Sass]] — Adds more language-specific capabilities, including syntax highlighting and formatting.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=humao.rest-client") REST Client]] — Allows you to send HTTP requests and view the response straight from the editor. This is the latest addition to my extensions, and I haven't used it much yet, but it looks like it might be #[em the solution] to a lot of my HTTP request frustrations.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext") reStructuredText]] — Adds support and previews for #[+a("http://docutils.sourceforge.net/rst.html") .rst] files (which I hate with a passion). But for Readmes to be rendered #[+a("https://pypi.python.org/pypi/spacy") nicely] on #[+a("https://pypi.python.org/") pypi], they have to be formatted as reStructuredText, and it's almost impossible to get complex markup right without previewing it frequently.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=qinjia.seti-icons") seti-icons]] — My favourite icon theme that adds small and non-obtrusive file icons to the tree-view explorer and tabs.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=bbenoist.shell") Shell]] — Runs shell commands from the command palette. I mainly use the included shortcut to run commands from the current file's location to optimise SVGs with #[code svgo].
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer") SVG viewer]] — Allows you to view SVGs from within the editor and export them as PNGs.
+
+    +item #[strong #[+a("https://marketplace.visualstudio.com/items?itemName=felixrieseberg.vsc-travis-ci-status") TravisCI Status]] — Shows the build status of the current project in the status bar.
+
++h(2, "custom-css") Custom CSS Stylesheets
+
+p One of the biggest downsides of VSCode is that it currently doesn't allow custom stylesheets to modify the editor contents and UI. While you can do it the hacky way by modifying the source files, it's is obviously not recommended, and you'll lose all your modifications once you update the application.
+
+p It might sound petty, but what eventually prompted me to look into this and find a better solution was the blue and purple status bar (and apparently I'm #[+a("https://github.com/Microsoft/vscode/issues/1884") not the only one]). It looks like custom stylesheets might be supported natively in a #[+a("https://github.com/Microsoft/vscode/milestone/27") future release], but in the meantime, here's another solution.
+
++h(3) Simple solution: Custom theme extension
+
+p Using #[+a("https://marketplace.visualstudio.com/items?itemName=bentx.vscode-custom-theme") Custom theme for VSCode], you can speficy custom colours for a range of UI components, including tabs, the activity bar and the status bar. You can even hide the little smiley face in the bottom right corner, which acts as the "Send feeback" button. All options are available as handy user settings, for example #[code theme.dark.tabs.background.color].
+
++image("vscode_customtheme.gif", "Custom UI themes using the custom theme extension")
+
+p Note that this extension still modifies the source and will set your editor to #[+a("https://code.visualstudio.com/docs/supporting/faq#_installation-appears-to-be-corrupt") "unsupported mode"]. This doesn't actually to have an impact on the editor's performance or functionality (it only adds "[Unsupported]" to your title bar), but it's important to keep this in mind for when you're experiencing issues or filing a support request.
+
++h(3) Fully custom solution: Custom CSS and JS loader extension
+
+p I finally stumbled across #[+a("https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css") an extension] that lets you load the editor with custom CSS and JavaScript files. The usage is a little unintuitive and not well-documented, but it turned out to work pretty smoothly. In your settings, you simply specify an array of URLs or local paths to the files (for local paths, prefix them with #[code file:&#47;&#47;&#47;]). I keep my custom modifications in the #[code .vscode] directory in my home folder, which by the way also contains all installed extensions.
+
++code("json").
+    "vscode_custom_css.imports": ["file:///Users/ines/.vscode/custom.css"]
+
+p From the command palette (#[code cmd] + #[code P]), you can now select "Enable Custom CSS and JS" (or "Update" to reload). You might still get a notification saying that your source files are corrupted (as you do if you actually modify the source), but it seems pretty safe to ignore this. If you need some inspiration, these are my current modifications:
+
++code("css").
+    /* Set background of status bar and activity bar */
+
+    .monaco-workbench>.part.statusbar,
+    .monaco-workbench>.activitybar>.content,
+    .monaco-tree .monaco-tree-row>.content.actions.more>.primary-action-bar {
+        background: #1A1E24 !important;
+    }
+
+    /* Hide "send feeback" button in status bar */
+
+    .dropdown.send-feedback {
+        display: none !important;
+    }
+
+p My next mission will be to find a way to set custom styles for specific tokens. I recently made the switch from #[+a("https://github.com/tonsky/FiraCode") Fira Code] to #[+a("http://www.typography.com/blog/introducing-operator") Operator Mono], but I miss the amazing code ligatures. Atom lets you #[+a("https://medium.com/@peterpme/operator-mono-fira-code-the-best-of-both-worlds-191be512fd5e#.5vxnc8l3d") combine the two], and according to #[+a("https://gist.github.com/Mikeysax/e707e6971d991a7552017b4c00ef6a97") this Gist], the same approach should work in VSCode. But it still didn't make a difference when I added it to my custom CSS, so this might require some more digging into the source.
+
++h(3, "update-fonts") Update #1 on using font combinations #[span.u-text-meta (2017-02-07)]
+
+p It turned out the above issue was be related to a #[+a("https://code.visualstudio.com/updates/v1_9#_theme-matching-rules-now-respect-textmate-semantics") change] in the latest v1.9 release that included flattening the TextMate theme scopes. While this makes customisation a little harder, it improves overall consistency, theme compatibility and performance.
+
+p Instead of scopes like #[code .token.keyword.operator] being assigned directly (which would make them accessible via CSS), the scopes defined in the TextMate colour theme are flattened and assigned to the tokens using class names like #[code .mtk1]. Unfortunately, the #[+a("https://manual.macromates.com/en/themes") TextMate syntax] seems to only allow colours and font styles, not font families.
+
++image("vscode_devtools.jpg", "The token rendering shown in the developer tools (toggle them via the command palette)")
+
+p #[em In theory], setting #[code .mtk1] and #[code .mtk5] to #[code font-family: "Fira Code"] brings back the ligatures for operators and arrow functions. But because third-party themes often differ in the scopes they use (and sometimes even contain bugs), this fix is definitely not recommended and can cause inconsistent and unpredictable results. For example, using the #[+a("https://marketplace.visualstudio.com/items?itemName=tinkertrain.theme-panda") Panda theme] in JavaScript, Fira Code is also applied to variable declarations, numbers, booleans, class names and attributes.
+
++h(3, "update-fonts-unicode") Update #2 on using font combinations #[span.u-text-meta (2017-02-09)]
+
+p I finally managed to achieve my (almost) ideal setup by using a custom #[code @font-face] declaration for only a specific #[+a("http://www.growingwiththeweb.com/2012/12/apply-fonts-based-on-language-using-css3.html") unicode range]. If the unicode character is part of that range, it's displayed in Fira Code. Otherwise, the fallback font, Operator Mono, is used.
+
++code("css").
+    @font-face {
+        font-family: 'Fira Code Ligatures';
+        src: local('Fira Code');
+        unicode-range: U+0021-0026, U+002A-002B, U+002D-002F, U+003A-003E, U+007B-007E;
+    }
+
+    .view-lines {
+        font-family: 'Fira Code Ligatures', 'Operator Mono' !important;
+    }
+
+p Note that the above example doesn't cover #[em all] characters that can be transformed into code ligatures. Instead, I decided to only include the ones that are relevant to my main programming languages. For a nice overview of all unicode characters and ranges, see #[+a("https://en.wikipedia.org/wiki/List_of_Unicode_characters") this list].
+
+p.o-inline-list
+    +button("https://code.visualstudio.com/download") Download Visual Studio Code

@@ -1,4 +1,16 @@
 {
+    "visual-studio-code": {
+        "headline": "An introduction to Visual Studio Code",
+        "description": "A few weeks ago, I finally made the switch to Microsoft's Visual Studio Code. I'm not gonna lie, abandoning Atom broke my heart. But it turned out VSCode wasn't just a rebound – it's really fast, comes with a bunch of great, built-in features and can be surprisingly pretty, given the right configuration.",
+        "date": "2017-02-05",
+        "category": "tech",
+        "image": {
+            "file": "vscode.jpg"
+        },
+        "colors": [[240, 14, 46], [25, 37, 80]],
+        "highlight_code": true
+    },
+
     "state-of-ai-oslo": {
         "headline": "48 hours in Oslo: The State of AI, talks and piñatas",
         "description": "On Monday, we were invited to Oslo by Bakken & Bæck to talk about the State of AI 2016 and share some of the ideas that inspire our work at Explosion AI. Thanks to everyone involved for putting on the event, and thanks to all the people who showed up. We've had lots of fun and great conversations, and I can't wait to come back!",
