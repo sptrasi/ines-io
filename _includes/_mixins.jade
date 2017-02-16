@@ -55,7 +55,15 @@ mixin image(filename, caption, alt)
         img(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="1200")
 
         if caption
-            figcaption.u-text-meta!=caption
+            +image-caption
+                !=caption
+
+        block
+
+
+mixin image-caption()
+    figcaption.u-text-meta
+        block
 
 
 //- List
