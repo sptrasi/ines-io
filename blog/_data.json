@@ -1,4 +1,17 @@
 {
+    "how-i-started-coding": {
+        "headline": "Story time: How I started coding",
+        "description": "I've seen a couple of these posts pop up over the past year or so, and I've always enjoyed reading other people's stories. So here's mine.",
+        "date": "2017-02-09",
+        "category": "personal",
+        "image": {
+            "file": "coding.jpg",
+            "credit_text": "Soupmeister",
+            "credit_url": "https://www.flickr.com/photos/soupmeister/5236381352"
+        },
+        "colors": [[29, 255, 210], [140, 61, 147]]
+    },
+
     "visual-studio-code": {
         "headline": "An introduction to Visual Studio Code",
         "description": "A few weeks ago, I finally made the switch to Microsoft's Visual Studio Code. I'm not gonna lie, abandoning Atom broke my heart. But it turned out VSCode wasn't just a rebound – it's really fast, comes with a bunch of great, built-in features and can be surprisingly pretty, given the right configuration.",
