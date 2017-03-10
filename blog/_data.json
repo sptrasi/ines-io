@@ -43,7 +43,7 @@
         "image": {
             "file": "explosion-ai.jpg"
         },
-        "colors": [[0, 106, 195], [0, 255, 104]]
+        "colors": [[30, 25, 53], [103, 76, 227]]
     },
 
     "displacy-js-nlp-visualizer": {
@@ -56,7 +56,7 @@
             "credit_text": "Kemal Şanlı",
             "credit_url": "https://dribbble.com/kemal"
         },
-        "colors": [[255, 204, 0], [255, 0, 162]],
+        "colors": [[255, 297, 0], [0, 58, 255]],
         "wide": true,
         "readmore": "https://explosion.ai/blog/displacy-js-nlp-visualizer"
     },
