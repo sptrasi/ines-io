@@ -95,11 +95,11 @@ mixin date(input)
 
 mixin quote(source, link)
     blockquote.c-quote.o-block&attributes(attributes)
-        p.o-block--small.u-text-italic
+        p.o-block.u-text-italic
             block
 
         if source
-            footer.u-text-meta.u-text-upper.u-text-strong
+            footer.u-text-meta.u-text-upper
 
                 if link
                     +a(link)!=source
