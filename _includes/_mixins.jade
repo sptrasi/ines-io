@@ -51,8 +51,8 @@ mixin h(level, id)
 //- Inline Image
 
 mixin image(filename, caption, alt)
-    figure.o-image.o-block&attributes(attributes)
-        img(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="1200")
+    figure.o-block&attributes(attributes)
+        img.o-block.o-block--x-small(src=(absolute || "") + "img/#{filename}" alt=(alt || caption) width="1200")
 
         if caption
             +image-caption
