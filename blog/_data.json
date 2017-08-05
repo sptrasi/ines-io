@@ -1,4 +1,16 @@
 {
+    "spacy-commercial-open-source-nlp": {
+        "headline": "Reflections on running spaCy: commercial open-source NLP",
+        "description": "As more and more people and companies are getting involved with open-source software, balancing the expectations of an open community and a traditional provider vs. consumer relationship is becoming increasingly difficult. Are maintainers becoming too authoritarian? Are users becoming too demanding? Are large companies selling out open-source?",
+        "date": "2017-05-10",
+        "category": "opinion",
+        "image": {
+            "file": "open-source.jpg"
+        },
+        "colors": [[9, 163, 213], [0, 128, 169]],
+        "embed_twitter": true
+    },
+
     "supervised-learning-data-collection": {
         "headline": "Supervised learning is great — it’s data collection that’s broken",
         "description": "Short of Artificial General Intelligence, we'll always need some way of specifying what we're trying to compute. Labelled examples are a great way to do that, but the process is often tedious. However, the dissatisfaction with supervised learning is misplaced. Instead of waiting for the unsupervised messiah to arrive, we need to fix the way we're collecting and reusing human knowledge.",
