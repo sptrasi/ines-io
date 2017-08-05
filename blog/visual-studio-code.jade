@@ -138,5 +138,22 @@ p I finally managed to achieve my (almost) ideal setup by using a custom #[code 
 
 p Note that the above example doesn't cover #[em all] characters that can be transformed into code ligatures. Instead, I decided to only include the ones that are relevant to my main programming languages. For a nice overview of all unicode characters and ranges, see #[+a("https://en.wikipedia.org/wiki/List_of_Unicode_characters") this list].
 
++h(3, "update-themes") Update #3 on custom themes #[span.u-text-meta (2017-04-17)]
+
+p Version 1.11 comes with (experimental) #[+a("https://code.visualstudio.com/updates/v1_11#_preview-workbench-theming") workbench theming] and it's working great so far. I'm currently using the following configuration:
+
++code("json").
+    {
+        "workbench.experimental.colorCustomizations": {
+            "statusBarBackground": "#1A1E24",
+            "sideBarBackground": "#14161B",
+            "activityBarBackground": "#14161B",
+            "activeTabBackground": "#1A1E24",
+            "inactiveTabBackground": "#14161B",
+            "panelBackground": "#14161B",
+            "editorGroupBorder": "#14161B"
+        }
+    }
+
 p.o-inline-list
     +button("https://code.visualstudio.com/download") Download Visual Studio Code
