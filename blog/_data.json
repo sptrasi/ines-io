@@ -1,4 +1,17 @@
 {
+    "wired-brain-ai-powered-future": {
+        "headline": "The wired brain: How not to talk about an AI-powered future",
+        "description": "The way we talk about AI is a mess. It starts with the most obvious, the imagery. Just like stock photos of happy people pointing at whiteboards were a symbol of the modern workplace, wired brains and robots have now come to represent \"the AI\". But the visual messaging is only a small part of a much larger problem.",
+        "date": "2017-03-09",
+        "category": "opinion",
+        "image": {
+            "file": "wired-brain.jpg",
+            "credit_text": "Freepik",
+            "credit_url": "http://www.freepik.com/free-vector/artistic-pattern-with-abstract-shapes_854209.htm"
+        },
+        "colors": [[255, 0, 116], [50, 50, 50]]
+    },
+
     "how-i-started-coding": {
         "headline": "Story time: How I started coding",
         "description": "I've seen a couple of these posts pop up over the past year or so, and I've always enjoyed reading other people's stories. So here's mine.",
