@@ -87,6 +87,26 @@ mixin item()
         block
 
 
+//- Table
+
+mixin table()
+    table.c-table.o-block.u-text-meta&attributes(attributes)
+        block
+
+mixin head-row()
+    tr.c-table__head-row&attributes(attributes)
+        block
+
+mixin row()
+    tr.c-table__row&attributes(attributes)
+        block
+
+
+mixin cell()
+    td.c-table__cell&attributes(attributes)
+        block
+
+
 //- Date
 
 mixin date(input)
