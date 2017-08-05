@@ -13,7 +13,7 @@ article.o-article(class=(image && image.display == false) ? "o-article--full" : 
             !=partial("_includes/_logo", { size: 125 })
 
         h1
-            span.u-heading-1.u-text-upper=headline
+            span.u-heading-1.u-text-upper!=(headline ? headline.replace(':', ':<br>') : headline)
 
             if date
                 .o-inline-list.u-text-meta
