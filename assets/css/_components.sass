@@ -113,6 +113,34 @@
     margin: 0 0 2rem 3.5rem
 
 
+//- Tables
+
+.c-table__row
+    border-style: solid
+    border-width: 2px 0
+
+    &:last-child
+        border-bottom: none
+
+.c-table__cell
+    padding: 1rem
+
+
+.c-table
+    @include scroll-shadow-base($color-front)
+    display: inline-block
+    overflow-x: auto
+    width: auto
+    -webkit-overflow-scrolling: touch
+
+.c-table__cell
+    &:first-child
+        @include scroll-shadow-cover(left, $color-back)
+
+    &:last-child
+        @include scroll-shadow-cover(right, $color-back)
+
+
 //- Hero Images
 
 .c-hero
