@@ -15,3 +15,27 @@
   position: $position
   #{$pos-y}: $pos-y-value
   #{$pos-x}: $pos-x-value
+
+
+// Scroll shadows for reponsive tables
+// adapted from David Bushell, http://codepen.io/dbushell/pen/wGaamR
+// $scroll-shadow-color      - color of shadow
+// $scroll-shadow-side       - side to cover shadow (left or right)
+// $scroll-shadow-background - original background color to match
+
+@mixin scroll-shadow-base($scroll-shadow-color)
+    background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center, radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center
+    background-attachment: scroll, scroll
+    background-repeat: no-repeat
+    background-size: 10px 100%, 10px 100%
+
+@mixin scroll-shadow-cover($scroll-shadow-side, $scroll-shadow-background)
+    $scroll-gradient-direction: right !default
+
+    @if $scroll-shadow-side == right
+        $scroll-gradient-direction: left
+        background-position: 100% 0
+
+    background-image: linear-gradient(to #{$scroll-gradient-direction}, rgba($scroll-shadow-background, 1) 50%, rgba($scroll-shadow-background, 0) 100%)
+    background-repeat: no-repeat
+    background-size: 20px 100%
