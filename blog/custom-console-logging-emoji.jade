@@ -49,6 +49,22 @@ p The idea behind this is pretty simple: all we have to do is add custom functio
     console.pizza("Tasty!");
     console.poo("Oh f*ck!");
 
++h(3, "update-es6") Update: The ES6 version #[span.u-text-meta (2016-09-17)]
+
+p Thanks to #[+a("http://es6-features.org/") ECMAScript 6], #[code console.emoji] has become pretty much a one-liner. Instead of an awkward two-item array to specify the commands, I'm now using an array of objects with #[code emoji] and #[code name] keys:
+
++code("javascript").
+    // Define your custom commands and emoji
+    const commands = [
+        { emoji: '🦄', name: 'unicorn' },
+        { emoji: '🍕', name: 'pizza' },
+        { emoji: '🍺', name: 'beer' },
+        { emoji: '💩', name: 'poo' }
+    ];
+
+    // Create custom commands
+    commands.forEach(({ name, emoji }) => window.console[name] = (...args) => console.log(emoji + ' ' + args.join(', ')));
+
 p.u-text-center
     +button("https://github.com/" + profiles.github + "/console-dot-emoji") View Code on GitHub
 
