@@ -8,6 +8,53 @@
         }
     },
 
+    "talks": {
+        "Teaching AI about Human Knowledge": {
+            "date": "2017-01-19",
+            "location": "Copenhagen (Denmark)",
+            "links": {
+                "Slides": "https://www.slideshare.net/InesMontani/teaching-ai-about-human-knowledge",
+                "Video": "https://www.facebook.com/foundersas/videos/712970348885532/"
+            }
+        },
+        "The State of AI 2016": {
+            "date": "2016-11-28",
+            "location": "Oslo (Norway)",
+            "links": {
+                "Slides": "https://www.slideshare.net/InesMontani/the-state-of-ai-2016",
+                "Video": "https://livestream.com/accounts/11147584/events/6697317/player",
+                "Blog post": "/blog/state-of-ai-oslo"
+            }
+        }
+    },
+
+    "features": {
+        "Spiegel Online": {
+            "title": "Startmenü",
+            "link": "http://www.spiegel.de/netzwelt/web/stefanie-sargnagel-auf-facebook-gesperrt-das-und-mehr-im-startmenue-newsletter-a-1138462.html",
+            "date": "2017-03-13",
+            "author": "Angela Gruber"
+        },
+        "The Exponential View": {
+            "title": "Issue #104",
+            "link": "https://www.getrevue.co/profile/azeem/issues/how-ai-will-change-the-enterprise-robot-friendships-quantum-computing-maybe-tinder-select-time-crystals-the-connectome-104-48905",
+            "date": "2017-03-12",
+            "author": "Azeem Azhar"
+        },
+        "News in AI and Machine Learning": {
+            "title": "Issue #15",
+            "link": "https://www.getrevue.co/profile/nathanbenaich/issues/news-in-artificial-intelligence-and-machine-learning-aug-sept-2016-27703",
+            "date": "2016-10-03",
+            "author": "Nathan Benaich"
+        },
+        "O'Reilly": {
+            "title": "Artificial Intelligence Newsletter",
+            "link": "http://post.oreilly.com/form/oreilly/viewhtml/9z1zc2p2sc2q59bpgb9v5cnavsf943v1tigt3jq4kt0?imm_mid=0e7125&cmp=em-data-na-na-newsltr_ai_20160829",
+            "date": "2016-08-29",
+            "author": "O'Reilly Media"
+        }
+    },
+
     "impressum": {
         "headline": "Impressum & Datenschutz"
     },

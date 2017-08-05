@@ -4,9 +4,7 @@
 
 include _includes/_mixins
 
-p Hi, I'm Ines and this is my personal blog. I'm a developer and marketing strategist specialising in web applications for Artificial Intelligence and Natural Language Processing technologies. I'm the co-founder of #[+a("https://explosion.ai", true) Explosion AI], a digital studio for custom AI and NLP solutions. We're also the makers of #[+a("https://spacy.io", true) spaCy], the leading open-source library for Natural Language Processing in Python, and #[+a("https://github.com/explosion/thinc") Thinc], an open-source library for deep learning with text.
-
-p As a front-end developer, I work on the things you can see and interact with – basically, I'm the one turning a plain and naked API into a fully functioning and usable site or application. For AI, this means letting humans #[+a("http://www.slideshare.net/InesMontani/teaching-ai-about-human-knowledge") get knowledge] to and from machine learning models.
+p Hi, I'm Ines and this is my personal blog. I'm a programmer, front-end developer and marketing strategist working on Artificial Intelligence and Natural Language Processing technologies. I'm the co-founder of #[+a("https://explosion.ai", true) Explosion AI], a digital studio for custom AI and NLP solutions. We're also the makers of #[+a("https://spacy.io", true) spaCy], the leading open-source library for Natural Language Processing in Python, and #[+a("https://prodi.gy", true) Prodigy], a machine teaching tool powered by active learning.
 
 p I believe in programming until four in the morning in my pyjamas instead of getting up early to attend conferences about productivity. I believe in making the best possible products instead of launching just for the sake of it because some startup advice blog told me so. I believe in rational planning, logical consequences and bullshit-free hard work instead of  "following my dreams". In short, I believe in doing things.
 
@@ -16,3 +14,22 @@ p I live in Berlin with my two fancy rats, #[+a("https://www.instagram.com/p/BKF
 
 p
     !=partial("_includes/_social-icons")
+
++h(2) Talks
+
++list
+    each talk, title in public._data.talks
+        +item
+            strong=title
+                each link, link_title in talk.links
+                    |  #[+a(link).u-text-label=link_title]
+
+            .u-text-meta #[+date(talk.date)] in #{talk.location}
+
++h(2) Featured in
+
++list
+    each feature, pub in public._data.features
+        +item
+            | #[strong=pub]: #[+a(feature.link)=feature.title]
+            .u-text-meta #[+date(feature.date)] by #{feature.author}
