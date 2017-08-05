@@ -1,4 +1,19 @@
 {
+    "supervised-learning-data-collection": {
+        "headline": "Supervised learning is great — it’s data collection that’s broken",
+        "description": "Short of Artificial General Intelligence, we'll always need some way of specifying what we're trying to compute. Labelled examples are a great way to do that, but the process is often tedious. However, the dissatisfaction with supervised learning is misplaced. Instead of waiting for the unsupervised messiah to arrive, we need to fix the way we're collecting and reusing human knowledge.",
+        "date": "2017-04-02",
+        "category": "tech",
+        "image": {
+            "file": "supervised-learning.jpg",
+            "credit_text": "Kemal Şanlı & Agata Sasiuk",
+            "credit_url": "https://dribbble.com/kemal"
+        },
+        "colors": [[255, 192, 79], [246, 22, 157]],
+        "wide": true,
+        "readmore": "https://explosion.ai/blog/supervised-learning-data-collection"
+    },
+
     "wired-brain-ai-powered-future": {
         "headline": "The wired brain: How not to talk about an AI-powered future",
         "description": "The way we talk about AI is a mess. It starts with the most obvious, the imagery. Just like stock photos of happy people pointing at whiteboards were a symbol of the modern workplace, wired brains and robots have now come to represent \"the AI\". But the visual messaging is only a small part of a much larger problem.",
