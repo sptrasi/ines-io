@@ -72,6 +72,9 @@ html(lang="en")
         if codepen_embed
             script(src="https://assets.codepen.io/assets/embed/ei.js" async)
 
+        if embed_twitter
+            script(src="https://platform.twitter.com/widgets.js" charset="utf-8" async)
+
        if environment == "production"
                 script window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga('create', '#{google_analytics}', 'auto'); ga('send', 'pageview');
 
